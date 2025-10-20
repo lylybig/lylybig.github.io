@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ReVar">
+  <meta name="keywords" content="GNN, Imbalance Node Classification">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geometric Imbalance in Semi-Supervised Node Classification</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/Hop.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">            
+            <img src="./static/images/Hop.png" id="hop" width="5%"><span style="background: linear-gradient(to right,  indigo, skyblue, violet, indigo, violet); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                
+            </span>Geometric Imbalance in Semi-Supervised Node Classification</h1>
+          <h4 class="title publication-title" style="font-size: 1.5rem;">NeurIPS 2025</h4>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://divinyan.com/">Liang Yan</a><sup>1,2</sup>,&nbsp;</span>
+            <span class="author-block">
+              <a href="">Shengzhong Zhang</a><sup>1</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="">Bisheng Li</a><sup>1</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://yangmenglinsite.github.io/">Menglin Yang</a><sup>3</sup>,&nbsp;</span>
+            </span>
+            <span class="author-block">
+              <a href="">Chen Yang</a><sup>1</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="">Min Zhou</a><sup>4</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=bLERs80AAAAJ&view_op=list_works&sortby=pubdate">Weiyang Ding</a><sup>1</sup>,&nbsp;</span>
+            </span>
+            <span class="author-block">
+              <a href="https://ytongxie.github.io/">Yutong Xie</a><sup>2†</sup>,&nbsp;</span>
+            </span>
+            <span class="author-block">
+              <a href="https://zengfenghuang.github.io/">Zengfeng Huang</a><sup>1†</sup>,&nbsp;</span>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Fudan University&nbsp; &nbsp;</span>
+            <span class="author-block"><sup>2</sup>MBZUAI&nbsp; &nbsp;</span>
+            <span class="author-block"><sup>3</sup>Hong Kong University of Science and Technology (Guangzhou)&nbsp; &nbsp;</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>4</sup>Logs AI&nbsp; &nbsp;</span>
+          </div>
+
+          <p> 
+            <sup>†</sup> corresponding authors &nbsp;
+          </p>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/forum?id=BND9CutZf6&referrer=%5Bthe%20profile%20of%20Liang%20Yan%5D(%2Fprofile%3Fid%3D~Liang_Yan5)"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2303.10371"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/yanliang3612/UNREAL"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="image-container">
+        <img src="./static/images/variance.png" alt="Teaser Image" width="100%" height="auto" />
+      </div>
+      <p>
+         We examine the alteration in variance concerning node classification as the imbalance ratio increases on and plot the regression curves for variance and imbalance ratio.
+        We conduct this experiment using a fixed number of training set nodes but different ones, to mitigate the influence of
+the numbber of training set nodes on variance.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+<!-- 
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+<!--         <h2 class="title is-3">Abstract</h2> -->
+        <h2 class="title is-3" style="background: linear-gradient(to right,  indigo, indigo, skyblue,indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            This paper introduces a new approach to address the issue of class imbalance in graph neural networks (GNNs) for learning on graph-structured data. 
+            Our approach integrates imbalanced node classification and Bias-Variance Decomposition, establishing a theoretical framework that closely relates data imbalance to model variance. 
+            We also leverage graph augmentation technique to estimate the variance, and design a regularization term to alleviate the impact of imbalance. 
+            Exhaustive tests are conducted on multiple benchmarks, including naturally imbalanced datasets and public-split class-imbalanced datasets, 
+            demonstrating that our approach outperforms state-of-the-art methods in various imbalanced scenarios. 
+            This work provides a novel theoretical perspective for addressing the problem of imbalanced node classification in GNNs.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  <!-- Paper image. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3" style="background: linear-gradient(to right,  indigo, indigo, skyblue,indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> Framework</h2>
+      <div class="publication-image">
+        <img src="./static/images/revar.png" alt="Framework Image" style="max-width: 100%; height: auto;">
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          <b>Overall pipeline of ReVar. </b>
+          (a) Two different views of the graph are obtained by graph augmentation transform, and are subsequently fed into GNN encoder.
+          (b) Intra-class and inter-class representations are aggregated, which means, for labeled nodes, it’s positive samples not only belong to the same class in both view but also in the other view. 
+          (c) Variance estimation. Specifically, the label probability distribution is computed for each node in two views based on it’s similarity with each class center. 
+          And the difference between two probability distributions is used to approximate the model’s variance and also optimized as one term in the loss function.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Paper image. -->
+
+  <!-- Paper image. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3" style="background: linear-gradient(to right,  indigo, indigo, skyblue,indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Experiment</h2>
+      <div class="publication-image">
+        <img src="./static/images/exp1.png" alt="Framework Image" style="max-width: 100%; height: auto;">
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          <b>Comparison of our method ReVar and other baselines on three benchmark datasets. </b>
+          Experimental results are measured by averaged balanced accuracy (bAcc.,%) and F1-score (%) with
+          the standard errors over 5 repetitions on three GNN architectures. Highlighted are the top first and
+          second. ∆ is the margin by which our method leads state-of-the-art method. 
+        </p>
+      </div>
+            <div class="publication-image">
+        <img src="./static/images/exp2.png" alt="Framework Image" style="max-width: 100%; height: auto;">
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          <b>Comparison of our method ReVar and other baselines on CS-Random. </b>Highlighted are the
+top first and second. ∆ is the margin by which our method leads state-of-the-art method.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Paper image. -->
+
+    
+
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{yan2023rethinking,
+      title={Rethinking semi-supervised imbalanced node classification from bias-variance decomposition},
+      author={Yan, Divin and Wei, Gengchen and Yang, Chen and Zhang, Shengzhong and others},
+      journal={Advances in Neural Information Processing Systems},
+      volume={36},
+      pages={29174--29200},
+      year={2023}
+    }
+}</code></pre>
+  </div>
+</section>
+
+  
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered"> -->
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+      <!-- <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+    <!-- </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p> -->
+          <p style="text-align:center">
+            Please contact Liang Yan: yanliangfdu@gmail.com for feedback and questions. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
