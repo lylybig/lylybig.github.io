@@ -271,12 +271,11 @@ the numbber of training set nodes on variance.
         <h2 class="title is-3" style="background: linear-gradient(to right,  indigo, indigo, skyblue,indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper introduces a new approach to address the issue of class imbalance in graph neural networks (GNNs) for learning on graph-structured data. 
-            Our approach integrates imbalanced node classification and Bias-Variance Decomposition, establishing a theoretical framework that closely relates data imbalance to model variance. 
-            We also leverage graph augmentation technique to estimate the variance, and design a regularization term to alleviate the impact of imbalance. 
-            Exhaustive tests are conducted on multiple benchmarks, including naturally imbalanced datasets and public-split class-imbalanced datasets, 
-            demonstrating that our approach outperforms state-of-the-art methods in various imbalanced scenarios. 
-            This work provides a novel theoretical perspective for addressing the problem of imbalanced node classification in GNNs.
+            Class imbalance in graph data poses a major challenge for effective node classification, particularly in semi-supervised settings. 
+            In this work, we formally introduce the concept of geometric imbalance, characterizing how class imbalance induces geometric ambiguity among minority nodes in the embedding space. 
+            We provide a rigorous theoretical analysis and propose a unified framework to explicitly mitigate geometric imbalance through pseudo-label alignment, node reordering, and ambiguity filtering. 
+            Extensive experiments on diverse benchmarks show that our approach consistently outperforms existing methods, especially under severe class imbalance. 
+            Our findings offer new theoretical insights and practical tools for robust semi-supervised imbalanced node classification.
           </p>
         </div>
       </div>
