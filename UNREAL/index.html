@@ -294,13 +294,13 @@ the numbber of training set nodes on variance.
       </div>
       <div class="content has-text-justified">
         <p>
-          <b>Overall pipeline of UNREAL. </b>
-          Our UNREAL framework mitigates geometric imbalance through three flexible and complementary components: 
-          (1) DPAM: a DualPath PseudoLabeler that enhances pseudo-label quality via alignment between clustering and classification; 
-          (2) NR: a Node-Reordering mechanism that jointly considers geometric proximity and classifier confidence; 
-          and (3) DGIS: a Discarding Geometrically Imbalanced Nodes module that filters out samples with ambiguous geometric positioning. 
-          Notably, DGIS can be viewed as a lightweight, approximate alternative to direct geometric imbalance scoring, enabling scalable filtering without requiring true labels or dense computations. 
-          These components can be used independently or in combination, allowing the framework to adapt to various scenarios and computational budgets. 
+          <b>Overview of geometric imbalance. </b>
+          Figure (a) presents a conceptual overview of geometric imbalance under different pretraining and fine-tuning scenarios for both GNNs and MLPs.
+          Figure (b)--(e) use t-SNE visualizations to directly contrast the evolution of node embeddings: for GNNs (Case 1 and 2), fine-tuning on imbalanced data leads to a substantial increase in intra-class dispersion and a reduction in inter-class separation for minority classes, resulting in pronounced geometric imbalance. 
+          In contrast, MLPs (Case 3 and 4) preserve compact and well-separated clusters, showing minimal change regardless of class imbalance.
+          This empirical contrast highlights that geometric imbalance is a distinctive and aggravated issue in GNNs, primarily due to their message passing mechanisms, while it remains marginal in MLPs.
+          Furthermore, Figure (f) and (g) quantitatively validate our theoretical results, demonstrating a strong positive correlation between geometric imbalance and prediction entropy (as predicted by Theorem 1), as well as a monotonic relationship between geometric imbalance and the class imbalance ratio (as characterized by Theorem 2). 
+          Taken together, these empirical observations not only substantiate our theoretical claims but also underscore the need for GNN-specific mitigation strategies. 
         </p>
       </div>
     </div>
