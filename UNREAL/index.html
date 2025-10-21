@@ -284,6 +284,28 @@ the numbber of training set nodes on variance.
     <!--/ Abstract. -->
 
   <!-- Paper image. -->
+
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3" style="background: linear-gradient(to right,  indigo, indigo, skyblue,indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> Geometric Imbalance</h2>
+      <div class="publication-image">
+        <img src="./static/images/geometric_imbalance.png" alt="Geometric Imbalance" style="max-width: 120%; height: auto;">
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          <b>Overall pipeline of UNREAL. </b>
+          Our UNREAL framework mitigates geometric imbalance through three flexible and complementary components: 
+          (1) DPAM: a DualPath PseudoLabeler that enhances pseudo-label quality via alignment between clustering and classification; 
+          (2) NR: a Node-Reordering mechanism that jointly considers geometric proximity and classifier confidence; 
+          and (3) DGIS: a Discarding Geometrically Imbalanced Nodes module that filters out samples with ambiguous geometric positioning. 
+          Notably, DGIS can be viewed as a lightweight, approximate alternative to direct geometric imbalance scoring, enabling scalable filtering without requiring true labels or dense computations. 
+          These components can be used independently or in combination, allowing the framework to adapt to various scenarios and computational budgets. 
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
       <h2 class="title is-3" style="background: linear-gradient(to right,  indigo, indigo, skyblue,indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> Framework</h2>
