@@ -291,11 +291,13 @@ the numbber of training set nodes on variance.
       </div>
       <div class="content has-text-justified">
         <p>
-          <b>Overall pipeline of ReVar. </b>
-          (a) Two different views of the graph are obtained by graph augmentation transform, and are subsequently fed into GNN encoder.
-          (b) Intra-class and inter-class representations are aggregated, which means, for labeled nodes, it’s positive samples not only belong to the same class in both view but also in the other view. 
-          (c) Variance estimation. Specifically, the label probability distribution is computed for each node in two views based on it’s similarity with each class center. 
-          And the difference between two probability distributions is used to approximate the model’s variance and also optimized as one term in the loss function.
+          <b>Overall pipeline of UNREAL. </b>
+          Our UNREAL framework mitigates geometric imbalance through three flexible and complementary components: 
+          (1) DPAM: a DualPath PseudoLabeler that enhances pseudo-label quality via alignment between clustering and classification; 
+          (2) NR: a Node-Reordering mechanism that jointly considers geometric proximity and classifier confidence; 
+          and (3) DGIS:a Discarding Geometrically Imbalanced Nodes module that filters out samples with ambiguous geometric positioning. 
+          Notably, DGIS can be viewed as a lightweight, approximate alternative to direct geometric imbalance scoring, enabling scalable filtering without requiring true labels or dense computations. 
+          These components can be used independently or in combination, allowing the framework to adapt to various scenarios and computational budgets. 
         </p>
       </div>
     </div>
@@ -311,7 +313,7 @@ the numbber of training set nodes on variance.
       </div>
       <div class="content has-text-justified">
         <p>
-          <b>Comparison of our method ReVar and other baselines on three benchmark datasets. </b>
+          <b>Comparison of our method UNREAL and other baselines on three benchmark datasets. </b>
           Experimental results are measured by averaged balanced accuracy (bAcc.,%) and F1-score (%) with
           the standard errors over 5 repetitions on three GNN architectures. Highlighted are the top first and
           second. ∆ is the margin by which our method leads state-of-the-art method. 
