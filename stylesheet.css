@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap");
+
 :root {
   --text-primary: #111111;
   --text-secondary: #4a4a4a;
@@ -69,8 +71,10 @@ strong {
 
 .name {
   margin: 0 0 18px;
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
   font-size: 44px;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   color: var(--text-primary);
 }
@@ -131,8 +135,10 @@ strong {
 
 h2 {
   margin: 0 0 18px;
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
 }
 
@@ -248,14 +254,25 @@ footer {
 
 .visitors-section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-bottom: 34px;
+}
+
+.visitors-title {
+  margin: 0 0 18px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
 }
 
 .globe-container {
   width: 100%;
   display: flex;
   justify-content: center;
+  min-height: 300px;
 }
 
 .globe-container > div,
