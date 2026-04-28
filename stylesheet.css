@@ -108,7 +108,16 @@ strong {
 
 .hero-media {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.avatar-caption {
+  margin-top: 10px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
 }
 
 .avatar-shell {
