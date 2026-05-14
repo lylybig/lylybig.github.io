@@ -89,6 +89,44 @@ strong {
   color: var(--text-secondary);
 }
 
+.student-note {
+  margin: 8px 0 14px;
+  color: var(--text-secondary);
+}
+
+.student-note summary {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 700;
+  color: #6f7f68;
+  background: #f2f6ef;
+  border-radius: 999px;
+  padding: 4px 12px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.student-note summary:hover,
+.student-note summary:focus {
+  color: #5f7058;
+  background: #e8efe4;
+}
+
+.student-note-icon {
+  margin-right: 6px;
+  color: #e5a84b;
+}
+
+.student-note-body {
+  margin-top: 12px;
+  margin-left: 18px;
+  padding-left: 16px;
+  border-left: 2px solid #b8c7b0;
+}
+
+.student-note-body p {
+  margin-bottom: 12px;
+}
+
 .contact-line {
   margin-top: 18px;
 }
