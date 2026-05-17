@@ -1,0 +1,205 @@
+:root {
+  --venom-ink: #15131a;
+  --venom-muted: #5c5a66;
+  --venom-line: #dedce6;
+  --venom-green: #18a36f;
+  --venom-red: #c63f58;
+  --venom-blue: #3977d4;
+  --venom-bg: #f8f7fb;
+}
+
+body {
+  font-family: "Noto Sans", "Google Sans", Arial, sans-serif;
+  color: var(--venom-ink);
+  background: #ffffff;
+}
+
+.venom-hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(21, 19, 26, 0.94), rgba(35, 28, 45, 0.88)),
+    url("../images/venom-logo.png") center right 8% / min(48vw, 560px) no-repeat;
+  color: #ffffff;
+}
+
+.venom-hero .hero-body {
+  width: 100%;
+}
+
+.venom-logo {
+  width: min(280px, 70vw);
+  filter: drop-shadow(0 24px 42px rgba(0, 0, 0, 0.42));
+}
+
+.publication-title {
+  font-family: "Google Sans", "Noto Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: 0;
+  margin-bottom: 0.45rem;
+}
+
+.brand-gradient {
+  background: linear-gradient(90deg, #ffffff, #39d98a 26%, #ff5d75 58%, #77a7ff 86%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.publication-subtitle {
+  color: #f1eff8;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.hero-copy {
+  color: #ebe9f2;
+  max-width: 680px;
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+.author-line {
+  margin-top: 1.5rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.affiliation-line {
+  margin-top: 0.25rem;
+  color: #d8d4e3;
+  font-size: 1.02rem;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.centered-links {
+  justify-content: center;
+}
+
+.button.is-dark {
+  background: #15131a;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 600;
+}
+
+.button.is-dark:hover {
+  background: #2a2533;
+}
+
+.section-title {
+  font-family: "Google Sans", "Noto Sans", sans-serif;
+  letter-spacing: 0;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 0.85rem auto 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--venom-green), var(--venom-red), var(--venom-blue));
+}
+
+.quickstart-section {
+  padding-top: 4rem;
+}
+
+.lead {
+  color: var(--venom-muted);
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+.install-snippet,
+pre {
+  margin-top: 1.25rem;
+  text-align: left;
+  border-radius: 8px;
+  border: 1px solid var(--venom-line);
+  background: #15131a;
+  color: #f4f1fb;
+  white-space: pre-wrap;
+}
+
+.band {
+  background: var(--venom-bg);
+}
+
+.table-container {
+  margin-top: 2rem;
+  border: 1px solid var(--venom-line);
+  border-radius: 8px;
+  overflow: auto;
+  background: #ffffff;
+}
+
+.model-table {
+  margin-bottom: 0;
+}
+
+.model-table th {
+  background: #efedf5;
+  color: #1c1924;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.model-table td {
+  vertical-align: middle;
+}
+
+.model-table code {
+  background: #f0f7f4;
+  color: #0f6c4c;
+  border-radius: 4px;
+  padding: 0.12rem 0.34rem;
+}
+
+.table-note {
+  color: var(--venom-muted);
+  margin-top: -0.4rem;
+}
+
+.footer {
+  background: #15131a;
+  color: #ebe9f2;
+}
+
+.footer a {
+  color: #78b2ff;
+}
+
+@media screen and (max-width: 768px) {
+  .venom-hero {
+    min-height: auto;
+    background:
+      linear-gradient(135deg, rgba(21, 19, 26, 0.97), rgba(35, 28, 45, 0.92)),
+      url("../images/venom-logo.png") center 18% / 78vw no-repeat;
+    padding-top: 2rem;
+  }
+
+  .publication-title {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .publication-subtitle,
+  .hero-copy,
+  .author-line,
+  .affiliation-line {
+    text-align: center;
+  }
+
+  .publication-links {
+    justify-content: center;
+  }
+}

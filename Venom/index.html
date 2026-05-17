@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Venom: a PyTorch generative modeling toolkit for diffusion, VAE, GAN, EBM, and normalizing flow models.">
+  <meta name="keywords" content="Generative Models, Diffusion Models, VAE, GAN, EBM, Normalizing Flows, PyTorch">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Venom: Generative Modeling Toolkit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Castoro&family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/venom-logo.png">
+</head>
+<body>
+
+<section class="hero venom-hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-vcentered is-variable is-8">
+        <div class="column is-4 has-text-centered">
+          <img class="venom-logo" src="./static/images/venom-logo.png" alt="Venom project logo">
+        </div>
+        <div class="column is-8">
+          <h1 class="title is-1 publication-title">
+            <span class="brand-gradient">Venom</span>
+          </h1>
+          <h2 class="subtitle is-3 publication-subtitle">A PyTorch Generative Modeling Toolkit</h2>
+          <p class="hero-copy">
+            Venom collects readable MNIST-first implementations of diffusion models,
+            score/SDE methods, flow matching, one-step generators, normalizing flows,
+            VAEs, GANs, and energy-based models under one research scaffold.
+          </p>
+          <div class="author-line">
+            <span class="author-name">Liang Yan</span>
+          </div>
+          <div class="affiliation-line">
+            Allen School of CSE, University of Washington
+          </div>
+          <div class="publication-links">
+            <a href="https://github.com/yanliang3612/Venom" class="button is-dark is-rounded">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+            <a href="../README.md" class="button is-dark is-rounded">
+              <span class="icon"><i class="fas fa-book-open"></i></span>
+              <span>README</span>
+            </a>
+            <a href="../notebooks/venom_api_kpi_tutorial_en.ipynb" class="button is-dark is-rounded">
+              <span class="icon"><i class="fas fa-table-list"></i></span>
+              <span>Notebook</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section quickstart-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3 section-title">Project Overview</h2>
+        <p class="content lead">
+          Venom is designed for studying families of generative models side by side.
+          Each family has a dedicated subpackage, training entrypoint, sampling entrypoint,
+          checkpoint layout, and small Python API.
+        </p>
+        <pre class="install-snippet"><code>pip install -e .
+python train_diffusion.py --variant ddpm --epochs 5
+python sample_diffusion.py --checkpoint runs/mnist_diffusion/ddpm/model_005.pt</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Supported Diffusion, Score, Flow-Matching, and One-Step Models</h2>
+    <div class="table-container">
+      <table class="table is-fullwidth is-striped model-table">
+        <thead>
+          <tr>
+            <th>Family</th>
+            <th>Variant</th>
+            <th>Implementation focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>DDPM</td><td><code>ddpm</code></td><td>Epsilon-prediction DDPM with a linear beta schedule.</td></tr>
+          <tr><td>Improved DDPM</td><td><code>improved-ddpm</code></td><td>Cosine schedule and learned-range variance.</td></tr>
+          <tr><td>ADM / Guided Diffusion</td><td><code>adm</code></td><td>Class-conditional DDPM-family objective.</td></tr>
+          <tr><td>Classifier-Free Guidance</td><td><code>cfg</code></td><td>Class dropout during training and guidance scale at sampling time.</td></tr>
+          <tr><td>EDM</td><td><code>edm</code></td><td>Karras-style continuous-noise denoising objective.</td></tr>
+          <tr><td>NCSN / NCSNv2</td><td><code>ncsn</code>, <code>ncsnv2</code></td><td>Noise-conditional score matching over discrete noise levels.</td></tr>
+          <tr><td>Score SDE</td><td><code>score-sde-vp</code>, <code>score-sde-ve</code>, <code>score-sde-subvp</code></td><td>Continuous-time VP, VE, and sub-VP score models.</td></tr>
+          <tr><td>PFGM / PFGM++</td><td><code>pfgm</code>, <code>pfgm++</code></td><td>Physics-inspired perturbation and sampling objectives.</td></tr>
+          <tr><td>Flow Matching</td><td><code>rectified-flow</code>, <code>flow-matching</code>, <code>conditional-flow-matching</code>, <code>ot-cfm</code>, <code>stochastic-interpolants</code></td><td>Velocity-field training over interpolating paths.</td></tr>
+          <tr><td>One-step Models</td><td><code>consistency</code>, <code>shortcut</code>, <code>meanflow</code></td><td>One-step or few-step generation objectives.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Supported VAE Models</h2>
+    <div class="table-container">
+      <table class="table is-fullwidth is-striped model-table">
+        <thead>
+          <tr>
+            <th>Family</th>
+            <th>Variant</th>
+            <th>Implementation focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>VAE</td><td><code>vae</code></td><td>Fully connected Gaussian-latent baseline.</td></tr>
+          <tr><td>ConvVAE</td><td><code>conv-vae</code></td><td>Convolutional encoder-decoder with Gaussian latents.</td></tr>
+          <tr><td>Beta-VAE</td><td><code>beta-vae</code></td><td>KL-weighted disentanglement-oriented objective.</td></tr>
+          <tr><td>CVAE</td><td><code>cvae</code></td><td>Label-conditioned VAE generation.</td></tr>
+          <tr><td>IWAE</td><td><code>iwae</code></td><td>Importance-weighted variational bound.</td></tr>
+          <tr><td>VQ-VAE</td><td><code>vq-vae</code></td><td>Discrete vector-quantized latent codebook.</td></tr>
+          <tr><td>Ladder / Hierarchical VAE</td><td><code>ladder-vae</code>, <code>hierarchical-vae</code></td><td>Two-level latent hierarchy.</td></tr>
+          <tr><td>Flow-VAE</td><td><code>flow-vae</code></td><td>Planar normalizing flows in the posterior.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Supported Flow-Based Models</h2>
+    <p class="content has-text-centered table-note">
+      These are likelihood-based normalizing flows, separate from flow matching and rectified flow.
+    </p>
+    <div class="table-container">
+      <table class="table is-fullwidth is-striped model-table">
+        <thead>
+          <tr>
+            <th>Family</th>
+            <th>Variant</th>
+            <th>Implementation focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Planar Flow</td><td><code>planar-flow</code></td><td>Stacked planar transforms with fixed-point inverse.</td></tr>
+          <tr><td>Radial Flow</td><td><code>radial-flow</code></td><td>Stacked radial transforms with fixed-point inverse.</td></tr>
+          <tr><td>NICE</td><td><code>nice</code></td><td>Additive coupling and exact inverse.</td></tr>
+          <tr><td>RealNVP</td><td><code>realnvp</code></td><td>Affine coupling with exact likelihood.</td></tr>
+          <tr><td>Glow-lite</td><td><code>glow</code></td><td>ActNorm, invertible linear transform, and affine coupling.</td></tr>
+          <tr><td>MAF</td><td><code>maf</code></td><td>Masked autoregressive density estimation.</td></tr>
+          <tr><td>IAF</td><td><code>iaf</code></td><td>Inverse autoregressive educational flow.</td></tr>
+          <tr><td>Neural Spline Flow</td><td><code>neural-spline-flow</code></td><td>Monotone spline-style coupling transform.</td></tr>
+          <tr><td>FFJORD-lite / CNF</td><td><code>ffjord</code></td><td>Continuous normalizing flow with Hutchinson trace estimates.</td></tr>
+          <tr><td>Flow++-style</td><td><code>flow++</code></td><td>ActNorm, invertible linear transform, and nonlinear coupling.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Supported GAN Models</h2>
+    <div class="table-container">
+      <table class="table is-fullwidth is-striped model-table">
+        <thead>
+          <tr>
+            <th>Family</th>
+            <th>Variant</th>
+            <th>Implementation focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>GAN</td><td><code>gan</code></td><td>Original MLP generator/discriminator with BCE loss.</td></tr>
+          <tr><td>DCGAN</td><td><code>dcgan</code></td><td>Convolutional generator and discriminator.</td></tr>
+          <tr><td>CGAN</td><td><code>cgan</code></td><td>Label-conditional adversarial training.</td></tr>
+          <tr><td>ACGAN</td><td><code>acgan</code></td><td>Auxiliary classifier discriminator head.</td></tr>
+          <tr><td>InfoGAN</td><td><code>infogan</code></td><td>Latent code prediction and mutual-information-style loss.</td></tr>
+          <tr><td>LSGAN</td><td><code>lsgan</code></td><td>Least-squares adversarial objective.</td></tr>
+          <tr><td>WGAN</td><td><code>wgan</code></td><td>Wasserstein critic with weight clipping.</td></tr>
+          <tr><td>WGAN-GP</td><td><code>wgan-gp</code></td><td>Wasserstein critic with gradient penalty.</td></tr>
+          <tr><td>HingeGAN</td><td><code>hinge-gan</code></td><td>Hinge adversarial loss.</td></tr>
+          <tr><td>SNGAN</td><td><code>sn-gan</code></td><td>Hinge loss with spectral normalization.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Supported Energy-Based Models</h2>
+    <div class="table-container">
+      <table class="table is-fullwidth is-striped model-table">
+        <thead>
+          <tr>
+            <th>Family</th>
+            <th>Variant</th>
+            <th>Implementation focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>RBM</td><td><code>rbm</code></td><td>Bernoulli-Bernoulli restricted Boltzmann machine with CD/PCD.</td></tr>
+          <tr><td>Gaussian RBM</td><td><code>gaussian-rbm</code></td><td>Gaussian visible units with Bernoulli hidden units.</td></tr>
+          <tr><td>Conditional RBM</td><td><code>conditional-rbm</code></td><td>Label-conditioned visible and hidden biases.</td></tr>
+          <tr><td>ConvRBM</td><td><code>conv-rbm</code></td><td>Convolutional image-structured energy model.</td></tr>
+          <tr><td>Deep EBM</td><td><code>deep-ebm</code></td><td>CNN scalar energy trained with SGLD negatives.</td></tr>
+          <tr><td>Conditional Deep EBM</td><td><code>conditional-ebm</code></td><td>Class-conditional energy function.</td></tr>
+          <tr><td>JEM</td><td><code>jem</code></td><td>Classifier logits interpreted as joint energies.</td></tr>
+          <tr><td>Score Matching EBM</td><td><code>score-matching-ebm</code></td><td>Denoising score matching objective.</td></tr>
+          <tr><td>Sliced Score Matching EBM</td><td><code>sliced-score-matching-ebm</code></td><td>Sliced score matching estimator.</td></tr>
+          <tr><td>NCE-EBM</td><td><code>nce-ebm</code></td><td>Noise-contrastive estimation objective.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">Tutorials and KPI Walkthroughs</h2>
+        <p class="content lead">
+          The project includes Chinese and English notebooks covering training,
+          sampling, guidance, conditioning, checkpoint locations, and smoke-test KPIs.
+        </p>
+        <div class="publication-links centered-links">
+          <a href="../notebooks/venom_api_kpi_tutorial.ipynb" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-language"></i></span>
+            <span>Chinese Notebook</span>
+          </a>
+          <a href="../notebooks/venom_api_kpi_tutorial_en.ipynb" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+            <span>English Notebook</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="citation">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 section-title">Citation</h2>
+    <pre><code>@software{yan2026venom,
+  title = {Venom: A PyTorch Generative Modeling Toolkit},
+  author = {Yan, Liang},
+  year = {2026},
+  url = {https://github.com/yanliang3612/Venom}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            Please contact Liang Yan for feedback and questions.
+          </p>
+          <p>
+            <a href="https://github.com/yanliang3612/Venom">github.com/yanliang3612/Venom</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
