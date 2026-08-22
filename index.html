@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Liang Yan</title>
+  <meta name="author" content="Divin(Liang) Yan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Liang Yan's academic homepage. Research in generative models, AI for science, graph learning, and the physics of machine learning.">
+  <meta name="theme-color" content="#fcfbf7">
+  <meta property="og:title" content="Liang Yan — Machine Learning Researcher">
+  <meta property="og:description" content="Research, publications, news, academic service, blog posts, and materials by Liang Yan.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/icon.png?v=uw">
+  <link rel="apple-touch-icon" href="images/icon.png?v=uw">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("theme");
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = savedTheme || (systemDark ? "dark" : "light");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#top">Liang Yan</a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="experience/">Experience</a>
+          <a href="publications/">Publications</a>
+          <a href="blog/">Blog</a>
+          <a href="materials/">Materials</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+          <span class="theme-label">Dark</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page">
+    <header id="top" class="profile">
+      <div class="avatar-shell">
+        <img class="avatar-image" src="images/my_imgae.png" alt="Liang Yan">
+      </div>
+      <div class="profile-copy">
+        <h1>Liang <span>(Divin)</span> Yan</h1>
+        <p class="profile-role">Machine Learning Researcher</p>
+        <p class="profile-focus">Generative Models · NLP · AI for Science</p>
+        <p class="contact-line">
+          <strong>Email:</strong> yanliangfdu[at]gmail.com · divinyan[at]cs.washington.edu
+        </p>
+        <p class="link-row">
+          <a href="https://scholar.google.com/citations?user=-Vv6hJsAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <span>·</span>
+          <a href="https://github.com/yanliang3612" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span>·</span>
+          <a href="https://orcid.org/0009-0009-2880-3124" target="_blank" rel="noopener noreferrer">ORCID</a>
+          <span>·</span>
+          <a href="https://x.com/liangya06173325" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <span>·</span>
+          <a href="https://www.linkedin.com/in/liang-yan-07052436a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
+      </div>
+    </header>
+
+    <section id="about" class="section-block about-section">
+      <h2>About</h2>
+      <div class="section-prose">
+        <ul class="about-timeline">
+          <li>
+            I am currently a PhD student at the Paul G. Allen School of Computer Science &amp; Engineering, University of Washington (2026–present).
+          </li>
+          <li>
+            From 2024 to 2026, I was a visiting student in the <a href="http://tensorlab.cms.caltech.edu/users/anima/" target="_blank" rel="noopener noreferrer">Anima AI+Science Lab</a> at the California Institute of Technology, where I worked with Prof. <a href="http://tensorlab.cms.caltech.edu/users/anima/" target="_blank" rel="noopener noreferrer">Anima Anandkumar</a>.
+          </li>
+          <li>
+            I completed an M.S. in Applied Mathematics at Fudan University, under the supervision of Prof. <a href="https://zengfenghuang.github.io/" target="_blank" rel="noopener noreferrer">Zengfeng Huang</a>. My research focused on graph learning and generative models, spanning both theory and real-world applications.
+          </li>
+          <li>
+            From 2023 to 2024, I was a visiting student in the <a href="https://www.ucmerced.edu/" target="_blank" rel="noopener noreferrer">Vision and Learning Lab at UC Merced</a>, advised by Prof. <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Ming-Hsuan Yang</a> and Dr. <a href="https://scholar.google.com.hk/citations?user=SSI90d4AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Lu Qi</a>.
+          </li>
+          <li>
+            I also completed research internships at Tencent AI Lab and Shanghai AI Lab.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="interests" class="section-block">
+      <h2>Research Interests</h2>
+      <div class="section-prose">
+        <p>
+          My research investigates generative modeling from first principles, with the goal of developing simple, principled, and scalable methods for natural language processing, multimodal learning, and AI for Science. I am particularly interested in how structural, geometric, and physical priors can inform generative AI approaches like large language modeling, diffusion modeling, flow matching, and multimodal learning, improving their generalization, controllability, and scientific reliability. I am also broadly interested in mathematics, physics, astronomy, and cosmology.
+        </p>
+      </div>
+    </section>
+
+    <section id="news" class="section-block">
+      <h2>News</h2>
+      <ul class="news-list">
+        <li>
+          <time class="news-date" datetime="2025-10">2025-10</time>
+          <p class="news-copy">
+            <span class="news-lead">NucleusDiff was reported by Caltech News!</span>
+            <a class="news-source" href="https://www.caltech.edu/about/news/new-ai-model-for-drug-design-brings-more-physics-to-bear-in-predictions" target="_blank" rel="noopener noreferrer" aria-label="Read the NucleusDiff story on Caltech News">Read the story</a>
+          </p>
+        </li>
+        <li>
+          <time class="news-date" datetime="2025-09">2025-09</time>
+          <p class="news-copy"><span class="news-lead">MGB was accepted by NeurIPS 2025 AI4Mat Workshop!</span> We present the first comprehensive material generation benchmark in the world, which includes LLMs, diffusion &amp; flow-based models, and VAE-based models!</p>
+        </li>
+        <li>
+          <time class="news-date" datetime="2025-09">2025-09</time>
+          <p class="news-copy"><span class="news-lead">UNREAL was accepted by NeurIPS 2025!</span> We first introduce the concept of geometric imbalance of GNNs on riemannian manifold!</p>
+        </li>
+        <li>
+          <time class="news-date" datetime="2025-09">2025-09</time>
+          <p class="news-copy"><span class="news-lead">NucleusDiff was accepted by PNAS 2025!</span></p>
+        </li>
+        <li>
+          <time class="news-date" datetime="2025-08">2025-08</time>
+          <p class="news-copy"><span class="news-lead">HuDiff was accepted by Nature Machine Intelligence 2025!</span> Congrats Jian and Fandi!</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications" class="section-block">
+      <div class="publications-heading">
+        <h2>Selected Publications</h2>
+        <a class="publications-all" href="publications/">View all publications <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="section-note">(* indicates equal contribution)</p>
+
+      <div class="paper-list">
+        <article class="paper-row paper-row--with-media">
+          <a class="paper-media paper-media--logo" href="https://www.preprints.org/manuscript/202602.1847" target="_blank" rel="noopener noreferrer" aria-label="Open the Multimodal LLMs for Scientific Discovery preprint">
+            <picture>
+              <source media="(prefers-reduced-motion: reduce)" srcset="images/publications/mllms-scientific-discovery-logo.png">
+              <img src="images/publications/mllms-for-science-modalities.gif" alt="Molecule, protein, DNA, and crystal modalities combining into the Multimodal LLMs for Scientific Discovery logo" width="360" height="360" loading="lazy" decoding="async">
+            </picture>
+          </a>
+          <div class="paper-content">
+            <a href="https://www.preprints.org/manuscript/202602.1847" target="_blank" rel="noopener noreferrer">
+              <span class="papertitle">A Comprehensive Survey of Multimodal LLMs for Scientific Discovery</span>
+            </a>
+            <p class="paper-authors"><span class="self-author">Liang Yan*</span>, Xu Jian*, Jian Ma*, Yuhang Liu, Tian Bian, Qichao Wang, Abhishek Basu, Yu Rong, Tingyang Xu, Pengcheng Wu, Le Song, Imran Razzak, Junchi Yan, Zengfeng Huang, Yutong Xie</p>
+            <p class="paper-links">
+              <a href="https://bagayalus.github.io/S3-Bench/" target="_blank" rel="noopener noreferrer">[Project Page]</a>
+              <a href="https://www.preprints.org/manuscript/202602.1847" target="_blank" rel="noopener noreferrer">[Paper]</a>
+              <a href="https://openreview.net/forum?id=HSz1Kr5BeC" target="_blank" rel="noopener noreferrer">[OpenReview]</a>
+              <a href="https://github.com/yanliang3612/Awesome-MLLMs-for-Science" target="_blank" rel="noopener noreferrer">[Code]</a>
+            </p>
+            <p class="paper-meta">Presented at NeurIPS 2025 VLM4RWD Workshop</p>
+            <p class="paper-status">In Submission</p>
+          </div>
+        </article>
+
+        <article class="paper-row paper-row--with-media">
+          <a class="paper-media paper-media--logo paper-media--mgb" href="https://openreview.net/forum?id=K15Dqxm0ge" target="_blank" rel="noopener noreferrer" aria-label="Open MGB: The Material Generation Benchmark">
+            <img src="images/publications/mgb-logo-transparent.png" alt="MGB logo" width="430" height="432" loading="lazy" decoding="async">
+          </a>
+          <div class="paper-content">
+            <a href="https://openreview.net/forum?id=K15Dqxm0ge" target="_blank" rel="noopener noreferrer">
+              <span class="papertitle">MGB: The Material Generation Benchmark</span>
+            </a>
+            <p class="paper-authors"><span class="self-author">Liang Yan</span>, Beom Seok Kang, Maurice D. Hanisch, Jian Ma, Anima Anandkumar</p>
+            <p class="paper-links">
+              <a href="https://openreview.net/forum?id=K15Dqxm0ge" target="_blank" rel="noopener noreferrer">[Paper]</a>
+              <a href="https://github.com/yanliang3612/MGB" target="_blank" rel="noopener noreferrer">[Code]</a>
+              <a href="file/MGB_poster.pdf" target="_blank" rel="noopener noreferrer">[Poster]</a>
+            </p>
+            <p class="paper-meta">Presented at NeurIPS 2025 AI4Mat Workshop</p>
+            <p class="paper-status">In Submission</p>
+          </div>
+        </article>
+
+        <article class="paper-row paper-row--with-media">
+          <a class="paper-media paper-media--logo paper-media--nucleusdiff" href="https://yanliang3612.github.io/NucleusDiff/" target="_blank" rel="noopener noreferrer" aria-label="Open the NucleusDiff project page">
+            <video class="paper-video" muted loop playsinline preload="metadata" poster="images/publications/nucleusdiff-poster.webp" aria-hidden="true">
+              <source src="images/publications/nucleusdiff-animation.mp4?v=2" type="video/mp4">
+            </video>
+          </a>
+          <div class="paper-content">
+            <a href="https://www.pnas.org/doi/10.1073/pnas.2415666122" target="_blank" rel="noopener noreferrer">
+              <span class="papertitle">Manifold-Constrained Nucleus-Level Denoising Diffusion Model for Structure-Based Drug Design</span>
+            </a>
+            <p class="paper-authors">Shengchao Liu*, <span class="self-author">Liang Yan*</span>, Weitao Du, Weiyang Liu, Zhuoxinran Li, Hongyu Guo, Christian Borgs, Jennifer Chayes, Anima Anandkumar</p>
+            <p class="paper-links">
+              <a href="https://yanliang3612.github.io/NucleusDiff/" target="_blank" rel="noopener noreferrer">[Project Page]</a>
+              <a href="https://www.pnas.org/doi/10.1073/pnas.2415666122" target="_blank" rel="noopener noreferrer">[Paper]</a>
+              <a href="http://arxiv.org/abs/2409.10584" target="_blank" rel="noopener noreferrer">[Arxiv]</a>
+              <a href="https://openreview.net/forum?id=tmUsGCMX8w&amp;referrer=%5Bthe%20profile%20of%20Divin%20Yan%5D(%2Fprofile%3Fid%3D~Divin_Yan1)" target="_blank" rel="noopener noreferrer">[OpenReview]</a>
+              <a href="https://github.com/yanliang3612/NucleusDiff" target="_blank" rel="noopener noreferrer">[Code]</a>
+              <a href="https://divinyan.com/" target="_blank" rel="noopener noreferrer">[Slides]</a>
+            </p>
+            <p class="paper-meta">Presented at ICML 2024 GRaM Workshop</p>
+            <p class="paper-status">Proceedings of the National Academy of Sciences 2025 (PNAS 2025) <strong class="paper-coverage">(Featured by <a href="https://www.caltech.edu/about/news/new-ai-model-for-drug-design-brings-more-physics-to-bear-in-predictions" target="_blank" rel="noopener noreferrer">Caltech News</a>)</strong></p>
+          </div>
+        </article>
+
+        <article class="paper-row paper-row--with-media">
+          <a class="paper-media paper-media--logo paper-media--unreal" href="https://divinyan.com/UNREAL" target="_blank" rel="noopener noreferrer" aria-label="Open the UNREAL project page">
+            <img src="images/publications/unreal-header-logo-transparent.png" alt="UNREAL Geometric Imbalance logo" width="800" height="800" loading="lazy" decoding="async">
+          </a>
+          <div class="paper-content">
+            <a href="https://openreview.net/forum?id=BND9CutZf6" target="_blank" rel="noopener noreferrer">
+              <span class="papertitle">Geometric Imbalance in Semi-Supervised Node Classification</span>
+            </a>
+            <p class="paper-authors"><span class="self-author">Liang Yan</span>, Shengzhong Zhang, Bisheng Li, Menglin Yang, Chen Yang, Min Zhou, Weiyang Ding, Yutong Xie, Zengfeng Huang</p>
+            <p class="paper-links">
+              <a href="https://divinyan.com/UNREAL" target="_blank" rel="noopener noreferrer">[Project Page]</a>
+              <a href="https://openreview.net/forum?id=BND9CutZf6" target="_blank" rel="noopener noreferrer">[Paper]</a>
+              <a href="https://arxiv.org/abs/2303.10371" target="_blank" rel="noopener noreferrer">[Arxiv]</a>
+              <a href="https://openreview.net/forum?id=Hh0BdBf6Ls" target="_blank" rel="noopener noreferrer">[OpenReview]</a>
+              <a href="https://github.com/yanliang3612/UNREAL" target="_blank" rel="noopener noreferrer">[Code]</a>
+              <a href="file/UNREAL_NeurIPS_PPT.pdf" target="_blank" rel="noopener noreferrer">[Slides]</a>
+            </p>
+            <p class="paper-meta">Presented at ICML 2025 DataWorld Workshop</p>
+            <p class="paper-status">NeurIPS 2025</p>
+          </div>
+        </article>
+
+        <article class="paper-row paper-row--with-media">
+          <a class="paper-media paper-media--logo paper-media--diagram paper-media--diffrop" href="https://divinyan.com/DiffROP" target="_blank" rel="noopener noreferrer" aria-label="Open the DiffROP project page">
+            <span class="diffrop-visual" aria-hidden="true">
+              <span class="diffrop-graphic">
+                <span class="diffrop-panel"><img src="images/publications/diffrop-overlap.png" alt="" width="1200" height="800" loading="lazy" decoding="async"></span>
+                <span class="diffrop-transition"><span>DiffROP</span><span class="diffrop-arrow">→</span></span>
+                <span class="diffrop-panel"><img src="images/publications/diffrop-separated.png" alt="" width="1200" height="800" loading="lazy" decoding="async"></span>
+              </span>
+              <span class="diffrop-legend">
+                <span><i class="diffrop-dot diffrop-dot--overlap"></i>Overlap</span>
+                <span><i class="diffrop-dot diffrop-dot--head"></i>Head class</span>
+                <span><i class="diffrop-dot diffrop-dot--tail"></i>Tail class</span>
+              </span>
+            </span>
+          </a>
+          <div class="paper-content">
+            <a href="https://arxiv.org/abs/2402.10821" target="_blank" rel="noopener noreferrer">
+              <span class="papertitle">Training Class-Imbalanced Diffusion Model Via Overlap Optimization</span>
+            </a>
+            <p class="paper-authors"><span class="self-author">Liang (Divin) Yan</span>, Lu Qi, Vincent Tao Hu, Ming-Hsuan Yang, Meng Tang</p>
+            <p class="paper-links">
+              <a href="https://divinyan.com/DiffROP" target="_blank" rel="noopener noreferrer">[Project Page]</a>
+              <a href="https://arxiv.org/abs/2402.10821" target="_blank" rel="noopener noreferrer">[Arxiv]</a>
+              <a href="https://divinyan.com/" target="_blank" rel="noopener noreferrer">[OpenReview]</a>
+              <a href="https://github.com/yanliang3612/DiffROP" target="_blank" rel="noopener noreferrer">[Code]</a>
+              <a href="https://divinyan.com/" target="_blank" rel="noopener noreferrer">[Slides]</a>
+            </p>
+            <p class="paper-status">Arxiv 2024</p>
+          </div>
+        </article>
+
+        <article class="paper-row paper-row--with-media">
+          <a class="paper-media paper-media--logo paper-media--revar" href="https://divinyan.com/ReVar/" target="_blank" rel="noopener noreferrer" aria-label="Open the ReVar project page">
+            <img src="images/publications/revar-header-logo-transparent.png" alt="ReVar logo" width="800" height="800" loading="lazy" decoding="async">
+          </a>
+          <div class="paper-content">
+            <a href="https://openreview.net/forum?id=0gvtoxhvMY" target="_blank" rel="noopener noreferrer">
+              <span class="papertitle">Rethinking Semi-Supervised Imbalanced Node Classification from Bias-Variance Decomposition</span>
+            </a>
+            <p class="paper-authors"><span class="self-author">Liang Yan</span>, Gengchen Wei, Chen Yang, Shengzhong Zhang, Zengfeng Huang</p>
+            <p class="paper-links">
+              <a href="https://divinyan.com/ReVar/" target="_blank" rel="noopener noreferrer">[Project Page]</a>
+              <a href="https://openreview.net/forum?id=0gvtoxhvMY" target="_blank" rel="noopener noreferrer">[Paper]</a>
+              <a href="https://arxiv.org/abs/2310.18765" target="_blank" rel="noopener noreferrer">[Arxiv]</a>
+              <a href="https://github.com/yanliang3612/Revar" target="_blank" rel="noopener noreferrer">[Code]</a>
+              <a href="https://nips.cc/media/neurips-2023/Slides/73050.pdf" target="_blank" rel="noopener noreferrer">[Slides]</a>
+              <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202023/73050.png?t=1702115401.9719656" target="_blank" rel="noopener noreferrer">[Poster]</a>
+            </p>
+            <p class="paper-status">NeurIPS 2023</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="open-source" class="section-block open-source-section">
+      <h2>Open Source &amp; Community</h2>
+      <div class="open-source-groups">
+        <section class="open-source-group" aria-labelledby="software-heading">
+          <h3 id="software-heading">Python Packages &amp; Software</h3>
+          <div class="project-list">
+            <article class="project-row">
+              <a class="project-logo project-logo--venom" href="https://github.com/yanliang3612/Venom" target="_blank" rel="noopener noreferrer" aria-label="Open Venom on GitHub">
+                <img src="images/projects/venom-logo.png" alt="Venom logo" width="1254" height="1254" loading="lazy" decoding="async">
+              </a>
+              <div class="project-content">
+                <a class="project-title" href="https://github.com/yanliang3612/Venom" target="_blank" rel="noopener noreferrer">Venom</a>
+                <p class="project-links"><a href="https://github.com/yanliang3612/Venom" target="_blank" rel="noopener noreferrer">[GitHub]</a></p>
+                <p class="project-description"><em>An educational PyTorch toolkit for diffusion, flows, VAEs, GANs, and energy-based models.</em></p>
+              </div>
+            </article>
+
+            <article class="project-row">
+              <a class="project-logo project-logo--tms" href="https://github.com/yanliang3612/Transformers-Made-Simple" target="_blank" rel="noopener noreferrer" aria-label="Open Transformers-Made-Simple on GitHub">
+                <img src="images/projects/transformers-made-simple-logo.png" alt="Transformers Made Simple logo" width="850" height="392" loading="lazy" decoding="async">
+              </a>
+              <div class="project-content">
+                <a class="project-title" href="https://github.com/yanliang3612/Transformers-Made-Simple" target="_blank" rel="noopener noreferrer">Transformers-Made-Simple</a>
+                <p class="project-links"><a href="https://github.com/yanliang3612/Transformers-Made-Simple" target="_blank" rel="noopener noreferrer">[GitHub]</a></p>
+                <p class="project-description"><em>A beginner-friendly PyTorch codebase for learning major Transformer architecture families.</em></p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="open-source-group" aria-labelledby="resources-heading">
+          <h3 id="resources-heading">Resources &amp; Community</h3>
+          <div class="project-list">
+            <article class="project-row">
+              <a class="project-logo project-logo--light" href="https://github.com/yanliang3612/Awesome-Generative-AI-for-Material-Discovery" target="_blank" rel="noopener noreferrer" aria-label="Open Awesome-Generative-AI-for-Material-Discovery on GitHub">
+                <img src="images/projects/generative-ai-materials.gif" alt="Generative AI Algorithms for Material Discovery logo" width="360" height="360" loading="lazy" decoding="async">
+              </a>
+              <div class="project-content">
+                <a class="project-title" href="https://github.com/yanliang3612/Awesome-Generative-AI-for-Material-Discovery" target="_blank" rel="noopener noreferrer">Awesome-Generative-AI-for-Material-Discovery</a>
+                <p class="project-links"><a href="https://github.com/yanliang3612/Awesome-Generative-AI-for-Material-Discovery" target="_blank" rel="noopener noreferrer">[GitHub]</a></p>
+                <p class="project-description"><em>A curated collection of generative AI algorithms and resources for materials discovery.</em></p>
+              </div>
+            </article>
+
+            <article class="project-row">
+              <a class="project-logo project-logo--light" href="https://github.com/yanliang3612/Awesome-MLLMs-for-Science" target="_blank" rel="noopener noreferrer" aria-label="Open Awesome-MLLMs-for-Science on GitHub">
+                <img src="images/projects/mllms-for-science.gif" alt="Multimodal LLMs for Science logo" width="360" height="360" loading="lazy" decoding="async">
+              </a>
+              <div class="project-content">
+                <a class="project-title" href="https://github.com/yanliang3612/Awesome-MLLMs-for-Science" target="_blank" rel="noopener noreferrer">Awesome-MLLMs-for-Science</a>
+                <p class="project-links"><a href="https://github.com/yanliang3612/Awesome-MLLMs-for-Science" target="_blank" rel="noopener noreferrer">[GitHub]</a></p>
+                <p class="project-description"><em>A curated overview of multimodal language models across four scientific discovery domains.</em></p>
+              </div>
+            </article>
+
+            <article class="project-row">
+              <a class="project-logo project-logo--graphs" href="https://github.com/yanliang3612/awesome-imbalanced-learning-on-graphs" target="_blank" rel="noopener noreferrer" aria-label="Open awesome-imbalanced-learning-on-graphs on GitHub">
+                <img src="images/projects/imbalanced-learning-graphs-stacked.png" alt="Imbalanced Learning on Graphs logo" width="1254" height="1254" loading="lazy" decoding="async">
+              </a>
+              <div class="project-content">
+                <a class="project-title" href="https://github.com/yanliang3612/awesome-imbalanced-learning-on-graphs" target="_blank" rel="noopener noreferrer">awesome-imbalanced-learning-on-graphs</a>
+                <p class="project-links"><a href="https://github.com/yanliang3612/awesome-imbalanced-learning-on-graphs" target="_blank" rel="noopener noreferrer">[GitHub]</a></p>
+                <p class="project-description"><em>A curated collection of surveys, papers, and code on imbalanced graph learning.</em></p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="service" class="section-block" aria-labelledby="service-title">
+      <h2 id="service-title">Service</h2>
+      <ul class="service-list">
+        <li>
+          <span class="service-intro">I have served as a program committee member and reviewer for the following conferences and workshops:</span>
+          <ul class="service-years">
+            <li><span class="service-year">2026:</span> ICLR; NeurIPS; ACM MM; ACM MM Datasets Track; IJCAI–ECAI; ICML LXAI Workshop; COLM AIW Workshop.</li>
+            <li><span class="service-year">2025:</span> ICLR; ICML; NeurIPS; ACM MM; ACM MM Datasets Track; ICML LXAI Workshop; ICML AI4Math Workshop; ICML AIW Workshop; ICML DataWorld Workshop; NeurIPS LXAI Workshop; NeurIPS VLM4RWD Workshop.</li>
+            <li><span class="service-year">2024:</span> KDD; ICLR; ICML; NeurIPS.</li>
+            <li><span class="service-year">2023:</span> KDD; NeurIPS.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="personal" class="section-block">
+      <h2>Personal</h2>
+      <p class="section-paragraph">
+        I originally had no connection to the field of artificial intelligence. If everything had gone as expected, I might have become a bank manager or an accountant. However, during my undergraduate years, I happened to stumble upon a book on artificial intelligence while wandering through the library. That book left a profound impact on me, and from that moment, I made up my mind to devote myself to this exciting field. This is my origin, the path I started on, and I hope I will never forget the inspiration and determination I felt at the very beginning.
+      </p>
+      <p class="section-paragraph">
+        I am a fan of the late NBA star Kobe Bryant. He has been a great source of inspiration for me. He once said: <i>"If you love a thing, you will overcome all difficulties."</i> So, the most important thing is to find something you truly love. I hope I already find mine too. RIP, Kobe.
+      </p>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-bottom">
+        <p>Updated at March. 2026</p>
+        <p class="visitor-count" aria-live="polite" hidden>Visitors <span data-visitor-count>0</span></p>
+        <p>Hosted with <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

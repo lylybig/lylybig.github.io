@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Liang Yan</title>
+  <meta name="author" content="Divin(Liang) Yan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research materials and resources by Liang Yan.">
+  <meta name="theme-color" content="#fcfbf7">
+  <meta property="og:title" content="Materials — Liang Yan">
+  <meta property="og:description" content="Research materials, slides, posters, and resources by Liang Yan.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" sizes="512x512" href="../images/icon.png?v=uw">
+  <link rel="apple-touch-icon" href="../images/icon.png?v=uw">
+  <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("theme");
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = savedTheme || (systemDark ? "dark" : "light");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="brand" href="../">Liang Yan</a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="../#about">About</a>
+          <a href="../experience/">Experience</a>
+          <a href="../publications/">Publications</a>
+          <a href="../blog/">Blog</a>
+          <a href="./" aria-current="true">Materials</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+          <span class="theme-label">Dark</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page archive-page">
+    <header class="archive-header">
+      <a class="archive-back" href="../"><span aria-hidden="true">←</span> Home</a>
+      <h1>Materials</h1>
+      <p>Research materials, slides, posters, and other resources.</p>
+    </header>
+
+    <section class="archive-section" aria-label="Research materials">
+      <div class="archive-list">
+        <div class="archive-empty">
+          <p><strong>No materials yet.</strong> New resources will appear here.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-bottom">
+        <p>Liang Yan · Materials</p>
+        <p><a href="../">Back to homepage</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
