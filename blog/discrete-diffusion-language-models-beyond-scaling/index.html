@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Real Question for Discrete Diffusion Language Models — Liang Yan</title>
+  <meta name="author" content="Liang Yan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Before asking whether discrete diffusion language models can scale, we should ask what their corruption and denoising processes are actually modeling.">
+  <meta name="theme-color" content="#fcfbf7">
+  <meta property="og:title" content="The Real Question for Discrete Diffusion Language Models May Not Be Whether They Can Scale">
+  <meta property="og:description" content="A first-principles look at diffusion, discrete language, and the meaning of corruption and denoising.">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-05-29">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../images/icon.png?v=uw">
+  <link rel="apple-touch-icon" href="../../images/icon.png?v=uw">
+  <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("theme");
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = savedTheme || (systemDark ? "dark" : "light");
+    })();
+  </script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="brand" href="../../">Liang Yan</a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="../../#about">About</a>
+          <a href="../../experience/">Experience</a>
+          <a href="../../publications/">Publications</a>
+          <a href="../" aria-current="true">Blog</a>
+          <a href="../../materials/">Materials</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+          <span class="theme-label">Dark</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page article-page">
+    <header class="post-header">
+      <a class="archive-back" href="../"><span aria-hidden="true">←</span> Blog</a>
+      <h1>The Real Question for Discrete Diffusion Language Models May Not Be Whether They Can Scale</h1>
+      <p class="post-deck">Before asking whether discrete diffusion language models can scale, we should ask whether their corruption and denoising processes have a meaningful interpretation in the discrete geometry of language.</p>
+      <div class="post-meta">
+        <time datetime="2026-05-29">May 29, 2026</time>
+        <span aria-hidden="true">·</span>
+        <span>Liang Yan</span>
+      </div>
+      <p class="post-source">This essay is an English adaptation of my <a href="https://zhuanlan.zhihu.com/p/2043006268206470534" target="_blank" rel="noopener noreferrer">original Chinese post on Zhihu</a>.</p>
+    </header>
+
+    <article class="blog-post">
+      <p>I have recently been reading work on discrete diffusion language models. So far, I am not yet fully convinced by the field&rsquo;s dominant direction.</p>
+
+      <p>Many discussions begin with the same question:</p>
+
+      <blockquote>
+        <p>Can discrete diffusion language models scale?</p>
+      </blockquote>
+
+      <p>In other words, can they follow the path of autoregressive language models and achieve powerful, general-purpose language modeling through more data, larger models, and longer training?</p>
+
+      <p>This is certainly an important question. But I increasingly believe that, before asking whether these models can scale, we should examine a more fundamental issue:</p>
+
+      <blockquote>
+        <p>Is the mathematical framework of diffusion, stochastic differential equations, and ordinary differential equations, which was originally developed for continuous spaces, naturally suited to discrete language data?</p>
+      </blockquote>
+
+      <p>Put differently, the question is not merely whether diffusion models can be applied to text. It is whether, once applied to text, they remain diffusion models in the original mathematical sense.</p>
+
+      <h2 id="continuous-diffusion">1. Why the Intuition Behind Continuous Diffusion Models Feels Natural</h2>
+
+      <p>In image generation, the intuition behind diffusion models is relatively natural.</p>
+
+      <p>Given a clean image \(x_0\), the forward diffusion process gradually adds Gaussian noise:</p>
+
+      \[
+      x_t = \alpha_t x_0 + \sigma_t \epsilon,
+      \qquad \epsilon \sim \mathcal{N}(0,I).
+      \]
+
+      <p>As \(t\) increases, the image becomes progressively less clear and eventually approaches pure Gaussian noise.</p>
+
+      <p>This process has an important property: its intermediate states remain in a continuous space. An image can be viewed as a high-dimensional continuous vector,</p>
+
+      \[
+      x \in \mathbb{R}^{H \times W \times C}.
+      \]
+
+      <p>The trajectory from \(x_0\) to \(x_t\) and finally to \(x_T\) can therefore be understood as motion along a noisy path through a continuous space.</p>
+
+      <p>Continuous diffusion can also be written as an SDE:</p>
+
+      \[
+      dx = f(x,t)dt + g(t)dW_t,
+      \]
+
+      <p>where \(W_t\) is a Wiener process, \(f(x,t)\) is the drift term, and \(g(t)\) is the diffusion coefficient.</p>
+
+      <p>The reverse generative process starts from the noise distribution and follows a reverse-time SDE or a probability-flow ODE back toward the data distribution:</p>
+
+      \[
+      dx = \left[f(x,t)-g(t)^2\nabla_x\log p_t(x)\right]dt + g(t)d\bar W_t.
+      \]
+
+      <p>The central object here is the score,</p>
+
+      \[
+      \nabla_x\log p_t(x),
+      \]
+
+      <p>which indicates how to move toward regions of higher probability in a continuous space.</p>
+
+      <p>For images, then, diffusion, SDEs, and ODEs admit a fairly natural geometric interpretation: data are progressively perturbed in a continuous space, and the model learns to transform noise back into data by following probability gradients in that space.</p>
+
+      <h2 id="language-is-discrete">2. But Language Does Not Live in a Continuous Space</h2>
+
+      <p>Text is fundamentally different.</p>
+
+      <p>A sentence can be represented as a sequence of tokens,</p>
+
+      \[
+      x=(x_1,x_2,\dots,x_n),
+      \]
+
+      <p>where every token belongs to a finite vocabulary,</p>
+
+      \[
+      x_i\in\mathcal V.
+      \]
+
+      <p>The state space is therefore</p>
+
+      \[
+      \mathcal V^n,
+      \]
+
+      <p>a discrete space rather than a continuous space such as \(\mathbb R^d\).</p>
+
+      <p>This creates a fundamental difficulty: tokens do not possess a natural continuous geometry.</p>
+
+      <p>Consider</p>
+
+      \[
+      \text{love},\ \text{like},\ \text{hate},\ \text{run},\ \text{[MASK]}.
+      \]
+
+      <p>There is no intrinsic Euclidean distance between these tokens, nor is there a natural operation that adds &ldquo;a little Gaussian noise&rdquo; to one of them.</p>
+
+      <p>For images, we can write</p>
+
+      \[
+      x_t=x_0+\epsilon,
+      \]
+
+      <p>because both \(x_0\) and \(\epsilon\) are continuous vectors. For text, however, the expression</p>
+
+      \[
+      \text{love}+\epsilon
+      \]
+
+      <p>has no natural meaning because a token is not itself a continuous variable.</p>
+
+      <p>Of course, we can map tokens into embeddings,</p>
+
+      \[
+      e_i=E(x_i)\in\mathbb R^d,
+      \]
+
+      <p>and perturb them continuously in the embedding space. But this raises another question: does a continuous trajectory in embedding space correspond to a meaningful semantic trajectory in language space? The answer is not obvious.</p>
+
+      <h2 id="between-token-and-mask">3. What Lies Between the Correct Token and <code>[MASK]</code>?</h2>
+
+      <p>A common approach in discrete diffusion language models is to replace original tokens progressively with a noisy state such as the <code>[MASK]</code> token.</p>
+
+      <p>The forward process can be written as</p>
+
+      \[
+      q(x_t\mid x_{t-1}),
+      \]
+
+      <p>or, for each position,</p>
+
+      \[
+      q(x_t^i\mid x_{t-1}^i).
+      \]
+
+      <p>A simple masking corruption process might be</p>
+
+      \[
+      q(x_t^i=\text{[MASK]}\mid x_{t-1}^i)=\beta_t,
+      \]
+
+      \[
+      q(x_t^i=x_{t-1}^i\mid x_{t-1}^i)=1-\beta_t.
+      \]
+
+      <p>At each step, a token is replaced by <code>[MASK]</code> with some probability. Formally, this is a well-defined Markov process, and we can train a reverse model,</p>
+
+      \[
+      p_\theta(x_{t-1}\mid x_t).
+      \]
+
+      <p>But is this really diffusion in the same sense?</p>
+
+      <p>For images, the intermediate states between a clean image and a noisy image can still be interpreted as the gradual degradation of visual information. For text, consider the transition</p>
+
+      \[
+      \text{I love machine learning.}
+      \]
+
+      <p>to</p>
+
+      \[
+      \text{I [MASK] machine learning.}
+      \]
+
+      <p>The <code>[MASK]</code> token is not a word that lies slightly away from &ldquo;love.&rdquo; It is not &ldquo;like,&rdquo; &ldquo;enjoy,&rdquo; or &ldquo;hate.&rdquo; It is a special placeholder indicating that information is missing.</p>
+
+      <p>Thus,</p>
+
+      \[
+      \text{love}\rightarrow\text{[MASK]}
+      \]
+
+      <p>does not have the same natural, continuous semantic interpretation as</p>
+
+      \[
+      \text{clean image}\rightarrow\text{slightly noisy image}.
+      \]
+
+      <p>More sharply, is there a meaningful semantic path between a token with a definite meaning and the <code>[MASK]</code> token? That question is itself unresolved.</p>
+
+      <h2 id="categorical-markov-chain">4. Discrete Diffusion Is Closer to a Categorical Markov Chain Than to an SDE</h2>
+
+      <p>From the perspective of the underlying mathematical object, many discrete diffusion language models are closer to a</p>
+
+      \[
+      \text{categorical Markov chain}
+      \]
+
+      <p>than to a continuous diffusion SDE.</p>
+
+      <p>The forward process of continuous diffusion is</p>
+
+      \[
+      dx=f(x,t)dt+g(t)dW_t,
+      \]
+
+      <p>where \(x\in\mathbb R^d\). By contrast, the forward process of discrete diffusion is usually written as</p>
+
+      \[
+      q(x_t\mid x_{t-1})=Q_t[x_{t-1},x_t],
+      \]
+
+      <p>where \(Q_t\) is a discrete transition matrix,</p>
+
+      \[
+      Q_t\in\mathbb R^{|\mathcal V|\times|\mathcal V|}.
+      \]
+
+      <p>For example,</p>
+
+      \[
+      Q_t=(1-\beta_t)I+\beta_t\mathbf 1m^\top,
+      \]
+
+      <p>where \(m\) may be a noise distribution, such as a uniform distribution or one concentrated on the <code>[MASK]</code> token.</p>
+
+      <p>This is a perfectly valid stochastic process, but its structure differs from that of an SDE. An SDE describes infinitesimal random perturbations of continuous variables,</p>
+
+      \[
+      x_{t+dt}=x_t+f(x_t,t)dt+g(t)\sqrt{dt}\epsilon.
+      \]
+
+      <p>Transitions between discrete tokens are generally jumps, such as</p>
+
+      \[
+      \text{love}\rightarrow\text{[MASK]},
+      \]
+
+      <p>or</p>
+
+      \[
+      \text{love}\rightarrow\text{apple}.
+      \]
+
+      <p>These transitions do not have a natural interpretation as infinitesimal perturbations.</p>
+
+      <p>I therefore tend to see many discrete diffusion language models as being closer to</p>
+
+      <ol>
+        <li>denoising autoencoding,</li>
+        <li>masked language modeling,</li>
+        <li>categorical Markov chains, and</li>
+        <li>iterative-refinement generation,</li>
+      </ol>
+
+      <p>rather than a natural discretization of continuous diffusion or an SDE.</p>
+
+      <h2 id="what-counts-as-diffusion">5. Calling It &ldquo;Diffusion&rdquo; Does Not Make It Diffusion in the Same Mathematical Sense</h2>
+
+      <p>This is not to say that discrete diffusion language models should not be called diffusion models.</p>
+
+      <p>If we adopt a broad definition in which a diffusion model transforms</p>
+
+      \[
+      \text{data}\rightarrow\text{corrupted data}\rightarrow\text{noise},
+      \]
+
+      <p>and then learns the reverse process,</p>
+
+      \[
+      \text{noise}\rightarrow\text{data},
+      \]
+
+      <p>discrete diffusion models do fit the paradigm. They have a forward corruption process,</p>
+
+      \[
+      q(x_t\mid x_{t-1}),
+      \]
+
+      <p>a reverse denoising process,</p>
+
+      \[
+      p_\theta(x_{t-1}\mid x_t),
+      \]
+
+      <p>and may be trained with an ELBO or a denoising objective,</p>
+
+      \[
+      \mathcal L=\mathbb E_q\left[-\log p_\theta(x_{t-1}\mid x_t)\right],
+      \]
+
+      <p>or by predicting the original data,</p>
+
+      \[
+      \mathcal L=\mathbb E_q\left[-\log p_\theta(x_0\mid x_t)\right].
+      \]
+
+      <p>From an engineering perspective, then, these methods can reasonably be grouped under diffusion-like generative modeling.</p>
+
+      <p>The question is whether being &ldquo;diffusion-like&rdquo; makes them mathematically equivalent to continuous diffusion. I do not think that necessarily follows.</p>
+
+      <p>Many methods are described as energy-based, agentic, reasoning, or planning systems. Similar names do not imply that they share exactly the same mathematical structure. The same caution should apply here.</p>
+
+      <h2 id="what-is-being-modeled">6. Before Scaling, Ask What the Model Is Actually Modeling</h2>
+
+      <p>Much of the discussion around discrete diffusion language models naturally turns toward scaling:</p>
+
+      <ul>
+        <li>Can we train larger models?</li>
+        <li>Can we use more data?</li>
+        <li>Can these models match autoregressive language models?</li>
+        <li>Can they support faster parallel generation?</li>
+        <li>Can they replace next-token prediction?</li>
+      </ul>
+
+      <p>All of these questions matter. But a more fundamental question may come first:</p>
+
+      \[
+      \text{What are these models actually modeling?}
+      \]
+
+      <p>If the forward process is masking, is the model learning the process by which language is generated, or is it learning the conditional recovery of missing tokens?</p>
+
+      <p>If the forward process is random replacement, what kind of semantic degradation does that represent?</p>
+
+      <p>If the reverse process is iterative denoising, does each denoising step correspond to any natural intermediate state in language generation?</p>
+
+      <p>These are not merely philosophical questions. They directly affect model design.</p>
+
+      <p>If we regard discrete diffusion as fundamentally SDE-like, we may continue to pursue</p>
+
+      \[
+      \text{discrete score},\qquad
+      \text{reverse process},\qquad
+      \text{ODE sampler}.
+      \]
+
+      <p>But if we regard it as closer to masked modeling and iterative refinement, perhaps we should instead redesign the</p>
+
+      \[
+      \text{corruption process},\qquad
+      \text{semantic intermediate state},\qquad
+      \text{training objective},
+      \]
+
+      <p>rather than simply borrowing the terminology and framework of continuous diffusion.</p>
+
+      <h2 id="better-research-question">7. A More Fundamental Research Question</h2>
+
+      <p>The question I now find more interesting is not</p>
+
+      <blockquote>
+        <p>Can discrete diffusion language models scale?</p>
+      </blockquote>
+
+      <p>but rather</p>
+
+      <blockquote>
+        <p>For language as a discrete symbolic system, what kind of corruption process is semantically natural?</p>
+      </blockquote>
+
+      <p>Or, equivalently:</p>
+
+      <blockquote>
+        <p>What kind of intermediate state can be modeled mathematically while still corresponding to genuine uncertainty in language?</p>
+      </blockquote>
+
+      <p>Uncertainty in text may not be a path from a token to <code>[MASK]</code>. It may instead be a path from a particular expression toward a distribution over semantically equivalent expressions.</p>
+
+      <p>For example,</p>
+
+      \[
+      \text{love}
+      \]
+
+      <p>might not diffuse toward <code>[MASK]</code>, but toward a semantic neighborhood,</p>
+
+      \[
+      \{\text{like},\text{enjoy},\text{appreciate},\text{be interested in}\}.
+      \]
+
+      <p>More abstractly, perhaps perturbations to language should occur in semantic space rather than raw token space.</p>
+
+      <p>But this immediately creates another difficult question: how should semantic space itself be defined? Is it an embedding space, a latent concept space, or a context-conditioned distribution over meanings?</p>
+
+      <p>This may be where the most interesting questions in discrete diffusion language modeling actually lie.</p>
+
+      <h2 id="closing-thoughts">8. Closing Thoughts</h2>
+
+      <p>I am not arguing that discrete diffusion language models lack value. On the contrary, I find the area compelling precisely because it forces us to reconsider the mathematical foundations of generative modeling in discrete spaces.</p>
+
+      <p>My reservation about the current trend is that many discussions move too quickly to scaling without adequately examining whether the continuous-space framework of diffusion, SDEs, and ODEs is genuinely natural for language.</p>
+
+      <p>For images, the path from a clean image to Gaussian noise has a continuous geometric meaning. For text, it is far less obvious that a meaningful semantic path exists between a token with a definite meaning and <code>[MASK]</code>.</p>
+
+      <p>Many discrete diffusion language models may therefore be better understood as</p>
+
+      \[
+      \text{denoising}+\text{masked modeling}+\text{categorical Markov chain},
+      \]
+
+      <p>rather than as direct discrete counterparts of continuous diffusion.</p>
+
+      <p>Before focusing exclusively on scale, perhaps we should return to the most fundamental question:</p>
+
+      <blockquote>
+        <p>What are these models actually modeling?</p>
+      </blockquote>
+
+      <p>If we cannot answer that clearly, scaling may simply make larger a framework that we do not yet truly understand.</p>
+    </article>
+
+    <section class="post-community" aria-labelledby="post-discussion-title">
+      <div class="post-community-heading">
+        <h2 id="post-discussion-title">Discussion</h2>
+        <p>Comments and reactions are powered by GitHub Discussions. Sign in with GitHub to join the conversation.</p>
+      </div>
+      <div
+        class="giscus-host"
+        data-giscus-repo="lylybig/lylybig.github.io"
+        data-giscus-repo-id="R_kgDOPR_X2Q"
+        data-giscus-category="Announcements"
+        data-giscus-category-id="DIC_kwDOPR_X2c4DEfnH"
+      ></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-bottom">
+        <p>Liang Yan · Blog</p>
+        <p><a href="../">Back to all posts</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="../../script.js"></script>
+</body>
+</html>

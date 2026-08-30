@@ -18,10 +18,32 @@ function syncThemeControl() {
   themeColor.setAttribute("content", dark ? "#1b2118" : "#fcfbf7");
 }
 
+function getGiscusTheme() {
+  return root.dataset.theme === "dark" ? "transparent_dark" : "light";
+}
+
+function syncGiscusTheme() {
+  const giscusFrame = document.querySelector("iframe.giscus-frame");
+
+  if (!giscusFrame) return;
+
+  giscusFrame.contentWindow?.postMessage(
+    {
+      giscus: {
+        setConfig: {
+          theme: getGiscusTheme(),
+        },
+      },
+    },
+    "https://giscus.app",
+  );
+}
+
 themeButton.addEventListener("click", () => {
   root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
   localStorage.setItem("theme", root.dataset.theme);
   syncThemeControl();
+  syncGiscusTheme();
 });
 
 function syncNavBorder() {
@@ -56,6 +78,37 @@ window.addEventListener("scroll", syncNavBorder, { passive: true });
 
 syncThemeControl();
 syncNavBorder();
+
+const giscusHost = document.querySelector(".giscus-host");
+
+if (giscusHost) {
+  const {
+    giscusRepo: repo,
+    giscusRepoId: repoId,
+    giscusCategory: category,
+    giscusCategoryId: categoryId,
+  } = giscusHost.dataset;
+
+  if (repo && repoId && category && categoryId) {
+    const giscusScript = document.createElement("script");
+    giscusScript.src = "https://giscus.app/client.js";
+    giscusScript.async = true;
+    giscusScript.crossOrigin = "anonymous";
+    giscusScript.dataset.repo = repo;
+    giscusScript.dataset.repoId = repoId;
+    giscusScript.dataset.category = category;
+    giscusScript.dataset.categoryId = categoryId;
+    giscusScript.dataset.mapping = "pathname";
+    giscusScript.dataset.strict = "1";
+    giscusScript.dataset.reactionsEnabled = "1";
+    giscusScript.dataset.emitMetadata = "0";
+    giscusScript.dataset.inputPosition = "bottom";
+    giscusScript.dataset.theme = getGiscusTheme();
+    giscusScript.dataset.lang = "en";
+    giscusScript.dataset.loading = "lazy";
+    giscusHost.append(giscusScript);
+  }
+}
 
 const paperVideos = [...document.querySelectorAll(".paper-video")];
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
