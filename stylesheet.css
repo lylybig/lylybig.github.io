@@ -341,6 +341,43 @@ strong {
   font-size: 1rem;
 }
 
+.about-community {
+  max-width: 92ch;
+  margin: 0 0 30px;
+  padding: 1px 0 2px 18px;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+}
+
+.about-community p {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.62;
+}
+
+.about-community strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-community-link {
+  display: inline-flex;
+  margin-top: 8px;
+  align-items: center;
+  gap: 0.32em;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.about-community-link span {
+  transition: transform 160ms ease;
+}
+
+.about-community-link:hover span,
+.about-community-link:focus-visible span {
+  transform: translate(2px, -1px);
+}
+
 .about-timeline li {
   margin: 0 0 15px;
   padding-left: 0.28em;
@@ -1321,6 +1358,15 @@ footer {
 
   .section-block h2 {
     font-size: 1.17rem;
+  }
+
+  .about-community {
+    margin-bottom: 25px;
+    padding-left: 14px;
+  }
+
+  .about-community p {
+    font-size: 0.93rem;
   }
 
   .news-list li {
