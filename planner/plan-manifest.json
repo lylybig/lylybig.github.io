@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "timezone": "America/Los_Angeles",
+  "defaultDate": "2026-11-07",
+  "dayPlans": [
+    {
+      "date": "2026-11-07",
+      "url": "daily/2026-11-07.html"
+    },
+    {
+      "date": "2026-11-08",
+      "url": "daily/2026-11-08.html"
+    },
+    {
+      "date": "2026-11-09",
+      "url": "daily/2026-11-09.html"
+    },
+    {
+      "date": "2026-11-10",
+      "url": "daily/2026-11-10.html"
+    },
+    {
+      "date": "2026-11-11",
+      "url": "daily/2026-11-11.html"
+    },
+    {
+      "date": "2026-11-12",
+      "url": "daily/2026-11-12.html"
+    },
+    {
+      "date": "2026-11-13",
+      "url": "daily/2026-11-13.html"
+    },
+    {
+      "date": "2026-11-14",
+      "url": "daily/2026-11-14.html"
+    },
+    {
+      "date": "2026-11-15",
+      "url": "daily/2026-11-15.html"
+    },
+    {
+      "date": "2026-11-16",
+      "url": "daily/2026-11-16.html"
+    },
+    {
+      "date": "2026-11-17",
+      "url": "daily/2026-11-17.html"
+    },
+    {
+      "date": "2026-11-18",
+      "url": "daily/2026-11-18.html"
+    },
+    {
+      "date": "2026-11-19",
+      "url": "daily/2026-11-19.html"
+    },
+    {
+      "date": "2026-11-20",
+      "url": "daily/2026-11-20.html"
+    },
+    {
+      "date": "2026-11-21",
+      "url": "daily/2026-11-21.html"
+    },
+    {
+      "date": "2026-11-22",
+      "url": "daily/2026-11-22.html"
+    },
+    {
+      "date": "2026-11-23",
+      "url": "daily/2026-11-23.html"
+    },
+    {
+      "date": "2026-11-24",
+      "url": "daily/2026-11-24.html"
+    },
+    {
+      "date": "2026-11-25",
+      "url": "daily/2026-11-25.html"
+    },
+    {
+      "date": "2026-11-26",
+      "url": "daily/2026-11-26.html"
+    },
+    {
+      "date": "2026-11-27",
+      "url": "daily/2026-11-27.html"
+    },
+    {
+      "date": "2026-11-28",
+      "url": "daily/2026-11-28.html"
+    },
+    {
+      "date": "2026-11-29",
+      "url": "daily/2026-11-29.html"
+    },
+    {
+      "date": "2026-11-30",
+      "url": "daily/2026-11-30.html"
+    }
+  ],
+  "weekPlans": [
+    {
+      "date": "2026-11-02",
+      "url": "weekly/2026-11-02.html"
+    },
+    {
+      "date": "2026-11-09",
+      "url": "weekly/2026-11-09.html"
+    },
+    {
+      "date": "2026-11-16",
+      "url": "weekly/2026-11-16.html"
+    },
+    {
+      "date": "2026-11-23",
+      "url": "weekly/2026-11-23.html"
+    },
+    {
+      "date": "2026-11-30",
+      "url": "weekly/2026-11-30.html"
+    }
+  ],
+  "monthPlans": [
+    {
+      "month": "2026-11",
+      "url": "monthly/2026-11.html"
+    }
+  ]
+}

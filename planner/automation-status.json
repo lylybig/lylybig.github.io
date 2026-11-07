@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "timezone": "America/Los_Angeles",
+  "updatedAt": "2026-11-07",
+  "enabled": false,
+  "blocker": "Native automation_update create and suggested_create both returned: MCP tool call requires approval, but approval policy is never.",
+  "immediateSync": "每次计划更新后在个人主页仓库的 planner/ 运行 npm run sync，由 GitHub Pages 发布；定时任务尚未启用。",
+  "site": "https://divinyan.com/planner/",
+  "publicationRule": "以下任务只维护 /Users/yanliang3612/Documents/lylybig.github.io/planner，在此运行 npm run sync 推送到 git@github.com:lylybig/lylybig.github.io.git；保护主页其他改动，分别核验 GitHub SHA 与线上 HTML。无变化不空提交。不要再更新旧计划仓库或 Sites。",
+  "jobs": [
+    {
+      "key": "daily",
+      "name": "每日科研日计划与 GitHub 同步",
+      "schedule": "每天 07:05",
+      "status": "blocked",
+      "prompt": "每天按西雅图时间 07:05 运行：读取仓库 /Users/yanliang3612/Documents/lylybig.github.io/planner 的 AGENTS.md、README、data/profile.json、当前月份计划和最近的实际汇报。生成或调整当天详细 HTML 日计划、受影响周计划和月度节点，更新 README 链接及按轻重缓急排序的 deadline。未知进度保持未反馈，保护 23:00–07:00 睡眠和周五晚休息。完成后运行 npm run sync，检查本地和 GitHub main SHA 一致，并给出当天链接和具体鼓励。 推送后检查 GitHub Pages 网页 https://divinyan.com/planner/ 已显示新版本；部署延迟或失败须单独说明。"
+    },
+    {
+      "key": "weekly",
+      "name": "每周科研周计划与 GitHub 同步",
+      "schedule": "每周日 16:00",
+      "status": "blocked",
+      "prompt": "每周日西雅图时间 16:00 运行：作为 Liang 的科研秘书，读取 /Users/yanliang3612/Documents/lylybig.github.io/planner 的 AGENTS.md、README、最近睡前汇报和实际进度，生成下周一至周日的详细 HTML 周计划与每天计划。写清本周交付、各天重点、固定安排、会议准备、科研实验依赖、英语与恢复，必要时调整月度节点。更新 README 的 HTML 链接、deadline 与轻重缓急。保留睡眠和周五晚休息，不把未反馈当作完成。运行 npm run sync 自行 commit 和 push，核验远端 SHA；报告下周入口与需要用户确认的真实信息。 推送后检查 GitHub Pages 网页 https://divinyan.com/planner/ 已显示新版本；部署延迟或失败须单独说明。"
+    },
+    {
+      "key": "sync",
+      "name": "科研计划 GitHub 定时同步兜底",
+      "schedule": "每天 07:15–23:15，每小时一次",
+      "status": "blocked",
+      "prompt": "每天西雅图时间 07:15 至 23:15 的每个小时，在 /Users/yanliang3612/Documents/lylybig.github.io/planner 检查计划仓库同步。读取 AGENTS.md，仅处理本仓库内计划相关文件。运行 npm run sync：有变化时构建和校验、自行 git commit 并 push 到 git@github.com:lylybig/lylybig.github.io.git，比较本地与远端 main 的 SHA。无变化不空提交，不重复修改计划，不发常规通知。认证、网络、权限或冲突问题保留本地文件并明确报告；不强推，不提交私钥、token、缓存或其他仓库内容。 推送后检查 GitHub Pages 网页 https://divinyan.com/planner/ 已显示新版本；部署延迟或失败须单独说明。"
+    }
+  ]
+}

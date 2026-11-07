@@ -1,0 +1,205 @@
+{
+  "name": "Liang",
+  "role": "UW CSE 博士",
+  "timezone": "America/Los_Angeles",
+  "language": "zh-CN",
+  "sleep": {
+    "start": "23:00",
+    "end": "07:00"
+  },
+  "rest": {
+    "weekday": 5,
+    "start": "18:00",
+    "description": "周五 18:00 后彻底下班，整个晚上休息"
+  },
+  "workRules": [
+    "每天先完成 1 项关键科研成果，最多承诺 3 项主要成果。",
+    "课程、会议、通勤计入当天负荷，会议多的日期减少科研任务。",
+    "计算任务可后台运行，人的排查、分析和写作按时间块安排。",
+    "未收到实际进度时保留“未反馈”，不能自动当作完成。",
+    "优先调整任务范围与顺序，睡眠及周五晚休息保持固定。"
+  ],
+  "fixed": [
+    {
+      "id": "bill",
+      "title": "Bill 一对一",
+      "days": [
+        1
+      ],
+      "start": "12:30",
+      "end": "13:00",
+      "evidence": "2026-11-09 日历实例与用户确认；未来实例按周例预留"
+    },
+    {
+      "id": "kumar",
+      "title": "Kumar 周进展汇报",
+      "days": [
+        2
+      ],
+      "start": "13:00",
+      "end": "14:00",
+      "evidence": "用户确认约 13:00–14:00"
+    },
+    {
+      "id": "engl",
+      "title": "ENGL 105 B",
+      "days": [
+        2,
+        4
+      ],
+      "start": "08:30",
+      "end": "10:20",
+      "evidence": "用户及 UW 2026 秋季课表确认，SLN 14444"
+    },
+    {
+      "id": "noble",
+      "title": "Noble Lab Meeting",
+      "days": [
+        4
+      ],
+      "start": "12:00",
+      "end": "14:00",
+      "evidence": "2026-11-12 日历实例已核实；未来实例按周例预留"
+    }
+  ],
+  "english": {
+    "course": "ENGL 105 B",
+    "detConversationThreshold": 140,
+    "coursePassingGrade": 2.7,
+    "waiverConfirmed": false,
+    "rule": "学校认定 DET 成绩并确认可免修前，继续保留课程和作业时间。",
+    "currentScore": null,
+    "homeworkDeadlines": [],
+    "courseFinalDate": null
+  },
+  "sources": [
+    {
+      "label": "秘书档案",
+      "url": "https://chatgpt.com/space/page_2739bab71520819187ee9b7611948929"
+    },
+    {
+      "label": "ICLR 2027 官方日期",
+      "url": "https://iclr.cc/Conferences/2027/CallForPapers"
+    },
+    {
+      "label": "ICLR 2027 作者指南",
+      "url": "https://iclr.cc/Conferences/2027/AuthorGuidelines"
+    },
+    {
+      "label": "UW TA 英语政策",
+      "url": "https://grad.uw.edu/policies/5-2-conditions-of-appointment-for-tas-who-are-not-native-speakers-of-english/"
+    },
+    {
+      "label": "ENGL 105 B 课表",
+      "url": "https://english.washington.edu/courses/2026/autumn/engl/105/b"
+    },
+    {
+      "label": "UW 学年校历与假期",
+      "url": "https://www.washington.edu/students/reg/2627cal.html"
+    }
+  ],
+  "projects": [
+    {
+      "id": "gauge",
+      "name": "GAUGE",
+      "type": "rebuttal",
+      "url": "https://openreview.net/forum?id=htzKaJTTMj",
+      "ratings": [
+        3,
+        2,
+        2
+      ],
+      "focus": "候选集覆盖与偏差、受控消融、开销、交互历史与理论假设",
+      "firstReplyTarget": "2026-11-10"
+    },
+    {
+      "id": "resnet",
+      "name": "Do ResNets Route",
+      "type": "rebuttal",
+      "url": "https://openreview.net/forum?id=QyyltF4pw5",
+      "ratings": [
+        1,
+        2,
+        2
+      ],
+      "focus": "校准稀疏路由论断，区分系数质量与重建保真，补共同 readout 及实用诊断",
+      "firstReplyTarget": "2026-11-11"
+    },
+    {
+      "id": "noisy",
+      "name": "Noisy Pairs",
+      "type": "rebuttal",
+      "url": "https://openreview.net/forum?id=mR68gGETr1",
+      "ratings": [
+        2,
+        3,
+        2,
+        1
+      ],
+      "focus": "定义、直观示例、引言、coherence 和 remasking 等适用边界、有限维常数",
+      "firstReplyTarget": "2026-11-12"
+    },
+    {
+      "id": "moe-llm",
+      "name": "Kumar MoE-LLM",
+      "type": "research",
+      "focus": "每周有结果、解释、阻塞和下一步；ICML 2027 投稿日期待官宣"
+    },
+    {
+      "id": "moe-agent",
+      "name": "Kumar MoE-agent-RL",
+      "type": "research",
+      "focus": "每周独立更新；明确环境、奖励、评估与下一轮实验"
+    },
+    {
+      "id": "noble",
+      "name": "Noble MS-enhancement",
+      "type": "research",
+      "focus": "等待 DIA 数据；数据未到时准备训练、评估及接入流程，数据到达后重排"
+    }
+  ],
+  "backlog": [
+    {
+      "id": "registration",
+      "title": "处理 UW 注册问题",
+      "due": "2026-11-09",
+      "status": "未反馈",
+      "detail": "先确认具体阻碍、截止日期及负责窗口；如更早到期，立即提前。"
+    },
+    {
+      "id": "jingyang",
+      "title": "回复 Jingyang 的问题",
+      "due": "2026-11-09",
+      "status": "未反馈",
+      "detail": "在行政窗口整理并回复；本系统不自动代发消息。"
+    },
+    {
+      "id": "coffee",
+      "title": "回复咖啡邀请",
+      "due": "2026-11-09",
+      "status": "未反馈",
+      "detail": "确认是否参加及可用时间。"
+    },
+    {
+      "id": "english-materials",
+      "title": "回复英语资料相关问题",
+      "due": "2026-11-09",
+      "status": "未反馈",
+      "detail": "整理所需资料与请求。"
+    },
+    {
+      "id": "course-deadlines",
+      "title": "录入英语作业与最终考核日期",
+      "due": "2026-11-09",
+      "status": "待确认",
+      "detail": "从当前课程 Canvas / syllabus 核实，不能用校历教学结束日代替。"
+    },
+    {
+      "id": "compute",
+      "title": "核实三篇 rebuttal 计算资源和协作分工",
+      "due": "2026-11-08",
+      "status": "待确认",
+      "detail": "核对已有结果、可复用 checkpoint、预计 GPU-hours、负责人。"
+    }
+  ]
+}
