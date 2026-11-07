@@ -41,3 +41,5 @@ if(prior!==head)git(['push','origin','main']);
 const remoteHead=git(['ls-remote','origin','refs/heads/main']).split(/\s+/)[0];
 if(remoteHead!==head)throw Error('Remote HEAD verification failed; local work is preserved.');
 console.log(JSON.stringify({status:'synchronized',changedFiles:files.length,branch,local:head,remote:remoteHead,website:'https://divinyan.com/planner/',note:'Verify GitHub Pages publication separately.'}));
+run(process.execPath,['scripts/verify-live.mjs','--wait']);
+console.log(JSON.stringify({status:'published',website:'https://divinyan.com/planner/',commit:head}));
