@@ -30,12 +30,18 @@ for(const item of [...manifests.dayPlans,...manifests.weekPlans,...manifests.mon
  const html=read(item.url);const prefix=html.match(/data-prefix="([^"]+)"/)[1];
  assert(!/<script[^>]+src=/.test(html),'HTML should work standalone: '+item.url);
  assert(html.includes('window.PLANNER_DATA = '),'Missing embedded data '+item.url);
+ assert(html.includes('rel="canonical" href="https://divinyan.com/planner/'+item.url+'"'),'Missing homepage URL '+item.url);
+ assert(html.includes('href="https://divinyan.com/">个人主页'),'Missing homepage entry '+item.url);
+ assert(read('README.md').includes('](https://divinyan.com/planner/'+item.url+')'),'Missing direct README URL '+item.url);
  assert(html.includes('function dayView()')&&html.includes('function weekView()')&&html.includes('function monthView()'),'Missing views '+item.url);
  for(const asset of ['assets/style.css','assets/app.js','assets/plan-data.js'])assert(fs.existsSync(path.resolve(root,path.dirname(item.url),prefix,asset)),`Missing asset ${item.url}: ${asset}`);
 }
 new vm.Script(read('src/app.js'));new vm.Script(read('assets/plan-data.js'));
 assert(read('src/style.css').includes('color-scheme:light;'),'Light palette is not fixed');
 assert(!read('src/style.css').includes('prefers-color-scheme:dark'),'Unexpected dark theme');
-for(const match of read('README.md').matchAll(/\]\(([^)]+\.html)\)/g))if(!/^https?:/.test(match[1]))assert(fs.existsSync(path.join(root,match[1])),`Broken README link ${match[1]}`);
+for(const match of read('README.md').matchAll(/\]\(([^)]+\.html)\)/g)){
+ const local=match[1].startsWith('https://divinyan.com/planner/')?match[1].slice('https://divinyan.com/planner/'.length):!/^https?:/.test(match[1])?match[1]:null;
+ if(local)assert(fs.existsSync(path.join(root,local)),`Broken README link ${match[1]}`);
+}
 assert.equal(profile.sleep.start,'23:00');assert.equal(profile.sleep.end,'07:00');
 console.log(`Checked ${checked} day plans, ${ids.size} events, no overlaps, sleep and Friday rest, holidays, workload, HTML assets and README links.`);

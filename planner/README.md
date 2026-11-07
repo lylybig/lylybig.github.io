@@ -12,17 +12,17 @@
 
 | 入口 | HTML |
 | --- | --- |
-| 日周月总入口 | [打开计划中心](index.html) |
-| 今日 11 月 7 日剩余安排 | [今日详细日计划](daily/2026-11-07.html) |
-| 明日 11 月 8 日 | [明日详细日计划](daily/2026-11-08.html) |
-| 11 月 9–15 日 | [首轮回复周计划](weekly/2026-11-09.html) |
-| 11 月 16–22 日 | [收敛与科研恢复周计划](weekly/2026-11-16.html) |
-| 2026 年 11 月 | [完整月计划](monthly/2026-11.html) |
+| 日周月总入口 | [打开计划中心](https://divinyan.com/planner/index.html) |
+| 今日 11 月 7 日剩余安排 | [今日详细日计划](https://divinyan.com/planner/daily/2026-11-07.html) |
+| 明日 11 月 8 日 | [明日详细日计划](https://divinyan.com/planner/daily/2026-11-08.html) |
+| 11 月 9–15 日 | [首轮回复周计划](https://divinyan.com/planner/weekly/2026-11-09.html) |
+| 11 月 16–22 日 | [收敛与科研恢复周计划](https://divinyan.com/planner/weekly/2026-11-16.html) |
+| 2026 年 11 月 | [完整月计划](https://divinyan.com/planner/monthly/2026-11.html) |
 | 全部入口清单 | [计划文件索引](plan-manifest.json) |
 
 HTML 使用轻色系，可切换日、周、月，点击时间块查看完整任务与完成标准，也能勾选成果、记录和导出晚间复盘。手机端周计划会改为逐日列表。
 
-平时直接使用在线网页。GitHub 保存计划、原始数据和修改历史；下方相对链接用于查阅对应文件。每份 HTML 也内嵌样式、交互和整月数据，可作为单文件离线备份。本地预览命令为 `npm run preview`。
+平时直接使用在线网页。GitHub 保存计划、原始数据和修改历史；下方每份 HTML 链接都直接打开个人主页中的对应计划。每份 HTML 也内嵌样式、交互和整月数据，可作为单文件离线备份。本地预览命令为 `npm run preview`。
 
 ![日计划预览](assets/preview.jpg)
 
@@ -114,11 +114,11 @@ HTML 使用轻色系，可切换日、周、月，点击时间块查看完整任
 
 | 周起始日 | 本周重点 | HTML |
 | --- | --- | --- |
-| 2026-11-02 起 | 启动周末 | [周计划](weekly/2026-11-02.html) |
-| 2026-11-09 起 | 三篇首轮回复 | [周计划](weekly/2026-11-09.html) |
-| 2026-11-16 起 | Rebuttal 收敛与项目恢复 | [周计划](weekly/2026-11-16.html) |
-| 2026-11-23 起 | MoE 与 DIA 稳定推进 | [周计划](weekly/2026-11-23.html) |
-| 2026-11-30 起 | 月末交接 | [周计划](weekly/2026-11-30.html) |
+| 2026-11-02 起 | 启动周末 | [周计划](https://divinyan.com/planner/weekly/2026-11-02.html) |
+| 2026-11-09 起 | 三篇首轮回复 | [周计划](https://divinyan.com/planner/weekly/2026-11-09.html) |
+| 2026-11-16 起 | Rebuttal 收敛与项目恢复 | [周计划](https://divinyan.com/planner/weekly/2026-11-16.html) |
+| 2026-11-23 起 | MoE 与 DIA 稳定推进 | [周计划](https://divinyan.com/planner/weekly/2026-11-23.html) |
+| 2026-11-30 起 | 月末交接 | [周计划](https://divinyan.com/planner/weekly/2026-11-30.html) |
 
 11-02 周入口只覆盖 11-07 至 11-08；11-30 周入口当前只覆盖本月最后一天。未生成日期会明确显示暂无计划，不补造任务。
 
@@ -126,30 +126,30 @@ HTML 使用轻色系，可切换日、周、月，点击时间块查看完整任
 
 | 日期 | HTML |
 | --- | --- |
-| 2026-11-07 | [日计划](daily/2026-11-07.html) |
-| 2026-11-08 | [日计划](daily/2026-11-08.html) |
-| 2026-11-09 | [日计划](daily/2026-11-09.html) |
-| 2026-11-10 | [日计划](daily/2026-11-10.html) |
-| 2026-11-11 | [日计划](daily/2026-11-11.html) |
-| 2026-11-12 | [日计划](daily/2026-11-12.html) |
-| 2026-11-13 | [日计划](daily/2026-11-13.html) |
-| 2026-11-14 | [日计划](daily/2026-11-14.html) |
-| 2026-11-15 | [日计划](daily/2026-11-15.html) |
-| 2026-11-16 | [日计划](daily/2026-11-16.html) |
-| 2026-11-17 | [日计划](daily/2026-11-17.html) |
-| 2026-11-18 | [日计划](daily/2026-11-18.html) |
-| 2026-11-19 | [日计划](daily/2026-11-19.html) |
-| 2026-11-20 | [日计划](daily/2026-11-20.html) |
-| 2026-11-21 | [日计划](daily/2026-11-21.html) |
-| 2026-11-22 | [日计划](daily/2026-11-22.html) |
-| 2026-11-23 | [日计划](daily/2026-11-23.html) |
-| 2026-11-24 | [日计划](daily/2026-11-24.html) |
-| 2026-11-25 | [日计划](daily/2026-11-25.html) |
-| 2026-11-26 | [日计划](daily/2026-11-26.html) |
-| 2026-11-27 | [日计划](daily/2026-11-27.html) |
-| 2026-11-28 | [日计划](daily/2026-11-28.html) |
-| 2026-11-29 | [日计划](daily/2026-11-29.html) |
-| 2026-11-30 | [日计划](daily/2026-11-30.html) |
+| 2026-11-07 | [日计划](https://divinyan.com/planner/daily/2026-11-07.html) |
+| 2026-11-08 | [日计划](https://divinyan.com/planner/daily/2026-11-08.html) |
+| 2026-11-09 | [日计划](https://divinyan.com/planner/daily/2026-11-09.html) |
+| 2026-11-10 | [日计划](https://divinyan.com/planner/daily/2026-11-10.html) |
+| 2026-11-11 | [日计划](https://divinyan.com/planner/daily/2026-11-11.html) |
+| 2026-11-12 | [日计划](https://divinyan.com/planner/daily/2026-11-12.html) |
+| 2026-11-13 | [日计划](https://divinyan.com/planner/daily/2026-11-13.html) |
+| 2026-11-14 | [日计划](https://divinyan.com/planner/daily/2026-11-14.html) |
+| 2026-11-15 | [日计划](https://divinyan.com/planner/daily/2026-11-15.html) |
+| 2026-11-16 | [日计划](https://divinyan.com/planner/daily/2026-11-16.html) |
+| 2026-11-17 | [日计划](https://divinyan.com/planner/daily/2026-11-17.html) |
+| 2026-11-18 | [日计划](https://divinyan.com/planner/daily/2026-11-18.html) |
+| 2026-11-19 | [日计划](https://divinyan.com/planner/daily/2026-11-19.html) |
+| 2026-11-20 | [日计划](https://divinyan.com/planner/daily/2026-11-20.html) |
+| 2026-11-21 | [日计划](https://divinyan.com/planner/daily/2026-11-21.html) |
+| 2026-11-22 | [日计划](https://divinyan.com/planner/daily/2026-11-22.html) |
+| 2026-11-23 | [日计划](https://divinyan.com/planner/daily/2026-11-23.html) |
+| 2026-11-24 | [日计划](https://divinyan.com/planner/daily/2026-11-24.html) |
+| 2026-11-25 | [日计划](https://divinyan.com/planner/daily/2026-11-25.html) |
+| 2026-11-26 | [日计划](https://divinyan.com/planner/daily/2026-11-26.html) |
+| 2026-11-27 | [日计划](https://divinyan.com/planner/daily/2026-11-27.html) |
+| 2026-11-28 | [日计划](https://divinyan.com/planner/daily/2026-11-28.html) |
+| 2026-11-29 | [日计划](https://divinyan.com/planner/daily/2026-11-29.html) |
+| 2026-11-30 | [日计划](https://divinyan.com/planner/daily/2026-11-30.html) |
 
 ## 维护与文件结构
 

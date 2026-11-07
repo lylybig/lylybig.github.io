@@ -27,6 +27,8 @@ data/profile.json 保存作息、固定安排和项目背景；data/YYYY-MM.json
 
 每次执行 `npm run build`、`npm run check`，并更新 README 中的入口、deadline 和轻重缓急。未核验的实际实验或证明不能写成已验证；已经关闭的讨论期不继续安排作者讨论任务。
 
+README 里每一份 HTML 计划都使用 `https://divinyan.com/planner/...` 的完整在线网址，确保在 GitHub 阅读时点击就能看图形。每个生成的 HTML 都保留对应的 canonical 网址和“个人主页”入口；网页内计划之间的相对路径需能正确解析到个人主页子目录。
+
 ## GitHub 同步
 
 唯一维护位置是 `/Users/yanliang3612/Documents/lylybig.github.io/planner`。用户明确要求把全部计划迁入个人主页仓库，并授权计划、复盘与网页更新自行 git commit 并 push 到 git@github.com:lylybig/lylybig.github.io.git。旧仓库只保留迁移说明和历史记录。
