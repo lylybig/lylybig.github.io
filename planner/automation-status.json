@@ -29,5 +29,6 @@
       "status": "blocked",
       "prompt": "每天西雅图时间 07:15 至 23:15 的每个小时，在 /Users/yanliang3612/Documents/lylybig.github.io/planner 检查计划仓库同步。读取 AGENTS.md，仅处理本仓库内计划相关文件。运行 npm run sync：有变化时构建和校验、自行 git commit 并 push 到 git@github.com:lylybig/lylybig.github.io.git，比较本地与远端 main 的 SHA。无变化不空提交，不重复修改计划，不发常规通知。认证、网络、权限或冲突问题保留本地文件并明确报告；不强推，不提交私钥、token、缓存或其他仓库内容。 推送后检查 GitHub Pages 网页 https://divinyan.com/planner/ 已显示新版本；部署延迟或失败须单独说明。"
     }
-  ]
+  ],
+  "cadencePolicy": "所有任务均执行 profile.workCadence：自主工作累计 60 分钟后休息 10 分钟，换任务不重置计时；取消非周五晚大块自由时间，保留三餐、通勤、22:30 睡前准备及 23:00–07:00 睡眠。周五 18:00 后完全下班。"
 }

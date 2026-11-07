@@ -20,8 +20,23 @@ for(const file of monthFiles){
   if(day===5)assert(es.filter(e=>e.end>'18:00').every(e=>e.category==='rest'),`Friday evening is not protected ${date}`);
   if(m.holidays.some(h=>h.date===date&&h.noClasses))assert(!es.some(e=>e.category==='fixed'&&/ENGL|Noble Lab/.test(e.title)),`Holiday class ${date}`);
   assert(m.days[date].priorities.length>0,'Missing priorities '+date);
-  const workload=es.filter(e=>!['rest','commute','buffer'].includes(e.category)).reduce((n,e)=>n+minutes(e.end)-minutes(e.start),0);
-  assert(workload<=9*60,`More than 9 planned work hours ${date}: ${workload/60}`);
+  const nonWork=['rest','break','commute','buffer'];
+  const workload=es.filter(e=>!nonWork.includes(e.category)).reduce((n,e)=>n+minutes(e.end)-minutes(e.start),0);
+  assert(workload<=profile.workCadence.dailyWorkLimitMinutes,`Work budget exceeded ${date}: ${workload/60}`);
+  if(m.cadence&&date>=m.cadence.effectiveFrom.date){
+   let streak=0;
+   for(let i=0;i<es.length;i++){
+    const e=es[i],length=minutes(e.end)-minutes(e.start);
+    if(i)assert.equal(es[i-1].end,e.start,'Unexplained gap '+date+' '+e.start);
+    if(e.category==='break')assert.equal(length,10,'Break must be 10 minutes '+e.id);
+    if(e.category==='fixed'||nonWork.includes(e.category))streak=0;
+    else {streak+=length;assert(streak<=60,'More than 60 continuous self-directed work minutes '+date+' '+e.title);}
+    if(e.category==='rest'&&!(day===5&&e.start>='18:00'))assert(/起床与早餐|午饭|晚饭|洗漱与睡前准备/.test(e.title),'Unexpected long rest '+date+' '+e.title);
+    if(day!==5&&e.category==='rest')assert(length<=30,'Extra rest beyond meals/bedtime '+date);
+   }
+   assert.equal(es.at(-1).end,'23:00','Missing bedtime '+date);
+   assert.equal(m.days[date].planBudget.workMinutes,workload,'Displayed work budget mismatch '+date);
+  }
   checked++;
  }
 }
@@ -44,4 +59,5 @@ for(const match of read('README.md').matchAll(/\]\(([^)]+\.html)\)/g)){
  if(local)assert(fs.existsSync(path.join(root,local)),`Broken README link ${match[1]}`);
 }
 assert.equal(profile.sleep.start,'23:00');assert.equal(profile.sleep.end,'07:00');
-console.log(`Checked ${checked} day plans, ${ids.size} events, no overlaps, sleep and Friday rest, holidays, workload, HTML assets and README links.`);
+assert.equal(profile.workCadence.workMinutes,60);assert.equal(profile.workCadence.breakMinutes,10);
+console.log(`Checked ${checked} day plans, ${ids.size} events, 60/10 cadence, no extra long rest, no overlaps, sleep and Friday rest, holidays, workload, HTML assets and README links.`);
