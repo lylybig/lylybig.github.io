@@ -109,7 +109,7 @@
       ],
       "note": "只覆盖 11 月 7–8 日；此前实际进度未知。 核心最小交付与延续投入分开；缺依赖先记录并缩小范围，晚上用实际耗时校准。",
       "rhythm": "通常两个科研主题/日，每个连续 2–3 个 60/10 周期；周一集中两份 MoE 更新为例外。",
-      "workMinutes": 1060,
+      "workMinutes": 1075,
       "breakMinutes": 140,
       "projectMinutes": {
         "english": 165,
@@ -118,9 +118,10 @@
         "moe-llm": 60,
         "noble": 50,
         "noisy": 360,
-        "rebuttal": 180
+        "rebuttal": 180,
+        "resnet": 15
       },
-      "coreMinutes": 820,
+      "coreMinutes": 835,
       "continuationMinutes": 240,
       "activeSpeakingMinutes": 90
     },
@@ -231,14 +232,22 @@
         "整理明天的第一项工作"
       ],
       "feedback": "未反馈",
-      "note": "Rebuttal 冲刺期：优先证据、回应与讨论。",
+      "note": "Rebuttal 冲刺期：优先证据、回应与讨论。 仅今天：23:00–23:15 与 Siying 讨论 ResNet-MoE rebuttal；今晚 23:15 入睡，明早 07:00 起床。其他日期仍按 23:00–07:00 作息。",
       "planBudget": {
-        "workMinutes": 320,
-        "fixedMinutes": 0,
+        "workMinutes": 335,
+        "fixedMinutes": 15,
         "breakMinutes": 40,
         "breakCount": 4
       },
-      "rhythm": "自主工作累计 60 分钟后休息 10 分钟；三餐与睡前准备另列，固定课程和会议按实际时长。"
+      "rhythm": "自主工作累计 60 分钟后休息 10 分钟；三餐与睡前准备另列，固定课程和会议按实际时长。",
+      "sleepOverride": {
+        "appliesToDate": "2026-11-07",
+        "start": "23:15",
+        "end": "07:00",
+        "evidence": "user-confirmed",
+        "reason": "用户确认今晚 23:00–23:15 与 Siying 开小会，仅今天例外。"
+      },
+      "oneOffNote": "仅今天：23:00–23:15 与 Siying 讨论 ResNet-MoE rebuttal；今晚 23:15 入睡，明早 07:00 起床。其他日期仍按 23:00–07:00 作息。"
     },
     "2026-11-08": {
       "priorities": [
@@ -1403,8 +1412,24 @@
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "22:30 结束工作、洗漱和准备睡眠，23:00 入睡。",
-      "doneCriteria": "22:30 结束工作、洗漱和准备睡眠，23:00 入睡。"
+      "detail": "22:30 结束常规科研并完成洗漱；23:00–23:15 参加与 Siying 的单次小会，会后 23:15 入睡，仅今晚例外。",
+      "doneCriteria": "22:30 结束常规科研并完成洗漱；23:00–23:15 参加与 Siying 的单次小会，会后 23:15 入睡，仅今晚例外。"
+    },
+    {
+      "id": "2026-11-07-2300-siying-resnet-rebuttal",
+      "date": "2026-11-07",
+      "start": "23:00",
+      "end": "23:15",
+      "title": "与 Siying 讨论 ResNet-MoE rebuttal",
+      "category": "fixed",
+      "project": "resnet",
+      "status": "planned",
+      "evidence": "user-confirmed",
+      "commitment": "core",
+      "oneOff": true,
+      "detail": "仅 2026-11-07 晚上一次：与 Siying 对齐 ResNet-MoE 论文的 rebuttal，优先讨论核心质疑、现有证据和必要补强。其他日期不重复。",
+      "minimumOutcome": "对齐最关键的 1–2 条质疑，记下需要的证据、分工和下一步；未讨论完的部分列为待确认。",
+      "doneCriteria": "参加讨论并记录关键结论、分工和下一步；未收到反馈前不自动标记完成。"
     },
     {
       "id": "2026-11-08-0700-258",

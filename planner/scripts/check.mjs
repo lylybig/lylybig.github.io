@@ -12,7 +12,12 @@ const minutes=t=>Number(t.slice(0,2))*60+Number(t.slice(3));
 let checked=0;const ids=new Set();
 for(const file of monthFiles){
  const m=JSON.parse(read('data/'+file));
- for(const e of m.events){assert(!ids.has(e.id),'Duplicate event '+e.id);ids.add(e.id);assert(minutes(e.start)<minutes(e.end),'Invalid duration '+e.title);assert(e.start>='07:00'&&e.end<='23:00','Sleep boundary '+e.date+' '+e.title);assert(m.days[e.date],'No day plan '+e.date);}
+ for(const e of m.events){
+  assert(!ids.has(e.id),'Duplicate event '+e.id);ids.add(e.id);assert(minutes(e.start)<minutes(e.end),'Invalid duration '+e.title);assert(m.days[e.date],'No day plan '+e.date);
+  const override=m.days[e.date].sleepOverride;
+  const explicitLateMeeting=override?.appliesToDate===e.date&&override.evidence==='user-confirmed'&&e.evidence==='user-confirmed'&&e.oneOff===true&&e.category==='fixed'&&e.end===override.start;
+  assert(e.start>='07:00'&&(e.end<='23:00'||explicitLateMeeting),'Sleep boundary '+e.date+' '+e.title);
+ }
  for(const date of Object.keys(m.days)){
   const es=m.events.filter(e=>e.date===date).sort((a,b)=>a.start.localeCompare(b.start));
   for(let i=1;i<es.length;i++)assert(es[i-1].end<=es[i].start,`Overlap ${date}: ${es[i-1].title} / ${es[i].title}`);
@@ -34,7 +39,9 @@ for(const file of monthFiles){
     if(e.category==='rest'&&!(day===5&&e.start>='18:00'))assert(/起床与早餐|午饭|晚饭|洗漱与睡前准备/.test(e.title),'Unexpected long rest '+date+' '+e.title);
     if(day!==5&&e.category==='rest')assert(length<=30,'Extra rest beyond meals/bedtime '+date);
    }
-   assert.equal(es.at(-1).end,'23:00','Missing bedtime '+date);
+   const override=m.days[date].sleepOverride;
+   if(override){assert.equal(override.appliesToDate,date,'Sleep exception must be date-specific');assert.equal(override.evidence,'user-confirmed','Sleep exception requires user instruction');assert(override.reason,'Missing sleep exception reason');}
+   assert.equal(es.at(-1).end,override?.start||'23:00','Missing bedtime '+date);
    assert.equal(m.days[date].planBudget.workMinutes,workload,'Displayed work budget mismatch '+date);
   }
   checked++;

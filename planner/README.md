@@ -56,6 +56,12 @@ HTML 使用轻色系，可切换日、周、月，点击时间块查看完整任
 
 [排程依据与完整方案](https://divinyan.com/planner/method.html)区分了 Graham、Karpathy、Hamming、Pausch 的个人经验和注意残留实验研究，也记录了[指定知乎问题](https://www.zhihu.com/question/274835426)中本次实际读到的 8 条回答与取舍，不以成功者轶事保证结果。
 
+## 今日单次调整（2026-11-07）
+
+- **23:00–23:15**：与 Siying 讨论 ResNet-MoE 论文的 rebuttal，记录关键质疑、证据、分工与下一步。
+- 用户确认仅今晚例外，今晚 **23:15** 入睡，其他日期继续 **23:00–07:00** 作息；不设为周例会，也不自动标记已完成。
+- [今天的日计划](https://divinyan.com/planner/daily/2026-11-07.html)。
+
 ## Deadline 与轻重缓急
 
 以下顺序体现当前紧急程度。**正式 deadline、内部目标、待确认日期分开记录。** 新的注册或课程硬截止会改变优先级。
