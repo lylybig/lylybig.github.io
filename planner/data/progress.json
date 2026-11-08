@@ -1,6 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": null,
-  "events": {},
-  "journals": {}
+  "updatedAt": "2026-11-08T00:25:29.189Z",
+  "events": {
+    "2026-11-07-1600-0": {
+      "done": true,
+      "updatedAt": "2026-11-08T00:25:29.189Z"
+    }
+  },
+  "journals": {},
+  "feedback": {
+    "2026-11-07": {
+      "status": "draft",
+      "updatedAt": "2026-11-08T00:25:29.189Z",
+      "needsPlanning": true,
+      "processedAt": null
+    }
+  }
 }
