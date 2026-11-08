@@ -4,7 +4,7 @@
 
 ## 每次更新
 
-1. 先读 README、data/profile.json、当前月份 data/YYYY-MM.json、data/progress.json 和最近的 data/reviews。结合本聊天最新的用户汇报；如果没有新汇报，实际进度保持未知。
+1. 先读 README、data/profile.json、当前月份 data/YYYY-MM.json、data/progress.json 和最近的 data/reviews，特别检查 progress.feedback 的 needsPlanning 和复盘 status=pending-review。结合本聊天最新的用户汇报；如果没有新汇报，实际进度保持未知。
 2. 保留用户已编辑的内容和稳定的 event id。只调整尚未执行的计划。过去计划保留为当时的计划，不把计划记录改写为已完成。
 3. 按用户最新政策：23:00–07:00 睡眠，只有周五 18:00 后完整下班。自主工作累计 60 分钟后休息 10 分钟，换任务不重置计时。取消其他大块自由时间；三餐各 30 分钟、必要通勤及 22:30–23:00 睡前准备另列。课程和会议按实际时长、前后留小休；完整非周五日约 11 小时 50 分至 12 小时 20 分工作（含课程会议），以 profile.workCadence 和校验为准。旧 8/9 小时上限已被用户新政策替代。
 4. 官方 deadline、内部完成目标和暂定安排须分别标注。ICLR 2027 作者讨论官方日期是 2026-11-18 AoE；内部执行截止是 11-18 18:00。ICML 2027 投稿日期待官网公布。ENGL 105 作业和考核日期未核实，不能编造。
@@ -13,9 +13,11 @@
 
 ## 晚间汇报与情绪支持
 
-用户会在睡前自然语言汇报，默认 22:10–22:30；周五改为 17:10–17:30，18:00 后不要求汇报。无需要求固定模板。先具体肯定真实完成的成果，也记录排除假设、定位问题和明确限制的进展。诚实、温暖、尊重，不虚构成就，不用羞耻或比较施压。
+本地反馈页面通过 scripts/local-store.mjs 直接写入 data/progress.json；提交复盘会写入 data/reviews/YYYY-MM-DD.json 并请求 GitHub 同步。读取这些文件即可，不需要用户导出。用户也会在睡前自然语言汇报，默认 22:10–22:30；周五改为 17:10–17:30，18:00 后不要求汇报。无需要求固定模板。先具体肯定真实完成的成果，也记录排除假设、定位问题和明确限制的进展。诚实、温暖、尊重，不虚构成就，不用羞耻或比较施压。
 
 将汇报保存为 data/reviews/YYYY-MM-DD.json，至少区分 completed、inProgress、blockers、energy、sleep、nextActions，未知字段留空。更新 data/progress.json；未经用户确认不把“跑着”“做了一半”记为完成。
+
+本地复盘的 rawNote 是用户原话；completed 来自明确勾选，其他 null 字段不代表用户没有推进。提交后的记录标为 pending-review，不表示秘书已经处理。用户说“按最新记录调整”时直接读取待处理记录，不要再要求重复发送内容。完成重排后设置 review.status=processed、processedAt，并清除 progress.feedback[date].needsPlanning，记录具体 planAdjustments。草稿状态需要保留标识。
 
 然后重排下一天和本周剩余日期，并检查是否影响月度节点。不要把全部延期项堆到第二天；可缩小范围、降低低优先级事项、移动到其他日期，或标记等待外部条件。保留已完成项和原始晚间记录。
 
@@ -32,6 +34,8 @@ README 里每一份 HTML 计划都使用 `https://divinyan.com/planner/...` 的�
 ## GitHub 同步
 
 唯一维护位置是 `/Users/yanliang3612/Documents/lylybig.github.io/planner`。用户明确要求把全部计划迁入个人主页仓库，并授权计划、复盘与网页更新自行 git commit 并 push 到 git@github.com:lylybig/lylybig.github.io.git。旧仓库只保留迁移说明和历史记录。
+
+本地服务在用户点击提交后会运行同一同步脚本。这是用户交互触发，当前定时任务仍未启用。手动更新前先通过本地 /api/state 查看同步是否进行中，等待完成再修改和提交，避免并发 Git 操作。
 
 每次更新结束在 planner/ 运行 `npm run sync` 立即提交并推送；定时同步任务作为兜底。只提交 planner/ 内计划相关内容，保留主页其他文件的用户改动。不提交私钥、token、.env、浏览器状态、缓存或其他仓库文件。若出现意外的未跟踪文件，先核对范围，不盲目 git add 全部。
 

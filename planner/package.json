@@ -8,6 +8,8 @@
     "check": "node scripts/check.mjs",
     "verify:live": "node scripts/verify-live.mjs",
     "preview": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "test": "node --test scripts/local-feedback.test.mjs",
     "sync": "node scripts/sync.mjs"
   },
   "engines": { "node": ">=20" }

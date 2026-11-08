@@ -13,7 +13,7 @@ const remote=git(['remote','get-url','origin']);
 if(remote!==expected&&remote!=='https://github.com/lylybig/lylybig.github.io.git')throw Error('Origin does not match the authorized homepage repository.');
 const branch=git(['symbolic-ref','--short','HEAD']);
 if(branch!=='main')throw Error('Expected main; review branch before synchronization.');
-const allowed=p=>/^planner\/(README\.md|AGENTS\.md|package\.json|\.gitignore|index\.html|plan-manifest\.json|automation-status\.json)$/.test(p)||/^planner\/(src|scripts|data|assets|daily|weekly|monthly)\//.test(p);
+const allowed=p=>/^planner\/(README\.md|AGENTS\.md|package\.json|\.gitignore|index\.html|plan-manifest\.json|automation-status\.json|start-planner\.command)$/.test(p)||/^planner\/(src|scripts|data|assets|daily|weekly|monthly)\//.test(p);
 function changedFiles(){
  const raw=execFileSync('git',['status','--porcelain=v1','-z','--untracked-files=all'],{cwd:repository,env,encoding:'utf8'});
  const chunks=raw.split('\0').filter(Boolean),files=[];
