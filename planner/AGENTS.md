@@ -51,6 +51,10 @@ README 里每一份 HTML 计划都使用 `https://divinyan.com/planner/...` 的�
 
 本地服务在用户点击提交后会运行同一同步脚本。这是用户交互触发，当前定时任务仍未启用。手动更新前先通过本地 /api/state 查看同步是否进行中，等待完成再修改和提交，避免并发 Git 操作。
 
+本地网页在这台 Mac 已安装 `com.divinyan.planner.local` 常驻服务，登录后启动、退出后自动恢复；先用 `npm run service:status` 检查。已实测终止服务后自动恢复且记录未变，登录自启未通过重启电脑测试。也可用 `npm run start:background` 或双击 `start-planner.command` 恢复独立后台进程；不要依赖会随聊天结束被清理的 exec 前台服务。启动器应复用健康服务，避免重复占用 4173。服务只监听 127.0.0.1。
+
+常驻服务运行代码与日志由安装器生成在 `~/Library/Application Support/DivinYanPlanner/`，仅是运行副本，不在该处手工维护；原始计划、反馈和唯一源代码仍在本仓库。修改 serve.mjs / local-store.mjs 后需 `npm run service:install` 刷新副本；仅改 HTML 或数据无需重启。普通后台日志与 PID 位于忽略提交的 work/。常驻服务不是日周计划或 Git 定时任务，不得声称已启用定时同步。
+
 每次更新结束在 planner/ 运行 `npm run sync` 立即提交并推送；定时同步任务作为兜底。只提交 planner/ 内计划相关内容，保留主页其他文件的用户改动。不提交私钥、token、.env、浏览器状态、缓存或其他仓库文件。若出现意外的未跟踪文件，先核对范围，不盲目 git add 全部。
 
 推送前读取 git status 并运行检查。若远端有新提交，使用正常 fetch 与安全合并/重排处理；不得强推、清理用户改动或覆盖无法解决的冲突。没有变化则不创建空提交。推送后比较本地 HEAD 与远端分支 SHA，只有一致才报告同步成功。网络、认证或冲突导致失败时明确告知本地已保存及远端尚未更新。

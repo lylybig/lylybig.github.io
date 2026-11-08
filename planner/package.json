@@ -9,6 +9,10 @@
     "verify:live": "node scripts/verify-live.mjs",
     "preview": "node scripts/serve.mjs",
     "start": "node scripts/serve.mjs",
+    "start:background": "node scripts/start-local.mjs",
+    "service:install": "node scripts/local-service.mjs install",
+    "service:status": "node scripts/local-service.mjs status",
+    "service:uninstall": "node scripts/local-service.mjs uninstall",
     "test": "node --test scripts/*.test.mjs",
     "sync": "node scripts/sync.mjs"
   },

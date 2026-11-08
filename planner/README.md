@@ -128,7 +128,13 @@ HTML 使用轻色系，可切换日、周、月，点击时间块查看完整任
 2. 点击“保存复盘并同步 GitHub”：生成 `data/reviews/YYYY-MM-DD.json`，保存原始文字、已勾选任务与精力，提交、推送并核验网页。再次提交保留旧版本到 `data/reviews/history/`。
 3. 对秘书说“按最新记录调整”：秘书直接读取文件，调整下一天和本周计划；不用复制记录或发送导出文件。保存不会自动唤醒秘书，后台定时任务仍未启用。
 
-服务只监听本机 127.0.0.1。可双击 `start-planner.command` 打开；或在 `planner/` 运行 `npm start`。关闭服务或重启 Mac 后，文件记录仍保留，再启动即可继续。
+服务只监听本机 127.0.0.1。双击 `start-planner.command` 会检查服务、必要时启动独立后台进程，再打开网页；启动窗口可关闭。也可在 `planner/` 运行 `npm run start:background`，然后打开本地网址。重复启动会复用现有服务。`npm start` 仍是前台调试方式，停止它会停止对应服务。
+
+如果看到 `ERR_CONNECTION_REFUSED`，表示本地服务没有接受连接。**这台 Mac 已安装本地网页常驻服务**：不依赖聊天和终端窗口，退出后由 macOS 自动重启，登录后自动启动。本次已实测退出恢复和反馈记录保留；登录自启按已加载的系统配置执行，未通过重启电脑测试。电脑关机期间本地网址不可访问。
+
+可用 `npm run service:status` 查看状态；其他 Mac 在仓库中执行 `npm run service:install` 安装，`npm run service:uninstall` 停用。`start-planner.command` 仍可作为打开网页或手动恢复的入口。常驻服务日志及生成的运行代码位于 `~/Library/Application Support/DivinYanPlanner/`；源代码唯一维护在本仓库，计划与反馈仍直接读写这里的 `data/`，不维护第二份数据。普通后台启动日志位于忽略提交的 `work/local-server.log`。
+
+这项常驻服务只维持本地网页和反馈接口，**日周计划与 Git 定时任务仍未启用**。更新 `scripts/serve.mjs` 或 `scripts/local-store.mjs` 后重新执行 `npm run service:install` 以刷新运行副本；仅修改 HTML 或计划数据无需重启。
 
 **公开主页的交互仍是浏览器草稿**，页面提供本地反馈入口。当地页面显示“已写入文件”才代表落盘，GitHub 同步状态单独显示；同步失败不丢失本地记录。点击同步会把记录提交到公开个人主页仓库。
 
