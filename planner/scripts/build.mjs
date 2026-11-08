@@ -12,6 +12,7 @@ const dates=Object.values(months).flatMap(m=>Object.keys(m.days)).sort();
 const template=read('src/template.html');
 const write=(p,body)=>{const target=path.join(root,p);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,body);};
 write('assets/style.css',read('src/style.css'));
+write('method.html',read('src/method.html'));
 const appSource=read('src/rewards.js')+'\n'+read('src/app.js');
 write('assets/app.js',appSource);
 const dataSource='window.PLANNER_DATA = '+JSON.stringify({profile,progress,months}).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029')+';\n';

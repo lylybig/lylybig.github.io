@@ -16,10 +16,17 @@ test('empty and restored progress never invent achievements or XP',()=>{
 });
 test('encouragement matches the project and only celebrates the whole day when all work is marked',()=>{
  const partial=rewards.measure(events,{a:true});assert.match(rewards.encourage(events[0],partial).message,/GAUGE|证据/);
- const full=rewards.measure(events,{a:true,b:true});assert.equal(rewards.encourage(events[1],full).title,'今天的计划收齐了 ✨');
+ const full=rewards.measure(events,{a:true,b:true});assert.equal(rewards.encourage(events[1],full).title,'核心计划收齐了 ✨');
 });
 test('class attendance and written English tasks do not invent spoken practice',()=>{
  const partial=rewards.measure(events,{a:true});
  assert.match(rewards.encourage({id:'class',project:'english',category:'fixed',title:'ENGL 105 B'},partial).message,/课程和会议/);
  assert.doesNotMatch(rewards.encourage({id:'homework',project:'english',category:'english',title:'英语课程作业'},partial).message,/又开口/);
+});
+
+test('continuation earns real XP without inflating core completion requirements',()=>{
+ const plan=[...events,{id:'extra',start:'10:00',end:'11:00',category:'research',project:'gauge',commitment:'continuation'}];
+ const onlyExtra=rewards.measure(plan,{extra:true});assert.equal(onlyExtra.xp,60);assert.equal(onlyExtra.percent,0);assert.equal(onlyExtra.next.id,'a');
+ const coreDone=rewards.measure(plan,{a:true,b:true});assert.equal(coreDone.percent,100);assert(coreDone.coreComplete);assert.equal(coreDone.xp,90);
+ const all=rewards.measure(plan,{a:true,b:true,extra:true});assert.equal(all.xp,150);assert.equal(all.percent,100);
 });

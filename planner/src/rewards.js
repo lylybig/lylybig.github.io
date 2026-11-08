@@ -6,13 +6,14 @@
   function measure(events,state={}){
     const work=events.filter(e=>!['rest','break','commute','buffer'].includes(e.category));
     const finished=work.filter(e=>completed(state,e.id));
+    const core=work.filter(e=>e.commitment!=='continuation'),coreFinished=core.filter(e=>completed(state,e.id));
     const size=e=>Math.max(0,minutes(e.end)-minutes(e.start));
-    const xp=finished.reduce((n,e)=>n+size(e),0),totalMinutes=work.reduce((n,e)=>n+size(e),0);
+    const xp=finished.reduce((n,e)=>n+size(e),0),totalMinutes=core.reduce((n,e)=>n+size(e),0),coreXp=coreFinished.reduce((n,e)=>n+size(e),0);
     let index=0;for(let i=1;i<levels.length;i++)if(xp>=levels[i][1])index=i;
-    return {xp,totalMinutes,count:finished.length,total:work.length,percent:totalMinutes?Math.round(xp/totalMinutes*100):0,level:index+1,levelName:levels[index][0],nextLevel:levels[index+1]?.[1]??null,next:work.find(e=>!completed(state,e.id))||null,badges:[{name:'首项点亮',icon:'✦',unlocked:finished.length>0},{name:'一小时积累',icon:'◷',unlocked:xp>=60},{name:'半程里程碑',icon:'❋',unlocked:totalMinutes>0&&xp>=totalMinutes/2},{name:'今日收齐',icon:'⚑',unlocked:work.length>0&&finished.length===work.length}]};
+    return {xp,totalMinutes,count:finished.length,total:work.length,coreCount:coreFinished.length,coreTotal:core.length,coreComplete:core.length>0&&coreFinished.length===core.length,percent:totalMinutes?Math.round(coreXp/totalMinutes*100):0,level:index+1,levelName:levels[index][0],nextLevel:levels[index+1]?.[1]??null,next:core.find(e=>!completed(state,e.id))||work.find(e=>!completed(state,e.id))||null,badges:[{name:'首项点亮',icon:'✦',unlocked:finished.length>0},{name:'一小时积累',icon:'◷',unlocked:xp>=60},{name:'核心半程',icon:'❋',unlocked:totalMinutes>0&&coreXp>=totalMinutes/2},{name:'核心收齐',icon:'⚑',unlocked:core.length>0&&coreFinished.length===core.length}]};
   }
   function encourage(event,summary){
-    if(summary.total>0&&summary.count===summary.total)return {title:'今天的计划收齐了 ✨',message:'今天的工作块已经全部点亮。把真实成果和阻塞收进复盘，再按原计划收工。'};
+    if(summary.coreComplete&&event.commitment!=='continuation')return {title:'核心计划收齐了 ✨',message:'今天的核心工作块已经点亮。收好真实成果和阻塞；延续块用于同题深入，不增加必须完成的新成果。'};
     if(event.category==='fixed')return {title:'固定安排，也收好一关',message:'课程和会议也占用精力。这一块收尾了，记下需要跟进的下一步就好。'};
     if(event.project==='english'&&!/口语|讲解/.test(event.title||''))return {title:'英语任务，又推进一块',message:'这份课程任务有了推进。把修改和问题收好，一点点把表达练扎实。'};
     const messages={

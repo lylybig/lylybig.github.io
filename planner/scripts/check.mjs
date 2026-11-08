@@ -61,3 +61,31 @@ for(const match of read('README.md').matchAll(/\]\(([^)]+\.html)\)/g)){
 assert.equal(profile.sleep.start,'23:00');assert.equal(profile.sleep.end,'07:00');
 assert.equal(profile.workCadence.workMinutes,60);assert.equal(profile.workCadence.breakMinutes,10);
 console.log(`Checked ${checked} day plans, ${ids.size} events, 60/10 cadence, no extra long rest, no overlaps, sleep and Friday rest, holidays, workload, HTML assets and README links.`);
+// Check the actual schedule promises, rather than merely checking generated markup.
+for(const file of monthFiles){
+ const m=JSON.parse(read('data/'+file));
+ for(const [date,day] of Object.entries(m.days)){
+  if(date<(profile.planning?.effectiveFrom||'9999'))continue;
+  const es=m.events.filter(e=>e.date===date),work=e=>!['rest','break','commute','buffer'].includes(e.category),length=e=>minutes(e.end)-minutes(e.start);
+  const speaking=es.reduce((n,e)=>n+(e.activeSpeakingMinutes||0),0);
+  assert(speaking>=75&&speaking<=90,'Spoken English allocation '+date);
+  assert.equal(speaking,day.planBudget.activeSpeakingMinutes,'Displayed speaking budget '+date);
+  assert(es.every(e=>!e.activeSpeakingMinutes||(e.project==='english'&&e.category==='english'&&e.activeSpeakingMinutes<=length(e))),'Do not count classes as spoken practice '+date);
+  assert.equal(es.filter(e=>work(e)&&e.commitment!=='continuation').reduce((n,e)=>n+length(e),0),day.planBudget.coreMinutes,'Core budget '+date);
+  assert.equal(es.filter(e=>e.commitment==='continuation').reduce((n,e)=>n+length(e),0),day.planBudget.continuationMinutes,'Continuation budget '+date);
+  const research=es.filter(e=>['research','moe'].includes(e.category)),projects=new Set(research.map(e=>e.project)),dow=new Date(date+'T12:00:00Z').getUTCDay();
+  assert(projects.size<=(dow===1?3:2),'Too many research contexts '+date);
+  assert(research.every(e=>length(e)>=30&&e.minimumOutcome&&e.estimate?.activeMinutes===length(e)),'Fragmented or unscoped research '+date);
+  const morning=research.filter(e=>e.end<='12:00');assert(new Set(morning.map(e=>e.project)).size<=1,'Morning focus switching '+date);
+  assert(day.priorities.length<=3,'Too many promised outcomes '+date);
+ }
+ for(const [start,w] of Object.entries(m.weekly)){
+  const end=new Date(start+'T12:00:00Z');end.setUTCDate(end.getUTCDate()+7);
+  const oral=m.events.filter(e=>e.date>=start&&e.date<end.toISOString().slice(0,10)).reduce((n,e)=>n+(e.activeSpeakingMinutes||0),0);
+  assert.equal(oral,w.activeSpeakingMinutes,'Weekly oral total '+start);
+ }
+}
+const progress=JSON.parse(read('data/progress.json'));
+for(const id of Object.keys(progress.events))assert(ids.has(id),'Lost actual progress event '+id);
+assert(read('method.html').includes('https://divinyan.com/planner/method.html'),'Method canonical URL');
+console.log('Checked protected spoken English, scoped research blocks, focus continuity, core/continuation budgets and preserved progress IDs.');
