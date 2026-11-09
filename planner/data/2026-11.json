@@ -134,15 +134,15 @@
         "11-10：GAUGE 可读首版为内部目标，先呈现已验证证据和边界，不等待全部实验。",
         "11-11：用户的两位 ResNet reviewer 回应先留 2 小时，另留 1 小时合并核查；Siying 负责第三位。",
         "Noisy Pairs 的定义与例子澄清改到 11-11，11-12 完整首轮目标；13–15 日按实际追问补证。",
-        "每天主动口语至少 75 分钟，23:00–07:00 睡眠和周五 18:00 后完整休息保留。"
+        "每天主动口语至少 75 分钟；通常 23:00–07:00 睡眠，11-09 单次按用户要求 23:00 收工、睡前准备后推算 23:30 就寝；周五 18:00 后完整休息。"
       ],
       "note": "11-08 休息不产生今天的额外工时债。今天不追加三个项目的新实验；轻量 ResNet 从原整日预算缩小，腾出时间给 GAUGE / Noisy Pairs。GAUGE 首版 11-10、ResNet 11-11、Noisy Pairs 11-12 均为内部目标，按真实依赖校准；正式 11-18 AoE 日期不变。",
       "rhythm": "通常两个科研主题/日，每个连续 2–3 个 60/10 周期；周一集中两份 MoE 更新为例外。",
-      "workMinutes": 4720,
+      "workMinutes": 4690,
       "breakMinutes": 620,
       "projectMinutes": {
         "english": 790,
-        "gauge": 920,
+        "gauge": 890,
         "life": 680,
         "moe-agent": 420,
         "moe-llm": 60,
@@ -151,7 +151,7 @@
         "resnet": 180
       },
       "coreMinutes": 3230,
-      "continuationMinutes": 1490,
+      "continuationMinutes": 1460,
       "activeSpeakingMinutes": 585
     },
     "2026-11-16": {
@@ -298,46 +298,63 @@
         "Kumar：MoE-LLM 与 Agent-RL 各一页真实更新，明天 13:00 汇报。",
         "英语：今天主动口语 75 分钟，保存 mini lesson、复录与真实作业进度。"
       ],
-      "feedback": "已按上午到岗时间重排；实际完成待汇报",
-      "note": "11 月 8 日休息未工作，今天从剩余时间重启。优先有硬时点的会面与明日更新；下午连续推进 GAUGE，不补偿性延长到睡眠时间。",
+      "feedback": "按 13:50 午饭及今天 23:00 收工重排；已勾选完成项保留，其他实际进度待汇报。",
+      "note": "仅调整今天未完成安排：总体顺延 30 分钟，首项遇午饭改为饭前准备与饭后接续；压缩 GAUGE 有条件试跑延续，不削减核心任务或主动口语。",
       "planBudget": {
-        "workMinutes": 550,
+        "workMinutes": 520,
         "fixedMinutes": 30,
         "breakMinutes": 80,
         "breakCount": 8,
         "coreMinutes": 480,
-        "continuationMinutes": 70,
+        "continuationMinutes": 40,
         "activeSpeakingMinutes": 75
       },
       "focusWindows": [
         {
-          "start": "13:10",
-          "end": "16:30",
+          "start": "13:40",
+          "end": "17:00",
           "project": "gauge",
-          "goal": "同一问题：快速分级 → 最小受控配置 → 有条件试跑。"
+          "goal": "同一问题分级与配置；13:50–14:20 午饭，试跑延续缩为 30 分钟。"
         },
         {
-          "start": "18:30",
-          "end": "19:30",
+          "start": "19:00",
+          "end": "20:00",
           "project": "moe-llm",
           "goal": "一页明日更新，不临时追新结果。"
         },
         {
-          "start": "19:40",
-          "end": "20:40",
+          "start": "20:10",
+          "end": "21:10",
           "project": "moe-agent",
           "goal": "沿用同一结构整理另一项目更新。"
         }
       ],
       "rhythm": "同一问题连续 2–3 个工作周期；每工作 60 分钟休息 10 分钟。延续块吸收估时误差，不新增硬交付。",
       "estimateReview": "晚间补记实际主动分钟、机器 ETA、阻塞与口语分钟，再调整范围；不把延期全堆到明天。",
-      "oneOffNote": "11 月 9 日按约 10:49 到办公室的信息，从 11:00 安排剩余时段；上午旧计划已归档，未自动记完成。今天口语预算 75 分钟，23:00 入睡。",
+      "oneOffNote": "仅 11 月 9 日：未完成任务总体顺延半小时。外卖预计 13:36 到，13:50–14:20 午饭；分级任务饭前准备 10 分钟，饭后继续 50 分钟。GAUGE 可选试跑缩至 30 分钟，主动口语仍为 75 分钟。23:00 收工后留 30 分钟洗漱，今晚暂排 23:30 入睡，其他日期作息不变。",
       "planHistory": {
         "url": "data/reviews/history/2026-11-09-plan-before-morning-restart.json",
         "archivedAt": "2026-11-09T18:55:30.990Z",
         "morningActualStatus": "未收到完成确认，不推断已执行"
       },
-      "executionStart": "11:00"
+      "executionStart": "11:00",
+      "workEndOverride": {
+        "appliesToDate": "2026-11-09",
+        "end": "23:00",
+        "evidence": "user-confirmed",
+        "reason": "用户要求今天工作到 11 点，结合当前下午语境按今晚 23:00 收工安排，仅限今天。"
+      },
+      "sleepOverride": {
+        "appliesToDate": "2026-11-09",
+        "start": "23:30",
+        "end": "07:00",
+        "evidence": "derived-from-confirmed-work-end",
+        "reason": "按今天 23:00 收工后保留原有 30 分钟睡前准备，暂排 23:30 入睡；该时间为排程推算。"
+      },
+      "afternoonHistory": {
+        "url": "data/reviews/history/2026-11-09-plan-before-lunch-delay.json",
+        "archivedAt": "2026-11-09T21:20:07.931894Z"
+      }
     },
     "2026-11-10": {
       "priorities": [
@@ -1984,18 +2001,17 @@
       "resumeHint": "结束前用 2–3 分钟记下文件/命令、卡点和回来后的第一步。"
     },
     {
-      "id": "2026-11-09-1145-19",
+      "id": "2026-11-09-original-lunch-slot",
       "date": "2026-11-09",
       "start": "12:00",
       "end": "12:30",
-      "title": "午饭",
-      "category": "rest",
+      "title": "原午饭时段 · 用餐已改到 13:50",
+      "category": "buffer",
       "project": "life",
       "status": "planned",
-      "evidence": "proposed",
-      "commitment": "core",
-      "detail": "30 分钟专心用餐，不处理工作消息。",
-      "doneCriteria": "30 分钟专心用餐，不处理工作消息。"
+      "evidence": "user-rescheduled",
+      "detail": "保留原计划时间位置；用户现在改为 13:50 吃饭，该时段实际活动未反馈，不记录为已用餐或已完成。",
+      "doneCriteria": "仅用于说明本次午饭改期，不计工作成果。"
     },
     {
       "id": "2026-11-09-1230-20",
@@ -2027,32 +2043,82 @@
       "doneCriteria": "起身、喝水、走动，不处理工作消息；之后继续同一问题。"
     },
     {
-      "id": "2026-11-09-restart-1310-gauge",
+      "id": "2026-11-09-shift-buffer",
       "date": "2026-11-09",
       "start": "13:10",
-      "end": "14:10",
+      "end": "13:40",
+      "title": "本次顺延过渡 · 外卖预计 13:36 到",
+      "category": "buffer",
+      "project": "life",
+      "status": "planned",
+      "evidence": "user-confirmed",
+      "detail": "按用户要求把未完成任务顺延半小时；外卖到达时间 13:36 只是预计，用餐从 13:50 开始。",
+      "doneCriteria": "13:40 接续计划，13:50 留出完整用餐时间。"
+    },
+    {
+      "id": "2026-11-09-priorities-material-prep",
+      "date": "2026-11-09",
+      "start": "13:40",
+      "end": "13:50",
+      "title": "三篇问题分级 · 打开材料与列提纲",
+      "category": "admin",
+      "project": "gauge",
+      "status": "planned",
+      "evidence": "user-rescheduled",
+      "commitment": "core",
+      "parentTask": "2026-11-09-three-paper-priorities",
+      "focusGroup": "2026-11-09-gauge",
+      "detail": "先打开三篇 reviews 与已有证据位置，列分级表提纲；14:20 饭后继续同一项任务，前后合计 60 分钟，不另开新科研项目。",
+      "doneCriteria": "保存同一份分级表提纲，饭后从同一处继续。",
+      "minimumOutcome": "为饭后同一份问题分级表做好材料准备。",
+      "estimate": {
+        "activeMinutes": 10,
+        "confidence": "午饭前后拆分原任务，不增加交付",
+        "machineWallMinutes": null
+      }
+    },
+    {
+      "id": "2026-11-09-1145-19",
+      "date": "2026-11-09",
+      "start": "13:50",
+      "end": "14:20",
+      "title": "午饭",
+      "category": "rest",
+      "project": "life",
+      "status": "planned",
+      "evidence": "user-confirmed",
+      "commitment": "core",
+      "detail": "外卖预计 13:36 到；按用户要求 13:50–14:20 专心吃饭，保留完整 30 分钟。",
+      "doneCriteria": "用餐休息 30 分钟，不处理工作消息。"
+    },
+    {
+      "id": "2026-11-09-restart-1310-gauge",
+      "date": "2026-11-09",
+      "start": "14:20",
+      "end": "15:10",
       "title": "三篇问题分级 → GAUGE 优先项",
       "category": "research",
       "project": "gauge",
       "status": "planned",
       "evidence": "proposed",
       "commitment": "core",
-      "detail": "用一页表列每篇最关键的 2 条质疑、已有证据位置与缺口；ResNet 仅核对两位/一位的分工。选出 GAUGE 一项最影响判断的缺口，不展开全部实验。",
-      "doneCriteria": "用一页表列每篇最关键的 2 条质疑、已有证据位置与缺口；ResNet 仅核对两位/一位的分工。选出 GAUGE 一项最影响判断的缺口，不展开全部实验。",
+      "detail": "接续 13:40 的同一项分级任务，完成一页三篇关键质疑、已有证据位置与缺口表；选出 GAUGE 一项优先缺口。午饭前后合计 60 分钟，不新增交付。",
+      "doneCriteria": "接续 13:40 的同一项分级任务，完成一页三篇关键质疑、已有证据位置与缺口表；选出 GAUGE 一项优先缺口。午饭前后合计 60 分钟，不新增交付。",
       "focusGroup": "2026-11-09-gauge",
-      "minimumOutcome": "用一页表列每篇最关键的 2 条质疑、已有证据位置与缺口；ResNet 仅核对两位/一位的分工。选出 GAUGE 一项最影响判断的缺口，不展开全部实验。",
+      "minimumOutcome": "接续 13:40 的同一项分级任务，完成一页三篇关键质疑、已有证据位置与缺口表；选出 GAUGE 一项优先缺口。午饭前后合计 60 分钟，不新增交付。",
       "estimate": {
-        "activeMinutes": 60,
+        "activeMinutes": 50,
         "confidence": "初估，今晚用实际耗时校准",
         "machineWallMinutes": null
       },
-      "resumeHint": "结束前用 2–3 分钟记下文件/命令、卡点和回来后的第一步。"
+      "resumeHint": "结束前用 2–3 分钟记下文件/命令、卡点和回来后的第一步。",
+      "parentTask": "2026-11-09-three-paper-priorities"
     },
     {
       "id": "2026-11-09-break-850-60-10",
       "date": "2026-11-09",
-      "start": "14:10",
-      "end": "14:20",
+      "start": "15:10",
+      "end": "15:20",
       "title": "休息 10 分钟",
       "category": "break",
       "project": "life",
@@ -2065,8 +2131,8 @@
     {
       "id": "2026-11-09-restart-1420-gauge",
       "date": "2026-11-09",
-      "start": "14:20",
-      "end": "15:20",
+      "start": "15:20",
+      "end": "16:20",
       "title": "GAUGE · 最小受控配置与启动条件",
       "category": "research",
       "project": "gauge",
@@ -2088,8 +2154,8 @@
     {
       "id": "2026-11-09-break-920-60-10",
       "date": "2026-11-09",
-      "start": "15:20",
-      "end": "15:30",
+      "start": "16:20",
+      "end": "16:30",
       "title": "休息 10 分钟",
       "category": "break",
       "project": "life",
@@ -2102,21 +2168,21 @@
     {
       "id": "2026-11-09-restart-1530-gauge",
       "date": "2026-11-09",
-      "start": "15:30",
-      "end": "16:30",
-      "title": "GAUGE · 同题试跑与 ETA 校准",
+      "start": "16:30",
+      "end": "17:00",
+      "title": "GAUGE · 有条件试跑与 ETA（30 分钟延续）",
       "category": "research",
       "project": "gauge",
       "status": "planned",
       "evidence": "proposed",
       "commitment": "continuation",
-      "detail": "前段配置就绪才做小规模试跑，记录 run ID、卡数、吞吐和 ETA；未就绪继续同一问题并写确切阻塞，不开更多项目。",
-      "doneCriteria": "前段配置就绪才做小规模试跑，记录 run ID、卡数、吞吐和 ETA；未就绪继续同一问题并写确切阻塞，不开更多项目。",
+      "detail": "今日延续预算由 60 分钟缩至 30 分钟。仅在 15:20 工作段的配置就绪时试跑，记录 run ID、卡数、吞吐和 ETA；否则记录确切阻塞。余下 30 分钟不算完成，按下一次实测需求重估。",
+      "doneCriteria": "今日延续预算由 60 分钟缩至 30 分钟。仅在 15:20 工作段的配置就绪时试跑，记录 run ID、卡数、吞吐和 ETA；否则记录确切阻塞。余下 30 分钟不算完成，按下一次实测需求重估。",
       "focusGroup": "2026-11-09-gauge",
-      "dependsOn": "14:20 工作段的最小配置通过检查。",
-      "minimumOutcome": "前段配置就绪才做小规模试跑，记录 run ID、卡数、吞吐和 ETA；未就绪继续同一问题并写确切阻塞，不开更多项目。",
+      "dependsOn": "15:20 工作段的最小配置通过检查。",
+      "minimumOutcome": "今日延续预算由 60 分钟缩至 30 分钟。仅在 15:20 工作段的配置就绪时试跑，记录 run ID、卡数、吞吐和 ETA；否则记录确切阻塞。余下 30 分钟不算完成，按下一次实测需求重估。",
       "estimate": {
-        "activeMinutes": 60,
+        "activeMinutes": 30,
         "confidence": "初估，今晚用实际耗时校准",
         "machineWallMinutes": null
       },
@@ -2125,8 +2191,8 @@
     {
       "id": "2026-11-09-break-990-60-10",
       "date": "2026-11-09",
-      "start": "16:30",
-      "end": "16:40",
+      "start": "17:00",
+      "end": "17:10",
       "title": "休息 10 分钟",
       "category": "break",
       "project": "life",
@@ -2139,8 +2205,8 @@
     {
       "id": "2026-11-09-restart-1640-english",
       "date": "2026-11-09",
-      "start": "16:40",
-      "end": "17:40",
+      "start": "17:10",
+      "end": "18:10",
       "title": "口语主练 · mini lesson 与追问",
       "category": "english",
       "project": "english",
@@ -2161,8 +2227,8 @@
     {
       "id": "2026-11-09-break-1060-60-10",
       "date": "2026-11-09",
-      "start": "17:40",
-      "end": "17:50",
+      "start": "18:10",
+      "end": "18:20",
       "title": "休息 10 分钟",
       "category": "break",
       "project": "life",
@@ -2175,8 +2241,8 @@
     {
       "id": "2026-11-09-restart-1750-english",
       "date": "2026-11-09",
-      "start": "17:50",
-      "end": "18:00",
+      "start": "18:20",
+      "end": "18:30",
       "title": "同题口语反馈记录",
       "category": "english",
       "project": "english",
@@ -2196,8 +2262,8 @@
     {
       "id": "2026-11-09-1700-24",
       "date": "2026-11-09",
-      "start": "18:00",
-      "end": "18:30",
+      "start": "18:30",
+      "end": "19:00",
       "title": "晚饭",
       "category": "rest",
       "project": "life",
@@ -2210,8 +2276,8 @@
     {
       "id": "2026-11-09-restart-1830-moe-llm",
       "date": "2026-11-09",
-      "start": "18:30",
-      "end": "19:30",
+      "start": "19:00",
+      "end": "20:00",
       "title": "MoE-LLM · 明日 Kumar 更新",
       "category": "moe",
       "project": "moe-llm",
@@ -2232,8 +2298,8 @@
     {
       "id": "2026-11-09-break-1170-60-10",
       "date": "2026-11-09",
-      "start": "19:30",
-      "end": "19:40",
+      "start": "20:00",
+      "end": "20:10",
       "title": "休息 10 分钟",
       "category": "break",
       "project": "life",
@@ -2246,8 +2312,8 @@
     {
       "id": "2026-11-09-restart-1940-moe-agent",
       "date": "2026-11-09",
-      "start": "19:40",
-      "end": "20:40",
+      "start": "20:10",
+      "end": "21:10",
       "title": "MoE-agent-RL · 明日 Kumar 更新",
       "category": "moe",
       "project": "moe-agent",
@@ -2268,8 +2334,8 @@
     {
       "id": "2026-11-09-break-1240-60-10",
       "date": "2026-11-09",
-      "start": "20:40",
-      "end": "20:50",
+      "start": "21:10",
+      "end": "21:20",
       "title": "休息 10 分钟",
       "category": "break",
       "project": "life",
@@ -2282,8 +2348,8 @@
     {
       "id": "2026-11-09-restart-2050-english",
       "date": "2026-11-09",
-      "start": "20:50",
-      "end": "21:50",
+      "start": "21:20",
+      "end": "22:20",
       "title": "口语复练与真实 ENGL 作业",
       "category": "english",
       "project": "english",
@@ -2304,8 +2370,8 @@
     {
       "id": "2026-11-09-break-1310-60-10",
       "date": "2026-11-09",
-      "start": "21:50",
-      "end": "22:00",
+      "start": "22:20",
+      "end": "22:30",
       "title": "休息 10 分钟",
       "category": "break",
       "project": "life",
@@ -2318,17 +2384,17 @@
     {
       "id": "2026-11-09-restart-2200-life",
       "date": "2026-11-09",
-      "start": "22:00",
-      "end": "22:30",
+      "start": "22:30",
+      "end": "23:00",
       "title": "邮件、reviewer 新问题与晚间汇报",
       "category": "admin",
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
       "commitment": "core",
-      "detail": "前 10 分钟批处理必要邮件与 reviewer 新问题；22:10–22:30 记录实际完成、阻塞、精力和口语分钟，确定明天第一项。未返回实验不记为完成。",
-      "doneCriteria": "前 10 分钟批处理必要邮件与 reviewer 新问题；22:10–22:30 记录实际完成、阻塞、精力和口语分钟，确定明天第一项。未返回实验不记为完成。",
-      "minimumOutcome": "前 10 分钟批处理必要邮件与 reviewer 新问题；22:10–22:30 记录实际完成、阻塞、精力和口语分钟，确定明天第一项。未返回实验不记为完成。",
+      "detail": "22:30–22:40 批处理必要邮件与 reviewer 新问题；22:40–23:00 记录实际完成、阻塞、精力和口语分钟，确定明天第一项。23:00 结束工作，未返回实验不记完成。",
+      "doneCriteria": "22:30–22:40 批处理必要邮件与 reviewer 新问题；22:40–23:00 记录实际完成、阻塞、精力和口语分钟，确定明天第一项。23:00 结束工作，未返回实验不记完成。",
+      "minimumOutcome": "22:30–22:40 批处理必要邮件与 reviewer 新问题；22:40–23:00 记录实际完成、阻塞、精力和口语分钟，确定明天第一项。23:00 结束工作，未返回实验不记完成。",
       "estimate": {
         "activeMinutes": 30,
         "confidence": "初估，今晚用实际耗时校准",
@@ -2339,16 +2405,17 @@
     {
       "id": "2026-11-09-2215-263",
       "date": "2026-11-09",
-      "start": "22:30",
-      "end": "23:00",
+      "start": "23:00",
+      "end": "23:30",
       "title": "洗漱与睡前准备",
       "category": "rest",
       "project": "life",
       "status": "planned",
-      "evidence": "proposed",
+      "evidence": "derived-from-confirmed-work-end",
       "commitment": "core",
-      "detail": "22:30 结束工作、洗漱并准备睡眠，23:00 入睡。",
-      "doneCriteria": "22:30 结束工作、洗漱并准备睡眠，23:00 入睡。"
+      "detail": "仅今天：23:00 结束工作，23:00–23:30 洗漱及睡前准备；暂排 23:30 入睡，其他日期维持原作息。",
+      "doneCriteria": "仅今天：23:00 结束工作，23:00–23:30 洗漱及睡前准备；暂排 23:30 入睡，其他日期维持原作息。",
+      "oneOff": true
     },
     {
       "id": "2026-11-10-0700-264",

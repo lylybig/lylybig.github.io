@@ -15,8 +15,10 @@ for(const file of monthFiles){
  for(const e of m.events){
   assert(!ids.has(e.id),'Duplicate event '+e.id);ids.add(e.id);assert(minutes(e.start)<minutes(e.end),'Invalid duration '+e.title);assert(m.days[e.date],'No day plan '+e.date);
   const override=m.days[e.date].sleepOverride;
+  const workEnd=m.days[e.date].workEndOverride;
   const explicitLateMeeting=override?.appliesToDate===e.date&&override.evidence==='user-confirmed'&&e.evidence==='user-confirmed'&&e.oneOff===true&&e.category==='fixed'&&e.end===override.start;
-  assert(e.start>='07:00'&&(e.end<='23:00'||explicitLateMeeting),'Sleep boundary '+e.date+' '+e.title);
+  const derivedPreparation=override?.appliesToDate===e.date&&override.evidence==='derived-from-confirmed-work-end'&&workEnd?.appliesToDate===e.date&&workEnd.evidence==='user-confirmed'&&e.category==='rest'&&e.title==='洗漱与睡前准备'&&e.oneOff===true&&e.start===workEnd.end&&e.end===override.start&&minutes(e.end)-minutes(e.start)===profile.workCadence.bedtimePreparationMinutes;
+  assert(e.start>='07:00'&&(e.end<='23:00'||explicitLateMeeting||derivedPreparation),'Sleep boundary '+e.date+' '+e.title);
  }
  for(const date of Object.keys(m.days)){
   const es=m.events.filter(e=>e.date===date).sort((a,b)=>a.start.localeCompare(b.start));
@@ -40,7 +42,14 @@ for(const file of monthFiles){
     if(day!==5&&e.category==='rest')assert(length<=30,'Extra rest beyond meals/bedtime '+date);
    }
    const override=m.days[date].sleepOverride;
-   if(override){assert.equal(override.appliesToDate,date,'Sleep exception must be date-specific');assert.equal(override.evidence,'user-confirmed','Sleep exception requires user instruction');assert(override.reason,'Missing sleep exception reason');}
+   if(override){
+    assert.equal(override.appliesToDate,date,'Sleep exception must be date-specific');assert(override.reason,'Missing sleep exception reason');
+    if(override.evidence==='derived-from-confirmed-work-end'){
+     const workEnd=m.days[date].workEndOverride;assert.equal(workEnd?.appliesToDate,date);assert.equal(workEnd.evidence,'user-confirmed');
+     assert.equal(minutes(override.start)-minutes(workEnd.end),profile.workCadence.bedtimePreparationMinutes,'Derived bedtime must preserve preparation duration');
+     assert(es.filter(e=>!nonWork.includes(e.category)).every(e=>e.end<=workEnd.end),'Work extends beyond agreed finish');
+    }else assert.equal(override.evidence,'user-confirmed','Sleep exception requires user instruction');
+   }
    assert.equal(es.at(-1).end,override?.start||'23:00','Missing bedtime '+date);
    assert.equal(m.days[date].planBudget.workMinutes,workload,'Displayed work budget mismatch '+date);
   }
