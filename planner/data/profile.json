@@ -135,8 +135,19 @@
         2,
         2
       ],
-      "focus": "校准稀疏路由论断，区分系数质量与重建保真，补共同 readout 及实用诊断",
-      "firstReplyTarget": "2026-11-11"
+      "focus": "用户负责两位 reviewer，Siying 负责一位；以解释、论断边界和证据出处为主，先写回应，不预排大规模重训。",
+      "firstReplyTarget": "2026-11-11",
+      "assignment": {
+        "userReviewerCount": 2,
+        "coauthor": "Siying",
+        "coauthorReviewerCount": 1,
+        "reviewerIdsConfirmed": false,
+        "source": "用户 2026-11-09 上午汇报周六讨论分工"
+      },
+      "effort": {
+        "initialActiveMinutes": 180,
+        "basis": "用户认为以解释为主、任务量较轻；两段各一位 reviewer，第三段合并核查，按真实草稿校准。"
+      }
     },
     {
       "id": "noisy",
@@ -182,23 +193,26 @@
     {
       "id": "jingyang",
       "title": "回复 Jingyang 的问题",
-      "due": "2026-11-09",
+      "due": "2026-11-10",
       "status": "未反馈",
-      "detail": "在行政窗口整理并回复；本系统不自动代发消息。"
+      "detail": "在行政窗口整理并回复；本系统不自动代发消息。 11-09 重排后，仅真正紧急的今天回复，其余明天批处理；这是内部跟进目标。",
+      "originalDue": "2026-11-09"
     },
     {
       "id": "coffee",
       "title": "回复咖啡邀请",
-      "due": "2026-11-09",
+      "due": "2026-11-10",
       "status": "未反馈",
-      "detail": "确认是否参加及可用时间。"
+      "detail": "确认是否参加及可用时间。 11-09 重排后，仅真正紧急的今天回复，其余明天批处理；这是内部跟进目标。",
+      "originalDue": "2026-11-09"
     },
     {
       "id": "english-materials",
       "title": "回复英语资料相关问题",
-      "due": "2026-11-09",
+      "due": "2026-11-10",
       "status": "未反馈",
-      "detail": "整理所需资料与请求。"
+      "detail": "整理所需资料与请求。 11-09 重排后，仅真正紧急的今天回复，其余明天批处理；这是内部跟进目标。",
+      "originalDue": "2026-11-09"
     },
     {
       "id": "course-deadlines",
@@ -210,9 +224,10 @@
     {
       "id": "compute",
       "title": "三篇证据与实验盘点、H100 试跑估时",
-      "due": "2026-11-08",
-      "status": "已知 20×H100；实验矩阵待整理",
-      "detail": "用户尚未整理各篇补实验，初步怀疑 GAUGE 最重。先逐项查已有证据、必要性、负责人和试跑耗时，再分配卡数。"
+      "due": "2026-11-09",
+      "status": "11-08 未开展工作，顺延今天",
+      "detail": "今天先做一页问题—证据—缺口表；GAUGE 一项最小配置和试跑。可用 20×H100，吞吐/ETA 先测量。",
+      "originalDue": "2026-11-08"
     }
   ],
   "workCadence": {

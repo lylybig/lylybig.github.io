@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-08",
+  "reportedAt": "2026-11-09T18:55:30.990Z",
+  "reportedOn": "2026-11-09",
+  "source": "chat",
+  "status": "processed",
+  "processedAt": "2026-11-09T18:55:30.990Z",
+  "rawNote": "我昨天周天躺了一天，啥也没干，。现在刚来上班，帮我根据事情轻重缓急，重新安排下时间表",
+  "completed": [],
+  "inProgress": [],
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "activeSpeakingMinutes": 0,
+  "activity": "休息一天，未开展工作（用户明确汇报）",
+  "nextActions": [
+    "11-09 下午问题分级与 GAUGE 最小配置",
+    "今晚两个 MoE 各一页明日更新",
+    "今天主动口语 75 分钟"
+  ],
+  "planAdjustments": [
+    "11-09 从 11:00 起执行剩余计划，早间旧计划归档，不补到夜里。",
+    "Bill 12:30 会面与明日 Kumar 13:00 汇报保留；今日 GAUGE 三个连续周期，两个 MoE 项目只整理最小更新。",
+    "ResNet：用户两位、Siying 一位，以解释为主；11-11 上午先留 2+1 小时，13/14 日重科研预算转给 Noisy Pairs / GAUGE。",
+    "今天口语 75 分钟，明起恢复原 75–90 分钟；不追补昨天口语。",
+    "三篇问题盘点由 11-08 顺延到 11-09；Noisy Pairs 提前定义澄清由 11-09 改到 11-11，其他正式截止不变。"
+  ]
+}
