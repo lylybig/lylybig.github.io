@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T21:06:03.701Z",
+  "updatedAt": "2026-11-10T19:10:49.504651Z",
   "events": {
     "2026-11-07-1600-0": {
       "done": false,
@@ -17,11 +17,63 @@
     },
     "2026-11-09-1230-20": {
       "done": true,
-      "updatedAt": "2026-11-09T21:06:02.228Z"
+      "updatedAt": "2026-11-10T00:25:15.318Z"
     },
     "2026-11-09-restart-1130-life": {
       "done": true,
       "updatedAt": "2026-11-09T21:06:03.701Z"
+    },
+    "2026-11-09-priorities-material-prep": {
+      "done": true,
+      "updatedAt": "2026-11-10T00:25:00.173Z"
+    },
+    "2026-11-09-restart-1310-gauge": {
+      "done": true,
+      "updatedAt": "2026-11-10T00:25:15.318Z"
+    },
+    "2026-11-09-restart-1420-gauge": {
+      "done": true,
+      "updatedAt": "2026-11-10T00:25:15.318Z"
+    },
+    "2026-11-09-restart-1530-gauge": {
+      "done": true,
+      "updatedAt": "2026-11-10T02:38:20.109Z"
+    },
+    "2026-11-09-restart-1750-english": {
+      "done": true,
+      "updatedAt": "2026-11-10T02:38:24.047Z"
+    },
+    "2026-11-09-restart-1640-english": {
+      "done": true,
+      "updatedAt": "2026-11-10T02:38:25.312Z"
+    },
+    "2026-11-09-restart-1830-moe-llm": {
+      "done": true,
+      "updatedAt": "2026-11-10T19:03:52.519Z"
+    },
+    "2026-11-09-restart-1940-moe-agent": {
+      "done": true,
+      "updatedAt": "2026-11-10T19:03:52.619Z"
+    },
+    "2026-11-09-restart-2050-english": {
+      "done": true,
+      "updatedAt": "2026-11-10T19:03:58.169Z"
+    },
+    "2026-11-09-restart-2200-life": {
+      "done": true,
+      "updatedAt": "2026-11-10T19:04:06.315Z"
+    },
+    "2026-11-10-focus-450-english": {
+      "done": true,
+      "updatedAt": "2026-11-10T19:04:16.266Z"
+    },
+    "2026-11-10-0830-29": {
+      "done": true,
+      "updatedAt": "2026-11-10T19:04:31.465Z"
+    },
+    "2026-11-10-focus-630-gauge": {
+      "done": false,
+      "updatedAt": "2026-11-10T19:04:31.465Z"
     }
   },
   "journals": {
@@ -50,16 +102,17 @@
     },
     "2026-11-09": {
       "status": "draft",
-      "updatedAt": "2026-11-09T21:06:03.701Z",
+      "updatedAt": "2026-11-10T19:04:06.315Z",
       "needsPlanning": false,
-      "processedAt": "2026-11-09T21:20:07.931894Z",
-      "planningNote": "已保留三项真实勾选，结合今天午饭改期与 23:00 收工指示重排。未提交的晚间草稿状态保留。",
-      "planAdjustments": [
-        "今天未完成任务总体顺延半小时，保留 Bill 会面及已勾选的三项完成记录。",
-        "午饭改为 13:50–14:20，外卖预计 13:36 到；首项分级任务饭前 10 分钟准备、饭后 50 分钟接续。",
-        "仅将 GAUGE 有条件试跑延续由 60 分钟缩至 30 分钟；核心任务、两份 MoE 更新与 75 分钟主动口语保留。",
-        "用户确认今天 23:00 收工；沿用原有 30 分钟睡前准备，推算 23:30 就寝，其他日期作息不变。"
-      ]
+      "processedAt": "2026-11-10T19:10:49.504651Z",
+      "planningNote": "已结合截至 2026-11-10T19:04:06.315Z 的本地勾选与 11-10 用户优先级/真实日历重排；仍保留草稿标识，未知实际结果与分钟不补造。"
+    },
+    "2026-11-10": {
+      "status": "draft",
+      "updatedAt": "2026-11-10T19:04:31.465Z",
+      "needsPlanning": false,
+      "processedAt": "2026-11-10T19:10:49.504651Z",
+      "planningNote": "已结合截至 2026-11-10T19:04:31.465Z 的本地勾选与 11-10 用户优先级/真实日历重排；仍保留草稿标识，未知实际结果与分钟不补造。"
     }
   }
 }

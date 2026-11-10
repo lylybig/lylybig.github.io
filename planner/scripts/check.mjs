@@ -90,7 +90,14 @@ for(const file of monthFiles){
   assert.equal(es.filter(e=>work(e)&&e.commitment!=='continuation').reduce((n,e)=>n+length(e),0),day.planBudget.coreMinutes,'Core budget '+date);
   assert.equal(es.filter(e=>e.commitment==='continuation').reduce((n,e)=>n+length(e),0),day.planBudget.continuationMinutes,'Continuation budget '+date);
   const research=es.filter(e=>['research','moe'].includes(e.category)),projects=new Set(research.map(e=>e.project)),dow=new Date(date+'T12:00:00Z').getUTCDay();
-  assert(projects.size<=(dow===1?3:2),'Too many research contexts '+date);
+  const contextOverride=day.researchContextOverride;
+  if(contextOverride){
+   assert.equal(contextOverride.appliesToDate,date,'Research exception must be date-specific');
+   assert.equal(contextOverride.evidence,'user-confirmed','Research exception requires user instruction');
+   assert(contextOverride.reason,'Missing research exception reason');
+   assert(Number.isInteger(contextOverride.maxProjects)&&contextOverride.maxProjects>=2&&contextOverride.maxProjects<=4,'Unbounded research exception');
+  }
+  assert(projects.size<=(contextOverride?.maxProjects??(dow===1?3:2)),'Too many research contexts '+date);
   assert(research.every(e=>length(e)>=30&&e.minimumOutcome&&e.estimate?.activeMinutes===length(e)),'Fragmented or unscoped research '+date);
   const morning=research.filter(e=>e.end<='12:00');assert(new Set(morning.map(e=>e.project)).size<=1,'Morning focus switching '+date);
   assert(day.priorities.length<=3,'Too many promised outcomes '+date);

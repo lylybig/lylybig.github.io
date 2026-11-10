@@ -123,7 +123,12 @@
         2
       ],
       "focus": "候选集覆盖与偏差、受控消融、开销、交互历史与理论假设",
-      "firstReplyTarget": "2026-11-10"
+      "firstReplyTarget": "2026-11-11",
+      "targetChange": {
+        "originalDate": "2026-11-10",
+        "changedAt": "2026-11-10T19:10:49.504651Z",
+        "reason": "11-10 用户要求优先 Kumar、MS-enhancement、口语，并加入中午 Journal Club。"
+      }
     },
     {
       "id": "resnet",
@@ -188,7 +193,7 @@
       "title": "处理 UW 注册问题",
       "due": "2026-11-09",
       "status": "未反馈",
-      "detail": "先确认具体阻碍、截止日期及负责窗口；如更早到期，立即提前。"
+      "detail": "先确认具体阻碍、截止日期及负责窗口；如更早到期，立即提前。 11-09 截止核实工作块已勾选；未提供实际截止或事项解决结论，仍待记录。"
     },
     {
       "id": "jingyang",
@@ -219,14 +224,14 @@
       "title": "录入英语作业与最终考核日期",
       "due": "2026-11-09",
       "status": "待确认",
-      "detail": "从当前课程 Canvas / syllabus 核实，不能用校历教学结束日代替。"
+      "detail": "从当前课程 Canvas / syllabus 核实，不能用校历教学结束日代替。 11-09 截止核实工作块已勾选；未提供实际截止或事项解决结论，仍待记录。"
     },
     {
       "id": "compute",
       "title": "三篇证据与实验盘点、H100 试跑估时",
       "due": "2026-11-09",
-      "status": "11-08 未开展工作，顺延今天",
-      "detail": "今天先做一页问题—证据—缺口表；GAUGE 一项最小配置和试跑。可用 20×H100，吞吐/ETA 先测量。",
+      "status": "11-09 配置/试跑工作块已勾选，具体日志与结果待汇报",
+      "detail": "用户已勾选三篇分级、GAUGE 最小配置与延续块；不推断有何科学结果。后续先读真实配置/日志和 ETA，再决定 20×H100 分配。",
       "originalDue": "2026-11-08"
     }
   ],
@@ -264,5 +269,41 @@
     "handoff": "切换前用最后 2–3 分钟记：停在哪里、文件/命令、下一步；休息后沿原问题继续。",
     "exceptions": "周一两个 MoE 项目集中准备周二汇报，可能超过两个科研主题；固定课会多的日期减少新增科研成果。",
     "positiveFeedback": "肯定可核验的结果、排除假设、定位错误、清楚表达和及时求助。核心完成率与延续投入分开，不用填满时间证明价值。"
-  }
+  },
+  "calendarObservations": [
+    {
+      "date": "2026-11-10",
+      "start": "12:00",
+      "end": "13:00",
+      "title": "Computational Proteomics Journal Club",
+      "location": "GNOM-S448",
+      "verifiedAt": "2026-11-10T19:10:49.504651Z",
+      "source": "Google Calendar / Noble lab subset",
+      "recurrenceObserved": "Weekly on Tuesday",
+      "planningScope": "仅纳入用户确认参加的今日实例，未来不自动全部增加。",
+      "subsequentChange": "用户随后取消原计划 13:00–14:00 Kumar；Journal Club 保留。"
+    },
+    {
+      "date": "2026-11-11",
+      "start": "14:00",
+      "end": "14:30",
+      "title": "ms-res-enhance",
+      "location": null,
+      "meetingUrl": null,
+      "verifiedAt": "2026-11-10T19:10:49.504651Z",
+      "source": "Google Calendar / Noble lab subset",
+      "planningScope": "用户指出的本周三实例；未看到重复规则，不推断每周。"
+    }
+  ],
+  "oneOffCancellations": [
+    {
+      "date": "2026-11-10",
+      "title": "Kumar 周进展汇报",
+      "start": "13:00",
+      "end": "14:00",
+      "source": "user-confirmed",
+      "reason": "用户明确取消今日实例；未来周例保留。",
+      "cancelledAt": "2026-11-10T19:12:17.087237Z"
+    }
+  ]
 }

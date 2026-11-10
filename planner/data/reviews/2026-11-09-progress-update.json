@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-09",
+  "source": "local-progress",
+  "reportType": "checkbox-progress-update",
+  "status": "processed",
+  "processedAt": "2026-11-10T19:10:49.504651Z",
+  "rawNote": null,
+  "completed": [
+    {
+      "eventId": "2026-11-09-restart-1100-noble",
+      "title": "Bill 会面准备 · 一页真实更新",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-09T21:06:00.264Z"
+    },
+    {
+      "eventId": "2026-11-09-1230-20",
+      "title": "Bill 一对一",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T00:25:15.318Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-1130-life",
+      "title": "注册、课程硬截止与必要邮件",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-09T21:06:03.701Z"
+    },
+    {
+      "eventId": "2026-11-09-priorities-material-prep",
+      "title": "三篇问题分级 · 打开材料与列提纲",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T00:25:00.173Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-1310-gauge",
+      "title": "三篇问题分级 → GAUGE 优先项",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T00:25:15.318Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-1420-gauge",
+      "title": "GAUGE · 最小受控配置与启动条件",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T00:25:15.318Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-1530-gauge",
+      "title": "GAUGE · 有条件试跑与 ETA（30 分钟延续）",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T02:38:20.109Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-1750-english",
+      "title": "同题口语反馈记录",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T02:38:24.047Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-1640-english",
+      "title": "口语主练 · mini lesson 与追问",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T02:38:25.312Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-1830-moe-llm",
+      "title": "MoE-LLM · 明日 Kumar 更新",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T19:03:52.519Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-1940-moe-agent",
+      "title": "MoE-agent-RL · 明日 Kumar 更新",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T19:03:52.619Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-2050-english",
+      "title": "口语复练与真实 ENGL 作业",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T19:03:58.169Z"
+    },
+    {
+      "eventId": "2026-11-09-restart-2200-life",
+      "title": "邮件、reviewer 新问题与晚间汇报",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T19:04:06.315Z"
+    }
+  ],
+  "inProgress": null,
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "activeSpeakingMinutes": null,
+  "nextActions": [
+    "11-10 Kumar 使用已勾选的两份更新；会后按真实反馈推进。",
+    "具体实验结论、口语实际分钟、精力和睡眠仍待本人汇报。"
+  ],
+  "planAdjustments": [
+    "不重复安排昨日已勾选的材料准备。",
+    "保留昨日原始计划、ID、勾选时间，不把工作块完成等同于论文提交或实验成功。"
+  ]
+}

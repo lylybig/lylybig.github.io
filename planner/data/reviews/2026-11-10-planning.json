@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "reportedAt": "2026-11-10T19:10:49.504651Z",
+  "source": "chat-and-local-progress-and-calendar",
+  "reportType": "calendar-priority-replan",
+  "status": "processed",
+  "processedAt": "2026-11-10T19:12:17.087237Z",
+  "rawNote": "看下google canlader，中午12点-1点的会议我们需要去参加下\n今天多花一些时间在kumar的项目，ms-enhance项目，还有英语口语上\n你看下google canlendar，我们周三下午还有个ms-enhancement的讨论，只有半小时\n原定 **13:00–14:00 Kumar 汇报 取消吧**",
+  "completed": [
+    {
+      "eventId": "2026-11-10-focus-450-english",
+      "title": "口语热身 · TA 解释与答问",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T19:04:16.266Z"
+    },
+    {
+      "eventId": "2026-11-10-0830-29",
+      "title": "ENGL 105 B",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T19:04:31.465Z"
+    }
+  ],
+  "inProgress": null,
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "activeSpeakingMinutes": null,
+  "calendarEvidence": [
+    {
+      "date": "2026-11-10",
+      "start": "12:00",
+      "end": "13:00",
+      "title": "Computational Proteomics Journal Club",
+      "location": "GNOM-S448",
+      "verifiedAt": "2026-11-10T19:10:49.504651Z",
+      "source": "Google Calendar / Noble lab subset",
+      "recurrenceObserved": "Weekly on Tuesday",
+      "planningScope": "仅纳入用户确认参加的今日实例，未来不自动全部增加。"
+    },
+    {
+      "date": "2026-11-11",
+      "start": "14:00",
+      "end": "14:30",
+      "title": "ms-res-enhance",
+      "location": null,
+      "meetingUrl": null,
+      "verifiedAt": "2026-11-10T19:10:49.504651Z",
+      "source": "Google Calendar / Noble lab subset",
+      "planningScope": "用户指出的本周三实例；未看到重复规则，不推断每周。"
+    }
+  ],
+  "nextActions": [
+    "11:30–12:00 午饭，12:00–13:00 Journal Club。",
+    "13:10 起两个 MoE 项目按现有关键问题连续推进，今天没有 Kumar 汇报。",
+    "16:40 起接续 MS 状态表与验证，明天会前核实讨论地点/入口。"
+  ],
+  "planAdjustments": [
+    "今日仅调整 11:30 后安排，上午原事件和所有实际标记保留。",
+    "今天 11:30 午饭，12:00 Journal Club，13:00 Kumar；会后两个 MoE 各一小时，再连续三小时 MS-enhancement。",
+    "主动口语计划 75→90 分钟，保留已勾选热身；课堂不计口语分钟。",
+    "周三 14:00–14:30 MS-enhancement 真实日历实例保留；地点/视频入口未知，先核实。",
+    "GAUGE 首稿内部目标延至 11-11，ResNet 11-11 不变；Noisy Pairs 定义/首稿集中 11-12，11-13 原有时段继续补强；正式截止不改。",
+    "用户随后取消仅今天 13:00–14:00 Kumar；未找到日历实例，未修改外部日历或通知他人。科研块改依据现有问题，不虚构会议反馈。MoE-LLM 增到两个连续工作小时，MoE-agent-RL 一小时；MS 3 小时、口语 90 分钟不减。"
+  ],
+  "histories": [
+    "data/reviews/history/2026-11-10-plan-before-calendar-priority-update.json",
+    "data/reviews/history/2026-11-11-plan-before-calendar-priority-update.json",
+    "data/reviews/history/2026-11-12-plan-before-calendar-priority-update.json"
+  ],
+  "updatedAt": "2026-11-10T19:12:17.087237Z"
+}
