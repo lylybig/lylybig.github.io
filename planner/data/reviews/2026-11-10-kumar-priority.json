@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "source": "chat",
+  "reportType": "priority-change",
+  "reportedAt": "2026-11-10T19:27:38.797967Z",
+  "status": "processed",
+  "processedAt": "2026-11-10T19:27:38.797967Z",
+  "rawNote": "今天的GUAGE就不搞了。全部用到kumar的项目。",
+  "completed": null,
+  "inProgress": null,
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "nextActions": [
+    "今天 GAUGE 不做；原计划预算全部转给 Kumar，两项目顺序推进。"
+  ],
+  "planAdjustments": [
+    "原 GAUGE 60 分钟计划预算转入 MoE-agent-RL，与已有下午块衔接。",
+    "保留实际完成记录与原计划归档；原时段工作内容/实际分钟未知，未自动记完成。",
+    "其余会议、MS-enhancement、口语、用餐及小休不变。"
+  ],
+  "historyPath": "data/reviews/history/2026-11-10-plan-before-kumar-reallocation.json"
+}

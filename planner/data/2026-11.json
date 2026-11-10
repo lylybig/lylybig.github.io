@@ -138,7 +138,7 @@
       "title": "Kumar / MS 讨论与三篇首稿分日推进",
       "goals": [
         "11-09 本地已勾选 GAUGE 配置、两份 MoE 更新与英语块；具体结果、实际分钟和阻塞仍待汇报。",
-        "11-10 参加 12:00 Journal Club；13:00 Kumar 汇报按用户要求取消，改为 MoE-LLM 两小时、MoE-agent-RL 一小时、MS-enhancement 三小时、主动口语 90 分钟。",
+        "11-10 参加 12:00 Journal Club；13:00 Kumar 汇报按用户要求取消，改为 MoE-LLM 两小时、MoE-agent-RL 两小时（含原 GAUGE 预算）、MS-enhancement 三小时、主动口语 90 分钟。 今天 GAUGE 待办取消，原时段实际完成未知。",
         "11-11 上午 ResNet 两位 reviewer 解释稿；14:00–14:30 MS-enhancement 讨论；下午晚间 GAUGE 可读首稿内部目标。",
         "11-12 Noisy Pairs 定义、例子与首稿集中推进；11-13 原有时段用于缺口/追问，不额外堆到今天。",
         "正式讨论 11-18 AoE；主要内容 11-16 收敛。正常 23:00–07:00，周五 18:00 后完整休息；11-09 历史单次例外保留。"
@@ -148,14 +148,14 @@
       "workMinutes": 4700,
       "breakMinutes": 610,
       "projectMinutes": {
-        "noble": 460,
-        "life": 560,
-        "gauge": 870,
         "english": 820,
+        "gauge": 810,
+        "life": 560,
+        "moe-agent": 540,
         "moe-llm": 180,
-        "moe-agent": 480,
-        "resnet": 180,
-        "noisy": 1150
+        "noble": 460,
+        "noisy": 1150,
+        "resnet": 180
       },
       "coreMinutes": 3390,
       "continuationMinutes": 1310,
@@ -368,12 +368,12 @@
     },
     "2026-11-10": {
       "priorities": [
-        "Kumar 项目：今天汇报取消。MoE-LLM 两个连续工作小时、MoE-agent-RL 一小时，各落实一个现有关键问题。",
+        "Kumar 项目：今天不做 GAUGE，原 60 分钟预算全部转入 MoE-agent-RL；MoE-LLM 与 Agent-RL 各约 2 小时计划预算，实际推进按记录。",
         "MS-enhancement：连续 3 小时准备明日 14:00 讨论；核心是一页真实状态表，延续做最小流程验证。",
         "口语：主动开口预算由 75 增至 90 分钟；课堂听讲与书面作业另计。"
       ],
       "feedback": "已读取 2 项本地完成标记，尚无完整文字复盘；实际分钟/科研结果待汇报。",
-      "note": "上午已发生/已开始安排保留；从 11:30 起按新优先级重排。未把计划或勾选推断为已取得科研结论。",
+      "note": "按最新用户要求取消今天所有 GAUGE 待办，原计划预算全部转入 Kumar 两个项目；固定会议、MS-enhancement、用餐、小休和口语保留。原时段实际执行未知，不自动记为已完成。",
       "planBudget": {
         "workMinutes": 730,
         "fixedMinutes": 170,
@@ -384,6 +384,12 @@
         "activeSpeakingMinutes": 90
       },
       "focusWindows": [
+        {
+          "start": "10:30",
+          "end": "11:30",
+          "project": "moe-agent",
+          "goal": "原 GAUGE 未完成预算转入 Kumar，实际已用分钟未知；下午同题继续。"
+        },
         {
           "start": "10:30",
           "end": "11:30",
@@ -411,12 +417,12 @@
       ],
       "rhythm": "同一问题连续 2–3 个工作周期；每工作 60 分钟休息 10 分钟。延续块吸收估时误差，不新增硬交付。",
       "estimateReview": "晚间补记实际主动分钟、机器 ETA、阻塞与口语分钟，再调整范围；不把延期全堆到明天。",
-      "oneOffNote": "今天 13:00–14:00 Kumar 汇报已按用户要求取消；未修改外部会议或通知他人。11:30–12:00 午饭，12:00–13:00 参加 Journal Club（GNOM-S448）。13:10–15:20 MoE-LLM（含 10 分钟小休），15:30–16:30 MoE-agent-RL；16:40–20:20 MS-enhancement（工作 3 小时，含晚饭与小休）。主动口语预算 90 分钟，22:10 汇报，23:00 睡。GAUGE 首稿内部目标移到 11-11，Noisy Pairs 集中到 11-12。",
+      "oneOffNote": "今天 13:00–14:00 Kumar 汇报已按用户要求取消；未修改外部会议或通知他人。11:30–12:00 午饭，12:00–13:00 参加 Journal Club（GNOM-S448）。13:10–15:20 MoE-LLM（含 10 分钟小休），15:30–16:30 MoE-agent-RL；16:40–20:20 MS-enhancement（工作 3 小时，含晚饭与小休）。主动口语预算 90 分钟，22:10 汇报，23:00 睡。今天 GAUGE 不做，原 60 分钟计划预算全部转给 Kumar（并入 Agent-RL）；原时段实际分钟未知，未自动记完成。GAUGE 首稿内部目标仍为 11-11，Noisy Pairs 集中到 11-12。",
       "researchContextOverride": {
         "appliesToDate": "2026-11-10",
-        "maxProjects": 4,
+        "maxProjects": 3,
         "evidence": "user-confirmed",
-        "reason": "用户 11-10 明确要求增加 Kumar 两项目、MS-enhancement 与口语；上午已开始 GAUGE 保留，下午只顺序推进两个 MoE 与 MS-enhancement，今天不再切回 GAUGE。"
+        "reason": "用户最新要求今天 GAUGE 不做，原预算全部转给 Kumar；今日科研主题为 MoE-LLM、MoE-agent-RL 与原有 MS-enhancement。"
       },
       "cancelledEvents": [
         {
@@ -435,6 +441,34 @@
           "cancelledAt": "2026-11-10T19:12:17.087237Z",
           "reason": "用户明确要求取消今天 13:00–14:00 汇报。",
           "scope": "仅计划；本次日历中未找到该实例，未删除或修改外部日历，也未通知他人。"
+        },
+        {
+          "id": "2026-11-10-focus-630-gauge",
+          "date": "2026-11-10",
+          "start": "10:30",
+          "end": "11:30",
+          "title": "GAUGE · 首轮回复证据装配 / 第 1 段",
+          "category": "research",
+          "project": "gauge",
+          "status": "cancelled",
+          "evidence": "proposed",
+          "detail": "检查昨晚试跑状态，产出一项结果表/错误定位；未返回则写真实 ETA，不另开新实验。",
+          "doneCriteria": "检查昨晚试跑状态，产出一项结果表/错误定位；未返回则写真实 ETA，不另开新实验。",
+          "commitment": "core",
+          "minimumOutcome": "检查昨晚试跑状态，产出一项结果表/错误定位；未返回则写真实 ETA，不另开新实验。",
+          "stretchOutcome": "最小交付完成后再深化同一问题；不自动换到其他项目。",
+          "focusGroup": "2026-11-10-gauge",
+          "dependsOn": "所需文件、数据或已返回日志；缺失时先写依赖与取得办法。",
+          "estimate": {
+            "activeMinutes": 60,
+            "confidence": "初估；按实际记录校准",
+            "machineWallMinutes": null
+          },
+          "resumeHint": "末尾 2–3 分钟记录当前文件/命令、未解决点和回来后的第一步。",
+          "focusGoal": "检查昨晚试跑状态，产出一项结果表/错误定位；未返回则写真实 ETA，不另开新实验。",
+          "cancelledAt": "2026-11-10T19:27:38.797967Z",
+          "reason": "用户明确表示今天 GAUGE 不做，原计划预算全部转给 Kumar 项目。",
+          "scope": "只调整尚未完成的计划归属；此前实际工作分钟未知，不改写为 Kumar 已完成。"
         }
       ]
     },
@@ -2543,25 +2577,26 @@
       "date": "2026-11-10",
       "start": "10:30",
       "end": "11:30",
-      "title": "GAUGE · 首轮回复证据装配 / 第 1 段",
-      "category": "research",
-      "project": "gauge",
+      "title": "MoE-agent-RL · 原 GAUGE 预算转入",
+      "category": "moe",
+      "project": "moe-agent",
       "status": "planned",
-      "evidence": "proposed",
-      "detail": "检查昨晚试跑状态，产出一项结果表/错误定位；未返回则写真实 ETA，不另开新实验。",
-      "doneCriteria": "检查昨晚试跑状态，产出一项结果表/错误定位；未返回则写真实 ETA，不另开新实验。",
+      "evidence": "user-confirmed",
+      "detail": "按最新要求将今天未完成的 GAUGE 计划预算全部转入 Kumar 项目。此原时段的调整只记录计划归属，实际已用分钟与成果未知；围绕 Agent-RL 当前问题整理一项配置、日志诊断或明确阻塞，下午同题继续。",
+      "doneCriteria": "记录 Agent-RL 一项现有证据、可运行配置或明确阻塞；不把计划预算当成实际完成。",
       "commitment": "core",
-      "minimumOutcome": "检查昨晚试跑状态，产出一项结果表/错误定位；未返回则写真实 ETA，不另开新实验。",
+      "minimumOutcome": "围绕 Agent-RL 当前同一问题留下一项可核对推进。",
       "stretchOutcome": "最小交付完成后再深化同一问题；不自动换到其他项目。",
-      "focusGroup": "2026-11-10-gauge",
-      "dependsOn": "所需文件、数据或已返回日志；缺失时先写依赖与取得办法。",
+      "focusGroup": "2026-11-10-moe-agent",
+      "dependsOn": "现有代码、日志、配置或确切阻塞；不要求临时完成新实验。",
       "estimate": {
         "activeMinutes": 60,
         "confidence": "初估；按实际记录校准",
         "machineWallMinutes": null
       },
       "resumeHint": "末尾 2–3 分钟记录当前文件/命令、未解决点和回来后的第一步。",
-      "focusGoal": "检查昨晚试跑状态，产出一项结果表/错误定位；未返回则写真实 ETA，不另开新实验。"
+      "focusGoal": "与下午 Agent-RL 时段衔接，原 GAUGE 60 分钟预算全部转入 Kumar，实际分钟以本人汇报为准。",
+      "rescheduledFromProject": "gauge"
     },
     {
       "id": "2026-11-10-1145-32",
