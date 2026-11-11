@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10T19:10:49.504651Z",
+  "updatedAt": "2026-11-11T19:51:05.540777Z",
   "events": {
     "2026-11-07-1600-0": {
       "done": false,
@@ -72,8 +72,32 @@
       "updatedAt": "2026-11-10T19:04:31.465Z"
     },
     "2026-11-10-focus-630-gauge": {
+      "done": true,
+      "updatedAt": "2026-11-10T22:40:33.142Z"
+    },
+    "2026-11-10-calendar-update-1200-noble": {
+      "done": true,
+      "updatedAt": "2026-11-10T22:40:38.347Z"
+    },
+    "2026-11-10-calendar-update-1410-moe-llm": {
+      "done": true,
+      "updatedAt": "2026-11-11T00:06:46.110Z"
+    },
+    "2026-11-10-calendar-update-1420-moe-llm-continuation": {
+      "done": true,
+      "updatedAt": "2026-11-11T00:06:51.772Z"
+    },
+    "2026-11-10-calendar-update-1520-moe-agent": {
+      "done": true,
+      "updatedAt": "2026-11-11T01:04:25.158Z"
+    },
+    "2026-11-10-calendar-update-1740-noble": {
       "done": false,
-      "updatedAt": "2026-11-10T19:04:31.465Z"
+      "updatedAt": "2026-11-11T01:04:29.856Z"
+    },
+    "2026-11-10-calendar-update-1630-noble": {
+      "done": true,
+      "updatedAt": "2026-11-11T02:56:47.115Z"
     }
   },
   "journals": {
@@ -109,10 +133,18 @@
     },
     "2026-11-10": {
       "status": "draft",
-      "updatedAt": "2026-11-10T19:04:31.465Z",
+      "updatedAt": "2026-11-11T02:56:47.115Z",
       "needsPlanning": false,
-      "processedAt": "2026-11-10T19:10:49.504651Z",
-      "planningNote": "已结合截至 2026-11-10T19:04:31.465Z 的本地勾选与 11-10 用户优先级/真实日历重排；仍保留草稿标识，未知实际结果与分钟不补造。"
+      "processedAt": "2026-11-11T19:51:05.540777Z",
+      "planningNote": "已读取最新 8 项本地完成标记并用于 11-11 重排；仍为草稿，未补造科研结果、实际口语分钟或晚间活动。"
+    },
+    "2026-11-11": {
+      "status": "submitted",
+      "updatedAt": "2026-11-11T19:51:05.540777Z",
+      "needsPlanning": false,
+      "processedAt": "2026-11-11T19:51:05.540777Z",
+      "reviewPath": "data/reviews/2026-11-11-planning.json",
+      "source": "chat"
     }
   }
 }

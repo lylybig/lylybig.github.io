@@ -123,12 +123,13 @@
         2
       ],
       "focus": "候选集覆盖与偏差、受控消融、开销、交互历史与理论假设",
-      "firstReplyTarget": "2026-11-11",
+      "firstReplyTarget": "2026-11-13",
       "targetChange": {
-        "originalDate": "2026-11-10",
-        "changedAt": "2026-11-10T19:10:49.504651Z",
-        "reason": "11-10 用户要求优先 Kumar、MS-enhancement、口语，并加入中午 Journal Club。"
-      }
+        "originalDate": "2026-11-11",
+        "changedAt": "2026-11-11T19:51:05.540777Z",
+        "reason": "11-11 约中午刚开始工作，用户保留 ResNet 与 MoE-LLM；今天两小时核心回应，完整可读首稿用 11-13 原有 GAUGE 上午时段完成。"
+      },
+      "coreResponseTarget": "2026-11-11"
     },
     {
       "id": "resnet",
@@ -141,7 +142,7 @@
         2
       ],
       "focus": "用户负责两位 reviewer，Siying 负责一位；以解释、论断边界和证据出处为主，先写回应，不预排大规模重训。",
-      "firstReplyTarget": "2026-11-11",
+      "firstReplyTarget": "2026-11-12",
       "assignment": {
         "userReviewerCount": 2,
         "coauthor": "Siying",
@@ -152,6 +153,12 @@
       "effort": {
         "initialActiveMinutes": 180,
         "basis": "用户认为以解释为主、任务量较轻；两段各一位 reviewer，第三段合并核查，按真实草稿校准。"
+      },
+      "ownResponsesTarget": "2026-11-11",
+      "targetChange": {
+        "originalDate": "2026-11-11",
+        "changedAt": "2026-11-11T19:51:05.540777Z",
+        "reason": "今天晚间写用户两位 reviewer，合并核查使用明晚原 Noisy Pairs 延续，不新增工时。"
       }
     },
     {

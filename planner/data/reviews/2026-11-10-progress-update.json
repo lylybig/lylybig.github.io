@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "reportType": "checkbox-progress-update",
+  "source": "local-progress",
+  "status": "processed",
+  "processedAt": "2026-11-11T19:51:05.540777Z",
+  "rawNote": null,
+  "completed": [
+    {
+      "eventId": "2026-11-10-focus-450-english",
+      "title": "口语热身 · TA 解释与答问",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T19:04:16.266Z"
+    },
+    {
+      "eventId": "2026-11-10-0830-29",
+      "title": "ENGL 105 B",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T19:04:31.465Z"
+    },
+    {
+      "eventId": "2026-11-10-focus-630-gauge",
+      "title": "MoE-agent-RL · 原 GAUGE 预算转入",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T22:40:33.142Z"
+    },
+    {
+      "eventId": "2026-11-10-calendar-update-1200-noble",
+      "title": "Computational Proteomics Journal Club",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-10T22:40:38.347Z"
+    },
+    {
+      "eventId": "2026-11-10-calendar-update-1410-moe-llm",
+      "title": "MoE-LLM · 当前最重要问题与最小推进",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-11T00:06:46.110Z"
+    },
+    {
+      "eventId": "2026-11-10-calendar-update-1420-moe-llm-continuation",
+      "title": "MoE-LLM · 同一问题深入与验证",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-11T00:06:51.772Z"
+    },
+    {
+      "eventId": "2026-11-10-calendar-update-1520-moe-agent",
+      "title": "MoE-agent-RL · 最小验收与当前阻塞",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-11T01:04:25.158Z"
+    },
+    {
+      "eventId": "2026-11-10-calendar-update-1630-noble",
+      "title": "MS-enhancement · DIA 接入与训练流程盘点",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-11T02:56:47.115Z"
+    }
+  ],
+  "inProgress": null,
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "activeSpeakingMinutes": null,
+  "nextActions": [
+    "MS 会前沿用昨日已勾选状态表；未勾选验证块不推断已完成。",
+    "MoE-LLM 接续昨日文件与命令推进一项问题。"
+  ],
+  "planAdjustments": [
+    "不要求重新从头准备昨日已勾选材料。",
+    "实际科研结论、主动口语分钟、睡眠未知；未勾选晚间块保留未知，不当作未做或自动补课。"
+  ]
+}

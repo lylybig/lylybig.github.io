@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "source": "chat-and-local-progress",
+  "reportType": "late-start-replan",
+  "reportedAt": "2026-11-11T19:51:05.540777Z",
+  "status": "processed",
+  "processedAt": "2026-11-11T19:51:05.540777Z",
+  "rawNote": "我刚刚才才开始工作，帮我规划下时间，我以后一定早睡早起\n可能还要花一部分时间到Resnet-MoE上\n可能还要花一部分时间到MoE-LLM上",
+  "completed": [],
+  "inProgress": null,
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "activeSpeakingMinutes": null,
+  "reportedWorkStartApprox": "11:46",
+  "nextActions": [
+    "先打开已做的 MS 状态表和今日材料，12:00 午饭。",
+    "按顺序完成 MS 讨论、GAUGE 核心回应、MoE-LLM 一项推进、ResNet 两份解释。",
+    "22:10 汇报实际进度，22:30 关工作，23:00 睡；未完成缩范围，不靠熬夜。"
+  ],
+  "planAdjustments": [
+    "原上午计划归档，今日从中午剩余时间执行，不默认完成旧口语或 ResNet。",
+    "14:00–14:30 MS 讨论保留，会前 35 分钟沿用已勾选状态表。",
+    "GAUGE 两小时核心回应，17:00 MoE-LLM 一小时，18:30 起 ResNet 两个连续小时；三科研主题为用户明确要求的单日例外。",
+    "今日主动口语 40+50=90；22:30 收工、23:00 睡，明日起恢复 07:00 起床目标，实际睡眠待汇报。",
+    "ResNet 合并核查移到 11-12 原有一小时延续；GAUGE 可读首稿移到 11-13 原有上午时段，Noisy Pairs 11-12 与 16/18 日关键节点保留。"
+  ],
+  "historyPath": "data/reviews/history/2026-11-11-plan-before-nov11-restart.json"
+}
