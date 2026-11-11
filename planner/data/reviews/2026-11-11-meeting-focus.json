@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "source": "chat",
+  "reportType": "meeting-focus-replan",
+  "status": "processed",
+  "reportedAt": "2026-11-11T20:16:10.610345Z",
+  "processedAt": "2026-11-11T20:16:10.610345Z",
+  "rawNote": "我觉得任务需要调整下，到2点直接集中在开会上吧",
+  "interpretation": "当前约 12:14；按午饭后至 14:00 集中准备 MS-enhancement 讨论理解，原 14:00–14:30 正式会议时间不改。",
+  "completed": null,
+  "inProgress": null,
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "activeSpeakingMinutes": null,
+  "nextActions": [
+    "会前只整理同一份 MS 状态表、关键日志、讨论问题与入会方式。",
+    "15:50 会后口语主练，晚间复练，主动口语预算共 90 分钟。"
+  ],
+  "planAdjustments": [
+    "12:30–13:30 MS 同题准备；13:30 小休 10 分钟；13:40–14:00 核对材料与入会方式。",
+    "原口语块稳定 ID 保留，移至 15:50–16:50；替换 GAUGE 的可选延续，不增加今晚负荷。",
+    "GAUGE 关键回应一小时、MoE-LLM 一小时、ResNet 两小时保留；首稿内部目标与正式截止均不变。",
+    "未改变任何完成标记；原计划已归档。"
+  ],
+  "historyPath": "data/reviews/history/2026-11-11-plan-before-ms-meeting-focus.json"
+}

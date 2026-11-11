@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11T19:51:05.540777Z",
+  "updatedAt": "2026-11-11T20:16:10.610345Z",
   "events": {
     "2026-11-07-1600-0": {
       "done": false,
@@ -140,11 +140,13 @@
     },
     "2026-11-11": {
       "status": "submitted",
-      "updatedAt": "2026-11-11T19:51:05.540777Z",
+      "updatedAt": "2026-11-11T20:16:10.610345Z",
       "needsPlanning": false,
-      "processedAt": "2026-11-11T19:51:05.540777Z",
+      "processedAt": "2026-11-11T20:16:10.610345Z",
       "reviewPath": "data/reviews/2026-11-11-planning.json",
-      "source": "chat"
+      "source": "chat",
+      "planningNote": "已处理聊天中的会前集中 MS 要求；原始重启汇报和本次调整分别保留，未改变实际完成标记。",
+      "latestPlanningReviewPath": "data/reviews/2026-11-11-meeting-focus.json"
     }
   }
 }
