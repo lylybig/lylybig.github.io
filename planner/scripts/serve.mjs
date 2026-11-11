@@ -7,6 +7,15 @@ import {createLocalStore} from './local-store.mjs';
 
 const defaultRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.md':'text/plain; charset=utf-8','.jpg':'image/jpeg','.png':'image/png'};
+function syncOutcome(output){
+ const records=[];
+ for(const line of String(output||'').split('\n')){try{records.push(JSON.parse(line));}catch{}}
+ const git=records.findLast(r=>r?.status==='synchronized'&&typeof r.remote==='string'&&r.local===r.remote);
+ const published=records.findLast(r=>r?.status==='published'&&r.commit);
+ if(published)return {status:'succeeded',gitStatus:'synchronized',publicationStatus:'published',commit:published.commit,message:'GitHub 仓库与在线网页均已更新，内容核验通过。'};
+ if(git)return {status:'publication-pending',gitStatus:'synchronized',publicationStatus:'pending',commit:git.remote,message:'GitHub 仓库已更新；在线网页尚未核验为最新版。可重试网页核验。'};
+ return {status:'failed',gitStatus:'unconfirmed',publicationStatus:'unknown',message:'本地文件已保存；GitHub 推送尚未确认完成，请重试同步。'};
+}
 export function createPlannerServer({root=defaultRoot,syncRunner}={}){
  let syncing=false,rerun=false,sync={status:'idle',message:'尚未请求同步。'};
  function requestSync(){
@@ -15,9 +24,9 @@ export function createPlannerServer({root=defaultRoot,syncRunner}={}){
   const job=Promise.resolve().then(()=>syncRunner?syncRunner():new Promise((resolve,reject)=>{
    const child=spawn(process.execPath,['scripts/sync.mjs','Save feedback from local planner'],{cwd:root,stdio:['ignore','pipe','pipe']});let output='';
    for(const stream of [child.stdout,child.stderr])stream.on('data',chunk=>{output=(output+chunk).slice(-16000);});
-   child.once('error',reject);child.once('close',code=>code===0?resolve(output):reject(new Error('同步未完成；本地记录已保存，请查看服务日志。\n'+output)));
+   child.once('error',reject);child.once('close',code=>code===0?resolve(output):reject(Object.assign(new Error('同步未完成；本地记录已保存，请查看服务日志。\n'+output),{syncOutput:output})));
   }));
-  Promise.resolve(job).then(output=>{sync={status:'succeeded',finishedAt:new Date().toISOString(),message:String(output).includes('"status":"published"')?'GitHub 已同步，网页内容已核验。':'GitHub 提交已核对一致；本次未重新发布网页。'};for(const line of String(output).split('\n')){try{const value=JSON.parse(line);if(value.commit||value.remote)sync.commit=value.commit||value.remote;}catch{}}},error=>{console.error(error.message);sync={status:'failed',finishedAt:new Date().toISOString(),message:'本地文件已保存；GitHub 或网页同步未完成，请点击重试同步。'};}).finally(()=>{syncing=false;if(rerun){rerun=false;requestSync();}});
+  Promise.resolve(job).then(output=>{sync={...syncOutcome(output),finishedAt:new Date().toISOString()};},error=>{console.error(error.message);sync={...syncOutcome(error.syncOutput),finishedAt:new Date().toISOString()};}).finally(()=>{syncing=false;if(rerun){rerun=false;requestSync();}});
   return {...sync};
  }
  const store=createLocalStore(root,{onSync:requestSync});

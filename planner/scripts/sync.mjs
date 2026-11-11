@@ -7,6 +7,10 @@ const env={...process.env,GIT_SSH_COMMAND:'ssh -o BatchMode=yes -o ConnectTimeou
 function run(cmd,args,cwd=planner,quiet=false){return execFileSync(cmd,args,{cwd,env,encoding:'utf8',stdio:quiet?['ignore','pipe','pipe']:['ignore','pipe','inherit'],timeout:120000}).trim();}
 const repository=run('git',['rev-parse','--show-toplevel']);
 const git=(args,quiet=false)=>run('git',args,repository,quiet);
+function verifyPublication(head){
+ run(process.execPath,['scripts/verify-live.mjs','--wait']);
+ console.log(JSON.stringify({status:'published',website:'https://divinyan.com/planner/',commit:head}));
+}
 if(path.relative(repository,planner)!=='planner')throw Error('Run from the homepage repository planner/ directory.');
 const expected='git@github.com:lylybig/lylybig.github.io.git';
 const remote=git(['remote','get-url','origin']);
@@ -26,7 +30,7 @@ checkScope(plannerFiles());
 git(['fetch','origin']);
 const [ahead,behind]=git(['rev-list','--left-right','--count','HEAD...origin/main']).split(/\s+/).map(Number);
 if(behind){if(ahead||plannerFiles().length)throw Error('Remote changes require review; no overwrite performed.');git(['merge','--ff-only','origin/main']);}
-if(!behind&&!ahead&&plannerFiles().length===0){const head=git(['rev-parse','HEAD']);console.log(JSON.stringify({status:'synchronized',changedFiles:0,branch,local:head,remote:head,website:'https://divinyan.com/planner/'}));process.exit(0);}
+if(!behind&&!ahead&&plannerFiles().length===0){const head=git(['rev-parse','HEAD']);console.log(JSON.stringify({status:'synchronized',changedFiles:0,branch,local:head,remote:head,website:'https://divinyan.com/planner/'}));verifyPublication(head);process.exit(0);}
 run(process.execPath,['scripts/build.mjs']);
 run(process.execPath,['scripts/check.mjs']);
 const files=plannerFiles();checkScope(files);
@@ -41,5 +45,4 @@ if(prior!==head)git(['push','origin','main']);
 const remoteHead=git(['ls-remote','origin','refs/heads/main']).split(/\s+/)[0];
 if(remoteHead!==head)throw Error('Remote HEAD verification failed; local work is preserved.');
 console.log(JSON.stringify({status:'synchronized',changedFiles:files.length,branch,local:head,remote:remoteHead,website:'https://divinyan.com/planner/',note:'Verify GitHub Pages publication separately.'}));
-run(process.execPath,['scripts/verify-live.mjs','--wait']);
-console.log(JSON.stringify({status:'published',website:'https://divinyan.com/planner/',commit:head}));
+verifyPublication(head);

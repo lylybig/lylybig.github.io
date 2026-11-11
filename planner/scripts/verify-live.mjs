@@ -5,7 +5,8 @@ import {fileURLToPath} from 'node:url';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'plan-manifest.json'),'utf8'));
-const files=['index.html','method.html',manifest.dayPlans[0].url,manifest.dayPlans[1]?.url||manifest.dayPlans[0].url,manifest.weekPlans.find(w=>w.date>=manifest.dayPlans[0].date)?.url||manifest.weekPlans[0].url,manifest.monthPlans[0].url,'assets/app.js'];
+const currentDay=manifest.dayPlans.find(d=>d.date===manifest.defaultDate)?.url;
+const files=[...new Set(['index.html','method.html',currentDay,manifest.dayPlans[0].url,manifest.dayPlans[1]?.url||manifest.dayPlans[0].url,manifest.weekPlans.find(w=>w.date>=manifest.dayPlans[0].date)?.url||manifest.weekPlans[0].url,manifest.monthPlans[0].url,'assets/app.js'].filter(Boolean))];
 const hash=value=>createHash('sha256').update(value).digest('hex');
 const expected=files.map(file=>({file,sha:hash(fs.readFileSync(path.join(root,file)))}));
 const attempts=process.argv.includes('--wait')?4:1;

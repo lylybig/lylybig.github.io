@@ -48,3 +48,22 @@ test('sync failure keeps local feedback and reports failure without claiming pub
  await new Promise(resolve=>setTimeout(resolve,20));const state=await(await fetch(f.base+'/api/state')).json();assert.equal(state.sync.status,'failed');
  const disk=JSON.parse(await fs.readFile(path.join(f.root,'data/reviews/2026-11-08.json')));assert.equal(disk.rawNote,'真实草稿');
 });
+test('verified Git push and failed publication are reported separately and a retry can verify publication',async t=>{
+ const sha='a'.repeat(40),pushed=JSON.stringify({status:'synchronized',local:sha,remote:sha});let attempts=0;
+ const f=await fixture(t,async()=>{
+  if(attempts++===0)throw Object.assign(Error('isolated Pages verification failure'),{syncOutput:pushed+'\n'+JSON.stringify({status:'publication-not-verified'})});
+  return pushed+'\n'+JSON.stringify({status:'published',commit:sha});
+ });
+ await f.post('progress',{journals:{'2026-11-08':{note:'保留这份真实记录'}}});
+ await f.post('sync',{});
+ let state=await(await fetch(f.base+'/api/state')).json();
+ assert.equal(state.sync.status,'publication-pending');assert.equal(state.sync.gitStatus,'synchronized');assert.equal(state.sync.publicationStatus,'pending');assert.equal(state.sync.commit,sha);
+ assert(state.sync.message.includes('GitHub 仓库已更新'));assert(!state.sync.message.includes('核验通过'));
+ await f.post('sync',{});state=await(await fetch(f.base+'/api/state')).json();
+ assert.equal(state.sync.status,'succeeded');assert.equal(state.sync.publicationStatus,'published');assert.equal(state.progress.journals['2026-11-08'].note,'保留这份真实记录');
+});
+test('successful command without publication evidence cannot claim the webpage is updated',async t=>{
+ const sha='b'.repeat(40),f=await fixture(t,async()=>JSON.stringify({status:'synchronized',local:sha,remote:sha,changedFiles:0}));
+ await f.post('sync',{});const state=await(await fetch(f.base+'/api/state')).json();
+ assert.equal(state.sync.status,'publication-pending');assert.equal(state.sync.publicationStatus,'pending');assert.equal(state.sync.commit,sha);
+});

@@ -174,7 +174,7 @@
   function refreshSaveStatus(){
     const el=document.getElementById('file-save-state');if(el)el.textContent=saveMessage;
     const remote=document.getElementById('git-sync-state');if(remote)remote.textContent=localMode?((syncInfo.message||'点击“保存复盘并同步 GitHub”后提交、推送并核验网页。')+(syncInfo.commit?' 提交 '+syncInfo.commit.slice(0,7):'')):'';
-    const retry=document.getElementById('retry-local-sync');if(retry)retry.hidden=syncInfo.status!=='failed';
+    const retry=document.getElementById('retry-local-sync');if(retry){retry.hidden=!['failed','publication-pending'].includes(syncInfo.status);retry.textContent=syncInfo.status==='publication-pending'?'重试网页核验':'重试 GitHub 同步';}
     const count=document.getElementById('day-feedback-count');if(count){const work=listEvents(date).filter(isWork);count.textContent=feedbackLabel()+' · '+work.filter(e=>done(e.id)).length+'/'+work.length+' 工作块已勾选';}
   }
   function flushFiles(){
@@ -207,7 +207,7 @@
   function feedbackLabel(){const item=progress.feedback?.[date];return item?(item.needsPlanning?(item.status==='submitted'?'已提交复盘 · 待秘书处理':'已写入本地进度'):'已处理'):(monthFor(date).days[date]?.feedback||'暂无反馈');}
   function feedbackStatus(){
     const href='http://127.0.0.1:4173/#view='+view+'&date='+date;
-    return `<section class="notice feedback-status" aria-label="反馈保存状态"><strong>${localMode?'本地反馈 · 直接写入文件':'在线查看 · 本地反馈入口'}</strong><p id="file-save-state" role="status">${escape(saveMessage)}</p><button id="retry-local-sync" class="btn" data-action="retry-local-sync" ${syncInfo.status==='failed'?'':'hidden'}>重试 GitHub 同步</button><p id="git-sync-state" class="small">${localMode?escape(syncInfo.message||'点击保存复盘后同步 GitHub；保存记录不会自动唤醒秘书。'):''}</p>${localMode?'':`<a class="btn" href="${href}" style="margin-top:9px">在这台 Mac 打开本地反馈页 ↗</a>`}</section>`;
+    return `<section class="notice feedback-status" aria-label="反馈保存状态"><strong>${localMode?'本地反馈 · 直接写入文件':'在线查看 · 本地反馈入口'}</strong><p id="file-save-state" role="status">${escape(saveMessage)}</p><button id="retry-local-sync" class="btn" data-action="retry-local-sync" ${['failed','publication-pending'].includes(syncInfo.status)?'':'hidden'}>${syncInfo.status==='publication-pending'?'重试网页核验':'重试 GitHub 同步'}</button><p id="git-sync-state" class="small">${localMode?escape(syncInfo.message||'点击保存复盘后同步 GitHub；保存记录不会自动唤醒秘书。'):''}</p>${localMode?'':`<a class="btn" href="${href}" style="margin-top:9px">在这台 Mac 打开本地反馈页 ↗</a>`}</section>`;
   }
   function readHash() { const q = new URLSearchParams(location.hash.slice(1)); const d = q.get('date'), v = q.get('view'); if (d && /^\d{4}-\d{2}-\d{2}$/.test(d)) date = clamp(d); if (['day','week','month'].includes(v)) view = v; }
   function navigate(v, d = date) { view = v; date = clamp(d); history.replaceState(null, '', `#view=${view}&date=${date}`); render(); window.scrollTo(0, 0); }
