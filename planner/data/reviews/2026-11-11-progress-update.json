@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "source": "local-progress",
+  "reportType": "checkbox-progress-update",
+  "status": "processed",
+  "processedAt": "2026-11-12T17:22:36.868969Z",
+  "rawNote": null,
+  "completed": [
+    {
+      "eventId": "2026-11-11-restart-1150-life",
+      "title": "启动 · 打开材料与确认今天第一步",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-11T23:52:15.049Z"
+    },
+    {
+      "eventId": "2026-11-11-restart-1315-noble",
+      "title": "MS-enhancement · 集中准备同一场讨论",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-11T23:52:21.153Z"
+    },
+    {
+      "eventId": "2026-11-11-calendar-update-1340-noble",
+      "title": "MS-enhancement · 入会准备与材料定位",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-11T23:52:47.549Z"
+    },
+    {
+      "eventId": "2026-11-11-calendar-update-1400-noble",
+      "title": "ms-res-enhance · MS-enhancement 讨论",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-11T23:52:53.807Z"
+    },
+    {
+      "eventId": "2026-11-11-calendar-update-1440-gauge",
+      "title": "GAUGE · 核心质疑与已有证据回应",
+      "source": "用户本地勾选",
+      "updatedAt": "2026-11-12T00:00:16.756Z"
+    }
+  ],
+  "notCompletedMarkers": [
+    {
+      "eventId": "2026-11-11-focus-450-english",
+      "source": "用户本地标记未完成，实际口语分钟仍未知"
+    }
+  ],
+  "inProgress": null,
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "activeSpeakingMinutes": null,
+  "unreported": [
+    "ResNet 用户两份回应、Siying 稿件是否可合并",
+    "MoE-LLM 昨晚工作状态",
+    "晚间口语实际分钟"
+  ],
+  "nextActions": [
+    "今天 ResNet 先核对现有稿，未完成分支补关键解释，已有稿直接核查。",
+    "Noisy Pairs 今天集中推进，GAUGE 明天接着现稿；MoE-LLM 后续在已有时段按真实日志继续。"
+  ],
+  "planAdjustments": [
+    "11-12 将一个 Noisy 延续小时改为 ResNet 保留窗口，并留课后条件口语补练。",
+    "昨日原计划、全部实际勾选与未完成标记保持不变。"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-12",
+  "reportedAt": "2026-11-12T17:22:36.868969Z",
+  "source": "chat-and-local-progress",
+  "reportType": "classday-plan",
+  "status": "processed",
+  "processedAt": "2026-11-12T17:22:36.868969Z",
+  "rawNote": "我在上课，帮我规划下今天的计划",
+  "completed": null,
+  "inProgress": [
+    {
+      "eventId": "2026-11-12-0830-53",
+      "title": "ENGL 105 B",
+      "source": "用户当前汇报，尚未确认完成"
+    }
+  ],
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "activeSpeakingMinutes": null,
+  "nextActions": [
+    "先继续上课，10:20 休息 10 分钟。",
+    "按课前实际口语情况选择课后补练或纠错，再定位 Noisy 问题；午饭与 Noble 组会保留。",
+    "下午 Noisy 连续推进，夜间 ResNet 条件补写/核查，22:10 汇报，23:00 睡。"
+  ],
+  "planAdjustments": [
+    "当前 ENGL 105 在进行中，保留课程真实结束 10:20；12:00–14:00 Noble 实例按既有核实记录保留，本次未重新读日历。",
+    "课后 10:30 留 25 分钟条件口语补练与 5 分钟硬截止邮件快筛；与课前口语互斥，晚间主动口语 50 分钟，目标 75。",
+    "Noisy Pairs 上午 30 分钟定位问题，下午三个连续 60/10 周期，最小交付为定义/例子、核心边界与可读首版缺口表。",
+    "ResNet 19:40 起两个周期，先核对稿件，再补写或合并；不默认昨日两份已完成。",
+    "GAUGE 明早接续已勾选的核心回应，Noisy 明日已有时段继续补证；今日不追加其他项目，23:00 睡，正式截止不变。"
+  ],
+  "historyPath": "data/reviews/history/2026-11-12-plan-before-classday-replan.json"
+}

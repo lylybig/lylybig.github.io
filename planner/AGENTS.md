@@ -80,3 +80,5 @@ README 里每一份 HTML 计划都使用 `https://divinyan.com/planner/...` 的�
 ## 11-11 同步状态修复
 
 本地状态区分 Git 仓库推送和 Pages 发布：远端 SHA 已核实但网页未一致时为 publication-pending，并显示“重试网页核验”；不能称作 Git 推送失败或网页已更新。无新文件时重试也要验证线上 HTML，含当天详细日计划，不创建空提交。修改 serve.mjs 后刷新常驻运行副本，继续保留反馈记录。
+
+11-12 用户正在上课，09:17 左右确认 ENGL 在进行中，未自动记完成。昨日已读取 MS 准备/讨论与 GAUGE 核心回应等五项完成标记；ResNet/MoE-LLM 晚间实际进度未知。今天 Noisy Pairs 3.5 小时、ResNet 两小时先查稿再补写/核查。10:30 条件口语补练的 25 分钟与课前 25 分钟计划互斥（conditionalActiveSpeakingMinutes），不重复计入日/周口语预算；若课前已练满则做反馈/作业，晚间主动口语 50 分钟，日目标 75。过去时段原计划与所有勾选保持不变。

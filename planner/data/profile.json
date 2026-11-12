@@ -127,7 +127,7 @@
       "targetChange": {
         "originalDate": "2026-11-11",
         "changedAt": "2026-11-11T19:51:05.540777Z",
-        "reason": "11-11 约中午刚开始工作，用户保留 ResNet 与 MoE-LLM；今天两小时核心回应，完整可读首稿用 11-13 原有 GAUGE 上午时段完成。"
+        "reason": "11-11 GAUGE 核心回应块已由用户勾选，具体成果/用时未知；13 日既有上午时段接着实际稿件收拢可读首版。"
       },
       "coreResponseTarget": "2026-11-11"
     },
@@ -154,12 +154,15 @@
         "initialActiveMinutes": 180,
         "basis": "用户认为以解释为主、任务量较轻；两段各一位 reviewer，第三段合并核查，按真实草稿校准。"
       },
-      "ownResponsesTarget": "2026-11-11",
+      "ownResponsesTarget": "2026-11-12",
       "targetChange": {
         "originalDate": "2026-11-11",
         "changedAt": "2026-11-11T19:51:05.540777Z",
         "reason": "今天晚间写用户两位 reviewer，合并核查使用明晚原 Noisy Pairs 延续，不新增工时。"
-      }
+      },
+      "previousOwnResponsesTarget": "2026-11-11",
+      "ownResponsesActualStatus": "11-11 未提供完成标记或草稿状态，不推断已完成/未完成；11-12 为补写或核查的保留窗口。",
+      "firstReplyScope": "12 日按现有稿补关键解释与骨架，材料齐全就合并核查；这是内部目标，实际完成与完整性待本人汇报。"
     },
     {
       "id": "noisy",
@@ -173,7 +176,8 @@
         1
       ],
       "focus": "定义、直观示例、引言、coherence 和 remasking 等适用边界、有限维常数",
-      "firstReplyTarget": "2026-11-12"
+      "firstReplyTarget": "2026-11-12",
+      "firstReplyScope": "12 日可读首版：关键定义、最小例子、核心边界与逐条问题映射；待补内容列缺口，13 日既有时段继续，不承诺全部理论问题今天解决。"
     },
     {
       "id": "moe-llm",
@@ -205,26 +209,29 @@
     {
       "id": "jingyang",
       "title": "回复 Jingyang 的问题",
-      "due": "2026-11-10",
+      "due": "2026-11-12",
       "status": "未反馈",
-      "detail": "在行政窗口整理并回复；本系统不自动代发消息。 11-09 重排后，仅真正紧急的今天回复，其余明天批处理；这是内部跟进目标。",
-      "originalDue": "2026-11-09"
+      "detail": "11-12 邮件窗口按实际情况跟进：已回复就跳过，未回复则批处理；这是内部跟进窗口，不是已核实的外部硬截止。本系统不代发。",
+      "originalDue": "2026-11-09",
+      "previousFollowUpDate": "2026-11-10"
     },
     {
       "id": "coffee",
       "title": "回复咖啡邀请",
-      "due": "2026-11-10",
+      "due": "2026-11-12",
       "status": "未反馈",
-      "detail": "确认是否参加及可用时间。 11-09 重排后，仅真正紧急的今天回复，其余明天批处理；这是内部跟进目标。",
-      "originalDue": "2026-11-09"
+      "detail": "11-12 邮件窗口按实际情况跟进：已回复就跳过，未回复则批处理；这是内部跟进窗口，不是已核实的外部硬截止。本系统不代发。",
+      "originalDue": "2026-11-09",
+      "previousFollowUpDate": "2026-11-10"
     },
     {
       "id": "english-materials",
       "title": "回复英语资料相关问题",
-      "due": "2026-11-10",
+      "due": "2026-11-12",
       "status": "未反馈",
-      "detail": "整理所需资料与请求。 11-09 重排后，仅真正紧急的今天回复，其余明天批处理；这是内部跟进目标。",
-      "originalDue": "2026-11-09"
+      "detail": "11-12 邮件窗口按实际情况跟进：已回复就跳过，未回复则批处理；这是内部跟进窗口，不是已核实的外部硬截止。本系统不代发。",
+      "originalDue": "2026-11-09",
+      "previousFollowUpDate": "2026-11-10"
     },
     {
       "id": "course-deadlines",

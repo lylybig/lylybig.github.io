@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11T20:16:10.610345Z",
+  "updatedAt": "2026-11-12T17:22:36.868969Z",
   "events": {
     "2026-11-07-1600-0": {
       "done": false,
@@ -98,6 +98,30 @@
     "2026-11-10-calendar-update-1630-noble": {
       "done": true,
       "updatedAt": "2026-11-11T02:56:47.115Z"
+    },
+    "2026-11-11-restart-1150-life": {
+      "done": true,
+      "updatedAt": "2026-11-11T23:52:15.049Z"
+    },
+    "2026-11-11-restart-1315-noble": {
+      "done": true,
+      "updatedAt": "2026-11-11T23:52:21.153Z"
+    },
+    "2026-11-11-calendar-update-1340-noble": {
+      "done": true,
+      "updatedAt": "2026-11-11T23:52:47.549Z"
+    },
+    "2026-11-11-calendar-update-1400-noble": {
+      "done": true,
+      "updatedAt": "2026-11-11T23:52:53.807Z"
+    },
+    "2026-11-11-calendar-update-1440-gauge": {
+      "done": true,
+      "updatedAt": "2026-11-12T00:00:16.756Z"
+    },
+    "2026-11-11-focus-450-english": {
+      "done": false,
+      "updatedAt": "2026-11-12T06:41:08.998Z"
     }
   },
   "journals": {
@@ -139,14 +163,20 @@
       "planningNote": "已读取最新 8 项本地完成标记并用于 11-11 重排；仍为草稿，未补造科研结果、实际口语分钟或晚间活动。"
     },
     "2026-11-11": {
-      "status": "submitted",
-      "updatedAt": "2026-11-11T20:16:10.610345Z",
+      "status": "draft",
+      "updatedAt": "2026-11-12T06:41:08.998Z",
       "needsPlanning": false,
-      "processedAt": "2026-11-11T20:16:10.610345Z",
-      "reviewPath": "data/reviews/2026-11-11-planning.json",
+      "processedAt": "2026-11-12T17:22:36.868969Z",
+      "planningNote": "已读取五项完成标记与一项未完成标记用于 11-12 排程；其他任务实际状态和口语分钟仍未知，保留草稿标识。",
+      "latestPlanningReviewPath": "data/reviews/2026-11-11-progress-update.json"
+    },
+    "2026-11-12": {
+      "status": "submitted",
       "source": "chat",
-      "planningNote": "已处理聊天中的会前集中 MS 要求；原始重启汇报和本次调整分别保留，未改变实际完成标记。",
-      "latestPlanningReviewPath": "data/reviews/2026-11-11-meeting-focus.json"
+      "updatedAt": "2026-11-12T17:22:36.868969Z",
+      "needsPlanning": false,
+      "processedAt": "2026-11-12T17:22:36.868969Z",
+      "reviewPath": "data/reviews/2026-11-12-planning.json"
     }
   }
 }
