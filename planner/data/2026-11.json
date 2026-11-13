@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "month": "2026-11",
   "createdAt": "2026-11-07",
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-13T18:48:15.735159Z",
   "timezone": "America/Los_Angeles",
   "range": {
     "start": "2026-11-07",
@@ -55,10 +55,11 @@
       "title": "GAUGE 核心回应 + ResNet 用户两份解释稿（内部目标）"
     },
     {
-      "date": "2026-11-12",
+      "date": "2026-11-13",
       "title": "ResNet 首轮回复目标",
       "originalDate": "2026-11-11",
-      "reason": "昨晚是否写好尚未确认；今天保留两小时，先检查现有稿，再补写或合并核查，不默认只需合并。"
+      "reason": "用户今天明确先搞完；先核对现稿，自己两份回应收尾优先，Siying 合并依赖单列。",
+      "previousDate": "2026-11-12"
     },
     {
       "date": "2026-11-12",
@@ -69,7 +70,8 @@
       "date": "2026-11-13",
       "title": "GAUGE 首轮回复目标",
       "originalDate": "2026-11-11",
-      "reason": "今天晚开始且用户保留 ResNet 与 MoE-LLM；用周五原有 GAUGE 时段，不增加工时。"
+      "reason": "13 日下午在 ResNet 收尾后集中推进；若被 ResNet 占用，14 日既有上午块接续，内部目标不等于实际完成。",
+      "fallbackDate": "2026-11-14"
     },
     {
       "date": "2026-11-16",
@@ -99,7 +101,7 @@
       "start": "2026-11-13",
       "end": "2026-11-18",
       "title": "补证与讨论收敛",
-      "goal": "11-13 上午用原有 GAUGE 时段收拢可读首稿，随后按真实追问补证；11-14 后新实验须有测得 ETA 且能 16 日前分析。16 日主要内容收敛、18 日 18:00 内部执行截止保留。"
+      "goal": "13 日先收尾 ResNet 自己两份解释稿，随后 GAUGE 同题两周期与 Kumar/MoE-LLM 两周期，主动口语按实际补到75–90。仅13日取消周五晚休息，22:30收工。Noisy 14日既有下午段先核对首版；14日后新实验需实测ETA并能16日前分析。16日20:00主要内容收敛、18日18:00内部执行截止保留。"
     },
     {
       "start": "2026-11-19",
@@ -142,30 +144,30 @@
       "activeSpeakingMinutes": 90
     },
     "2026-11-09": {
-      "title": "按真实起点分配 · 核心回应与项目连续推进",
+      "title": "ResNet 先收尾 · GAUGE 证据与科研进展连续推进",
       "goals": [
         "11-09 本地已勾选 GAUGE 配置、两份 MoE 更新与英语块；具体结果、实际分钟和阻塞仍待汇报。",
         "11-10 参加 12:00 Journal Club；13:00 Kumar 汇报按用户要求取消，改为 MoE-LLM 两小时、MoE-agent-RL 两小时（含原 GAUGE 预算）、MS-enhancement 三小时、主动口语 90 分钟。 今天 GAUGE 待办取消，原时段实际完成未知。",
         "11-11 已勾选 MS 会前准备、讨论及 GAUGE 核心回应；口语主练标记未完成，晚间其他任务实际进度仍未知。",
-        "11-12 ENGL 105 与 Noble 组会保留，Noisy Pairs 3.5 小时收拢可读首版，ResNet 两小时按现有稿补写/核查，主动口语目标 75；11-13 接续 GAUGE 现稿，原有 Noisy 时段补强缺口。",
-        "正式讨论 11-18 AoE；主要内容 11-16 收敛。正常 23:00–07:00，周五 18:00 后完整休息；11-09 历史单次例外保留。"
+        "11-12 课会与 Noisy/ResNet 实际成果待反馈；11-13 先连续三周期收尾 ResNet，未完占用随后科研块。完成后 GAUGE 两周期、Kumar/MoE-LLM 两周期；Noisy 14 日原有下午块先核对首版。",
+        "正式讨论11-18 AoE，主要内容11-16 20:00收敛。仅11-13按用户要求取消周五晚休息，仍22:30收工、23:00睡；其他周五18:00后休息。"
       ],
-      "note": "11-12 按最新实际标记调整：保留昨天真实完成和未完成标记，不把未标记的 ResNet/MoE-LLM 当作已做或未做。今日集中两个科研主题；课前口语未知，用课后条件补练保证计划目标，不双计。Noisy 首稿今天、GAUGE 首稿明天均为内部可读版本目标，16 日主要内容收敛与官方 18 日 AoE 不变。",
+      "note": "今天顺序为 ResNet → GAUGE → 口语 → MoE-LLM → 条件口语补练。只承诺可控的最小产物，ResNet未收尾不硬切，其他科研是条件启动。11:00前保留历史计划、实际未知。晨练50与晚间补练35互斥：晨练50+傍晚40=90，未晨练则傍晚40+晚间35=75，不双计。Noisy13日补强取消，14日原有块接续；MoE-agent仍用15日连续窗口。",
       "rhythm": "通常两个科研主题/日，每个连续 2–3 个 60/10 周期；周一集中两份 MoE 更新为例外。",
-      "workMinutes": 4470,
-      "breakMinutes": 580,
+      "workMinutes": 4710,
+      "breakMinutes": 610,
       "projectMinutes": {
         "noble": 460,
-        "life": 570,
-        "gauge": 570,
-        "english": 850,
-        "moe-llm": 240,
+        "life": 590,
+        "gauge": 630,
+        "english": 890,
+        "moe-llm": 360,
         "moe-agent": 540,
-        "resnet": 240,
-        "noisy": 1000
+        "resnet": 420,
+        "noisy": 820
       },
-      "coreMinutes": 3480,
-      "continuationMinutes": 990,
+      "coreMinutes": 3600,
+      "continuationMinutes": 1110,
       "activeSpeakingMinutes": 600
     },
     "2026-11-16": {
@@ -595,46 +597,80 @@
     },
     "2026-11-13": {
       "priorities": [
-        "GAUGE：上午三小时接续核心回应，目标是可读首稿与证据复核；缺结果明确标注。",
-        "Noisy Pairs：优先一项影响判断的定义/边界与追问。",
-        "口语：主动开口 90 分钟，保存初录/复录并记录变化。"
+        "ResNet-MoE 第一优先：先完成自己两位 reviewer 的解释稿，查漏与证据核对；未收尾就占用随后科研块，不到点硬切。",
+        "ResNet 收尾后依次推进 GAUGE 与 Kumar / MoE-LLM，各留连续两周期；最小成果是一个证据闭环、一条可复现进展。",
+        "主动口语至少 75 分钟：傍晚 40 + 条件补练最多 35；晨练已达 50 则傍晚后共 90，晚间改纠错。"
       ],
       "feedback": "未反馈",
-      "note": "按依赖和最小交付排程；未取得真实材料前不保证实验结果。",
+      "note": "11-13 用户明确今天不休息：仅今天取消周五 18:00 后整晚休息，22:30 收工、23:00 睡。11:00 前保留原计划，实际执行未反馈；从 11:00 先做 ResNet，不把旧计划当完成。",
       "planBudget": {
-        "workMinutes": 500,
+        "workMinutes": 740,
         "fixedMinutes": 0,
-        "breakMinutes": 70,
-        "breakCount": 7,
-        "coreMinutes": 440,
-        "continuationMinutes": 60,
+        "breakMinutes": 100,
+        "breakCount": 10,
+        "coreMinutes": 560,
+        "continuationMinutes": 180,
         "activeSpeakingMinutes": 90
       },
       "focusWindows": [
         {
-          "start": "08:40",
-          "end": "12:00",
-          "project": "gauge",
-          "goal": "核验一张结果表的配置、基线和统计口径，缺证据明确标出。"
+          "start": "11:00",
+          "end": "14:40",
+          "project": "resnet",
+          "goal": "自己两份回应定稿，最后一周期吸收返工并核查合并；不预排大训练。"
         },
         {
-          "start": "12:30",
-          "end": "15:50",
-          "project": "noisy",
-          "goal": "Noisy Pairs 的定义、边界与 reviewer 追问。"
+          "start": "14:50",
+          "end": "17:00",
+          "project": "gauge",
+          "goal": "ResNet 收尾后才启动；一项关键质疑与已有证据闭环，同题延续。"
+        },
+        {
+          "start": "18:40",
+          "end": "20:50",
+          "project": "moe-llm",
+          "goal": "ResNet 收尾后接续 MoE-LLM 同一问题，一条可复现进展与周二更新。"
         }
       ],
       "rhythm": "同一问题连续 2–3 个工作周期；每工作 60 分钟休息 10 分钟。延续块吸收估时误差，不新增硬交付。",
-      "estimateReview": "晚间补记实际主动分钟、机器 ETA、阻塞与口语分钟，再调整范围；不把延期全堆到明天。"
+      "estimateReview": "22:10 记录 ResNet 实际用时与稿件状态、科研块是否被收尾占用、口语真实分钟及精力；据此替换周末原有时段，不把未反馈视作未完成。",
+      "oneOffNote": "仅 2026-11-13：取消周五 18:00 后完整休息，工作到 22:30、23:00 睡，仍执行 60/10 与正常用餐。11:00 起 ResNet 优先，后续科研块以其完成为启动条件；其余周五不变。",
+      "fridayRestOverride": {
+        "appliesToDate": "2026-11-13",
+        "evidence": "user-confirmed",
+        "cancelled": true,
+        "reason": "用户明确说“今天不休息了”，只限今天，保留 22:30 收工和 23:00 睡眠。"
+      },
+      "researchContextOverride": {
+        "appliesToDate": "2026-11-13",
+        "evidence": "user-confirmed",
+        "maxProjects": 3,
+        "replanFrom": "11:00",
+        "reason": "用户明确要求 ResNet-MoE、GAUGE、Kumar 与口语，ResNet 先收尾；保留 11:00 前历史计划，从 11:00 起上午只推进 ResNet。Kumar 今晚集中 MoE-LLM，不再增加第四个科研主题。"
+      },
+      "completionGate": {
+        "at": "14:40",
+        "project": "resnet",
+        "definition": "自己两位 reviewer 逐条有回答、已有证据有出处、论断边界一致、文件已保存；Siying 未到稿只列外部依赖。",
+        "onOverrun": "后续 GAUGE、再 Kumar 科研块依次让给 ResNet；口语、三餐与睡眠保留。晚间报告实际占用后再调周末，不保证三小时足够，也不添加新硬任务。"
+      },
+      "speakingScenarios": {
+        "targetMinimumMinutes": 75,
+        "normalPlannedMinutes": 90,
+        "actualMinutes": null,
+        "ifMorningAlready50": "07:30 原计划实际已完成50 +17:10开口40=90；21:00做纠错/作业，不补练。",
+        "ifMorningNotDoneOrUnknown": "17:10开口40 +21:00条件补练35=75；原晨练计划保留为历史，未自动记完成。",
+        "partialRule": "记录真实分钟，只补到75–90，条件补练最多35，不与晨练重复计入日周月预算。"
+      }
     },
     "2026-11-14": {
       "priorities": [
         "GAUGE：关键证据复核，只有有 ETA 的必要实验才继续。",
-        "Noisy Pairs：逐项核查一组关键假设与例子，把已证和适用范围分清。",
+        "Noisy Pairs：先核对 11-12 实际稿件；未成首版就用原有下午核心块收拢，再补一组关键假设/例子。",
         "口语：主动开口 90 分钟，保存初录/复录并记录变化。"
       ],
       "feedback": "未反馈",
-      "note": "按依赖和最小交付排程；未取得真实材料前不保证实验结果。",
+      "note": "11-13 Noisy 补强块让给用户指定的 ResNet/GAUGE/Kumar。今天先读取 11-12 实际稿件，在原有 Noisy 时段先补未收拢的定义/首版，再处理边界；不新增工时。GAUGE 与 ResNet 延期按今晚真实汇报决定是否替换延续块，不预先叠加。",
       "planBudget": {
         "workMinutes": 740,
         "fixedMinutes": 0,
@@ -4015,29 +4051,28 @@
       "commitment": "core"
     },
     {
-      "id": "2026-11-13-focus-660-gauge",
+      "id": "2026-11-13-focus-750-resnet",
       "date": "2026-11-13",
       "start": "11:00",
       "end": "12:00",
-      "title": "GAUGE · 核心回应扩成可读首稿与证据复核",
+      "title": "ResNet-MoE · 第一位 reviewer 回应定稿",
       "category": "research",
-      "project": "gauge",
+      "project": "resnet",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "接续昨日已勾选的 GAUGE 核心回应块，先读现有稿件与证据位置，再补逐条骨架、已验证内容和适用边界，目标是可审阅首版。缺结果就标注；若首版已成，直接核查同一稿，不重复已做段落。具体实验结论和实际用时仍待汇报。",
-      "doneCriteria": "接续昨日已勾选的 GAUGE 核心回应块，先读现有稿件与证据位置，再补逐条骨架、已验证内容和适用边界，目标是可审阅首版。缺结果就标注；若首版已成，直接核查同一稿，不重复已做段落。具体实验结论和实际用时仍待汇报。",
+      "detail": "先用最多 10 分钟打开现有稿、确认自己负责的两位 reviewer（不猜 ID）；接续已写内容，把第一位逐条答齐。每条给直接回答、已有证据出处与论断边界；解释为主，不另开大规模训练。最低产物是一份可供合作者检查的完整回应稿，缺证明确列出。",
+      "doneCriteria": "先用最多 10 分钟打开现有稿、确认自己负责的两位 reviewer（不猜 ID）；接续已写内容，把第一位逐条答齐。每条给直接回答、已有证据出处与论断边界；解释为主，不另开大规模训练。最低产物是一份可供合作者检查的完整回应稿，缺证明确列出。",
       "commitment": "core",
-      "minimumOutcome": "接续昨日已勾选的 GAUGE 核心回应块，先读现有稿件与证据位置，再补逐条骨架、已验证内容和适用边界，目标是可审阅首版。缺结果就标注；若首版已成，直接核查同一稿，不重复已做段落。具体实验结论和实际用时仍待汇报。",
-      "stretchOutcome": "最小交付完成后再深化同一问题；不自动换到其他项目。",
-      "focusGroup": "2026-11-13-gauge",
-      "dependsOn": "所需文件、数据或已返回日志；缺失时先写依赖与取得办法。",
       "estimate": {
         "activeMinutes": 60,
-        "confidence": "初估；按实际记录校准",
+        "confidence": "初估；先看现稿，按实际用时校准",
         "machineWallMinutes": null
       },
-      "resumeHint": "末尾 2–3 分钟记录当前文件/命令、未解决点和回来后的第一步。",
-      "focusGoal": "接续昨日已勾选的 GAUGE 核心回应块，先读现有稿件与证据位置，再补逐条骨架、已验证内容和适用边界，目标是可审阅首版。缺结果就标注；若首版已成，直接核查同一稿，不重复已做段落。具体实验结论和实际用时仍待汇报。"
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。",
+      "minimumOutcome": "先用最多 10 分钟打开现有稿、确认自己负责的两位 reviewer（不猜 ID）；接续已写内容，把第一位逐条答齐。每条给直接回答、已有证据出处与论断边界；解释为主，不另开大规模训练。最低产物是一份可供合作者检查的完整回应稿，缺证明确列出。",
+      "focusGroup": "2026-11-13-resnet",
+      "dependsOn": "现有回应稿、对应 reviews 和已保存证据；缺少材料先明确缺口，不编造结论。",
+      "stretchOutcome": "最小交付完成后继续核查同一问题，不新增必须成果。"
     },
     {
       "id": "2026-11-13-1145-66",
@@ -4049,34 +4084,33 @@
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "30 分钟用餐。",
-      "doneCriteria": "30 分钟用餐。",
+      "detail": "完整 30 分钟吃饭，饭后接续同一份 ResNet 文档。",
+      "doneCriteria": "完整 30 分钟吃饭，饭后接续同一份 ResNet 文档。",
       "commitment": "core"
     },
     {
-      "id": "2026-11-13-focus-750-resnet",
+      "id": "2026-11-13-focus-820-resnet",
       "date": "2026-11-13",
       "start": "12:30",
       "end": "13:30",
-      "title": "Noisy Pairs · reviewer 追问与边界补强",
+      "title": "ResNet-MoE · 第二位 reviewer 回应定稿",
       "category": "research",
-      "project": "noisy",
+      "project": "resnet",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。",
-      "doneCriteria": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。",
+      "detail": "继续同一份文档，完成自己负责的第二位 reviewer 的逐条回应。优先解释 sparse routing 与系数集中/重构的区别、论断适用范围，并核对引用的已有结果；已写好的部分只核查。最低产物为两份自己负责的回应均可读、问题均有对应，尚缺证据明确标注。",
+      "doneCriteria": "继续同一份文档，完成自己负责的第二位 reviewer 的逐条回应。优先解释 sparse routing 与系数集中/重构的区别、论断适用范围，并核对引用的已有结果；已写好的部分只核查。最低产物为两份自己负责的回应均可读、问题均有对应，尚缺证据明确标注。",
       "commitment": "core",
-      "minimumOutcome": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。",
-      "stretchOutcome": "最小交付完成后再深化同一问题；不自动换到其他项目。",
-      "focusGroup": "2026-11-13-noisy",
-      "dependsOn": "所需文件、数据或已返回日志；缺失时先写依赖与取得办法。",
       "estimate": {
         "activeMinutes": 60,
-        "confidence": "初估；按实际记录校准",
+        "confidence": "初估；先看现稿，按实际用时校准",
         "machineWallMinutes": null
       },
-      "resumeHint": "末尾 2–3 分钟记录当前文件/命令、未解决点和回来后的第一步。",
-      "focusGoal": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。"
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。",
+      "minimumOutcome": "继续同一份文档，完成自己负责的第二位 reviewer 的逐条回应。优先解释 sparse routing 与系数集中/重构的区别、论断适用范围，并核对引用的已有结果；已写好的部分只核查。最低产物为两份自己负责的回应均可读、问题均有对应，尚缺证据明确标注。",
+      "focusGroup": "2026-11-13-resnet",
+      "dependsOn": "现有回应稿、对应 reviews 和已保存证据；缺少材料先明确缺口，不编造结论。",
+      "stretchOutcome": "最小交付完成后继续核查同一问题，不新增必须成果。"
     },
     {
       "id": "2026-11-13-break-810-60-10",
@@ -4088,34 +4122,33 @@
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续刚才的问题。",
-      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续刚才的问题。",
+      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
+      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
       "commitment": "core"
     },
     {
-      "id": "2026-11-13-focus-820-resnet",
+      "id": "2026-11-13-focus-890-resnet",
       "date": "2026-11-13",
       "start": "13:40",
       "end": "14:40",
-      "title": "Noisy Pairs · reviewer 追问与边界补强",
+      "title": "ResNet-MoE · 查漏、证据与合并核查",
       "category": "research",
-      "project": "noisy",
+      "project": "resnet",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。",
-      "doneCriteria": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。",
-      "commitment": "core",
-      "minimumOutcome": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。",
-      "stretchOutcome": "最小交付完成后再深化同一问题；不自动换到其他项目。",
-      "focusGroup": "2026-11-13-noisy",
-      "dependsOn": "所需文件、数据或已返回日志；缺失时先写依赖与取得办法。",
+      "detail": "延续前两段，吸收补写与返工。逐条核对 reviewer 问题是否答齐、数字/图表/措辞是否有出处、正文修改是否一致；Siying 稿已到才合并，未到就记录唯一待合并项，不把合作者等待当作自己写作未完成。完成标准：自己两份回应可提交审阅，版本保存且无未标明的证据缺口。仅安排用户核查与提交，不自动外发。",
+      "doneCriteria": "延续前两段，吸收补写与返工。逐条核对 reviewer 问题是否答齐、数字/图表/措辞是否有出处、正文修改是否一致；Siying 稿已到才合并，未到就记录唯一待合并项，不把合作者等待当作自己写作未完成。完成标准：自己两份回应可提交审阅，版本保存且无未标明的证据缺口。仅安排用户核查与提交，不自动外发。",
+      "commitment": "continuation",
       "estimate": {
         "activeMinutes": 60,
-        "confidence": "初估；按实际记录校准",
+        "confidence": "初估；先看现稿，按实际用时校准",
         "machineWallMinutes": null
       },
-      "resumeHint": "末尾 2–3 分钟记录当前文件/命令、未解决点和回来后的第一步。",
-      "focusGoal": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。"
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。",
+      "minimumOutcome": "延续前两段，吸收补写与返工。逐条核对 reviewer 问题是否答齐、数字/图表/措辞是否有出处、正文修改是否一致；Siying 稿已到才合并，未到就记录唯一待合并项，不把合作者等待当作自己写作未完成。完成标准：自己两份回应可提交审阅，版本保存且无未标明的证据缺口。仅安排用户核查与提交，不自动外发。",
+      "focusGroup": "2026-11-13-resnet",
+      "dependsOn": "现有回应稿、对应 reviews 和已保存证据；缺少材料先明确缺口，不编造结论。",
+      "stretchOutcome": "最小交付完成后继续核查同一问题，不新增必须成果。"
     },
     {
       "id": "2026-11-13-break-880-60-10",
@@ -4127,34 +4160,34 @@
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续刚才的问题。",
-      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续刚才的问题。",
+      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
+      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
       "commitment": "core"
     },
     {
-      "id": "2026-11-13-focus-890-resnet",
+      "id": "2026-11-13-focus-660-gauge",
       "date": "2026-11-13",
       "start": "14:50",
       "end": "15:50",
-      "title": "Noisy Pairs · reviewer 追问与边界补强",
+      "title": "GAUGE · 一个关键质疑与证据闭环",
       "category": "research",
-      "project": "noisy",
+      "project": "gauge",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。",
-      "doneCriteria": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。",
-      "commitment": "continuation",
-      "minimumOutcome": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。",
-      "stretchOutcome": "最小交付完成后再深化同一问题；不自动换到其他项目。",
-      "focusGroup": "2026-11-13-noisy",
-      "dependsOn": "所需文件、数据或已返回日志；缺失时先写依赖与取得办法。",
+      "detail": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。 条件满足后接续 11-11 已勾选的核心回应及实际稿件，挑一个最影响判断的质疑，形成“主张—已有证据—限制—待补动作”表及可读回应。尚未盘点补实验，不承诺今天跑完；20 张 H100 的新任务须先测 ETA。",
+      "doneCriteria": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。 条件满足后接续 11-11 已勾选的核心回应及实际稿件，挑一个最影响判断的质疑，形成“主张—已有证据—限制—待补动作”表及可读回应。尚未盘点补实验，不承诺今天跑完；20 张 H100 的新任务须先测 ETA。",
+      "commitment": "core",
       "estimate": {
         "activeMinutes": 60,
-        "confidence": "初估；按实际记录校准",
+        "confidence": "初估；先看现稿，按实际用时校准",
         "machineWallMinutes": null
       },
-      "resumeHint": "末尾 2–3 分钟记录当前文件/命令、未解决点和回来后的第一步。",
-      "focusGoal": "只处理一项影响判断的定义/假设边界或 reviewer 新问题，保存解释与证据；未证部分保持明确限制。"
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。",
+      "minimumOutcome": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。 条件满足后接续 11-11 已勾选的核心回应及实际稿件，挑一个最影响判断的质疑，形成“主张—已有证据—限制—待补动作”表及可读回应。尚未盘点补实验，不承诺今天跑完；20 张 H100 的新任务须先测 ETA。",
+      "focusGroup": "2026-11-13-gauge",
+      "dependsOn": "现有回应稿、对应 reviews 和已保存证据；缺少材料先明确缺口，不编造结论。",
+      "stretchOutcome": "最小交付完成后继续核查同一问题，不新增必须成果。",
+      "startCondition": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。"
     },
     {
       "id": "2026-11-13-break-950-60-10",
@@ -4166,31 +4199,34 @@
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续刚才的问题。",
-      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续刚才的问题。",
+      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
+      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
       "commitment": "core"
     },
     {
-      "id": "2026-11-13-focus-960-english",
+      "id": "2026-11-13-replan-1600-gauge",
       "date": "2026-11-13",
       "start": "16:00",
       "end": "17:00",
-      "title": "口语复练与课程作业 · 下班前收好",
-      "category": "english",
-      "project": "english",
+      "title": "GAUGE · 同题首稿与证据整理",
+      "category": "research",
+      "project": "gauge",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "主动口语 40 分钟：用英文解释 CSE 概念或模拟 TA 答问，录音、回听、改 3 处再复录。其余时间用于反馈记录/真实课程作业，二者不混算。",
-      "doneCriteria": "累计主动开口 40 分钟（可分跟读、讲解和答问），保留初录/复录与三个纠错点；记录真实用时，未练满如实记进度。",
-      "commitment": "core",
-      "minimumOutcome": "累计主动开口 40 分钟（可分跟读、讲解和答问），保留初录/复录与三个纠错点；记录真实用时，未练满如实记进度。",
+      "detail": "同一问题继续，吸收上一段估时误差，把已证内容并入可读首稿，列出其他 reviewer 的缺口与负责人。若 ResNet 尚未收尾，本块仍优先 ResNet；不保证所有新实验已返回。",
+      "doneCriteria": "同一问题继续，吸收上一段估时误差，把已证内容并入可读首稿，列出其他 reviewer 的缺口与负责人。若 ResNet 尚未收尾，本块仍优先 ResNet；不保证所有新实验已返回。",
+      "commitment": "continuation",
       "estimate": {
         "activeMinutes": 60,
-        "confidence": "初估；按实际记录校准",
+        "confidence": "初估；先看现稿，按实际用时校准",
         "machineWallMinutes": null
       },
-      "resumeHint": "末尾 2–3 分钟记录当前文件/命令、未解决点和回来后的第一步。",
-      "activeSpeakingMinutes": 40
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。",
+      "minimumOutcome": "同一问题继续，吸收上一段估时误差，把已证内容并入可读首稿，列出其他 reviewer 的缺口与负责人。若 ResNet 尚未收尾，本块仍优先 ResNet；不保证所有新实验已返回。",
+      "focusGroup": "2026-11-13-gauge",
+      "dependsOn": "现有回应稿、对应 reviews 和已保存证据；缺少材料先明确缺口，不编造结论。",
+      "stretchOutcome": "最小交付完成后继续核查同一问题，不新增必须成果。",
+      "startCondition": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。"
     },
     {
       "id": "2026-11-13-break-1020-60-10",
@@ -4202,57 +4238,199 @@
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续刚才的问题。",
-      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续刚才的问题。",
+      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
+      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
       "commitment": "core"
     },
     {
-      "id": "2026-11-13-focus-1030-life",
+      "id": "2026-11-13-focus-960-english",
       "date": "2026-11-13",
       "start": "17:10",
-      "end": "17:30",
-      "title": "晚间汇报与必要邮件",
-      "category": "admin",
-      "project": "life",
+      "end": "18:10",
+      "title": "口语主练 · 主动开口 40 分钟",
+      "category": "english",
+      "project": "english",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "记录完成、推进、阻塞和口语实际分钟；查看必要邮件，18:00 后不再处理。",
-      "doneCriteria": "记录完成、推进、阻塞和口语实际分钟；查看必要邮件，18:00 后不再处理。",
+      "detail": "主动开口 40 分钟：脱稿讲清一个 CSE 概念、给例子、模拟两个 TA 追问；录音，挑 3 个影响理解的问题并复录。其余 20 分钟回听纠错或处理最近的英语作业，不混算为口语。晨练实际分钟未知，晚上另留条件补练。",
+      "doneCriteria": "主动开口 40 分钟：脱稿讲清一个 CSE 概念、给例子、模拟两个 TA 追问；录音，挑 3 个影响理解的问题并复录。其余 20 分钟回听纠错或处理最近的英语作业，不混算为口语。晨练实际分钟未知，晚上另留条件补练。",
       "commitment": "core",
       "estimate": {
-        "activeMinutes": 20,
-        "confidence": "初估；按实际记录校准",
+        "activeMinutes": 60,
+        "confidence": "初估；先看现稿，按实际用时校准",
         "machineWallMinutes": null
       },
-      "resumeHint": "末尾 2–3 分钟记录当前文件/命令、未解决点和回来后的第一步。"
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。",
+      "activeSpeakingMinutes": 40
     },
     {
       "id": "2026-11-13-1700-70",
       "date": "2026-11-13",
-      "start": "17:30",
-      "end": "18:00",
+      "start": "18:10",
+      "end": "18:40",
       "title": "晚饭",
       "category": "rest",
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "30 分钟用餐，18:00 后完整休息。",
-      "doneCriteria": "30 分钟用餐，18:00 后完整休息。",
+      "detail": "完整 30 分钟用餐，今天取消周五整晚休息仅适用 11-13。",
+      "doneCriteria": "完整 30 分钟用餐，今天取消周五整晚休息仅适用 11-13。",
+      "commitment": "core"
+    },
+    {
+      "id": "2026-11-13-replan-1840-moe-llm",
+      "date": "2026-11-13",
+      "start": "18:40",
+      "end": "19:40",
+      "title": "Kumar / MoE-LLM · 一个可复现进展",
+      "category": "moe",
+      "project": "moe-llm",
+      "status": "planned",
+      "evidence": "proposed",
+      "detail": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。 继续上次同一实验或错误，先读真实日志，选择一个最阻碍进展的问题；保存一份可运行配置、已有结果分析或确切的阻塞诊断，形成周二可报告的一条进展。今晚以 MoE-LLM 为主，MoE-agent-RL 保留周日原有连续时段，不再切一小时做另一个项目。",
+      "doneCriteria": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。 继续上次同一实验或错误，先读真实日志，选择一个最阻碍进展的问题；保存一份可运行配置、已有结果分析或确切的阻塞诊断，形成周二可报告的一条进展。今晚以 MoE-LLM 为主，MoE-agent-RL 保留周日原有连续时段，不再切一小时做另一个项目。",
+      "commitment": "core",
+      "estimate": {
+        "activeMinutes": 60,
+        "confidence": "初估；先看现稿，按实际用时校准",
+        "machineWallMinutes": null
+      },
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。",
+      "minimumOutcome": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。 继续上次同一实验或错误，先读真实日志，选择一个最阻碍进展的问题；保存一份可运行配置、已有结果分析或确切的阻塞诊断，形成周二可报告的一条进展。今晚以 MoE-LLM 为主，MoE-agent-RL 保留周日原有连续时段，不再切一小时做另一个项目。",
+      "focusGroup": "2026-11-13-moe-llm",
+      "dependsOn": "现有回应稿、对应 reviews 和已保存证据；缺少材料先明确缺口，不编造结论。",
+      "stretchOutcome": "最小交付完成后继续核查同一问题，不新增必须成果。",
+      "startCondition": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。"
+    },
+    {
+      "id": "2026-11-13-break-1940-replan",
+      "date": "2026-11-13",
+      "start": "19:40",
+      "end": "19:50",
+      "title": "休息 10 分钟",
+      "category": "break",
+      "project": "life",
+      "status": "planned",
+      "evidence": "proposed",
+      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
+      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
+      "commitment": "core"
+    },
+    {
+      "id": "2026-11-13-replan-1950-moe-llm",
+      "date": "2026-11-13",
+      "start": "19:50",
+      "end": "20:50",
+      "title": "Kumar / MoE-LLM · 同题验证与更新材料",
+      "category": "moe",
+      "project": "moe-llm",
+      "status": "planned",
+      "evidence": "proposed",
+      "detail": "沿上一块继续验证、分析和保存配置/日志，整理“已知结果、还不知道什么、下一步”三点更新。延续块不承诺训练返回；ResNet 若尚未收尾，本块也让给 ResNet。MoE-agent-RL 的连续时段仍在 11-15，不今晚来回切。",
+      "doneCriteria": "沿上一块继续验证、分析和保存配置/日志，整理“已知结果、还不知道什么、下一步”三点更新。延续块不承诺训练返回；ResNet 若尚未收尾，本块也让给 ResNet。MoE-agent-RL 的连续时段仍在 11-15，不今晚来回切。",
+      "commitment": "continuation",
+      "estimate": {
+        "activeMinutes": 60,
+        "confidence": "初估；先看现稿，按实际用时校准",
+        "machineWallMinutes": null
+      },
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。",
+      "minimumOutcome": "沿上一块继续验证、分析和保存配置/日志，整理“已知结果、还不知道什么、下一步”三点更新。延续块不承诺训练返回；ResNet 若尚未收尾，本块也让给 ResNet。MoE-agent-RL 的连续时段仍在 11-15，不今晚来回切。",
+      "focusGroup": "2026-11-13-moe-llm",
+      "dependsOn": "现有回应稿、对应 reviews 和已保存证据；缺少材料先明确缺口，不编造结论。",
+      "stretchOutcome": "最小交付完成后继续核查同一问题，不新增必须成果。",
+      "startCondition": "启动条件：ResNet 自己两份已达到完成标准；未达到就继续 ResNet，占用本块，重新记录实际项目与用时，不强行切换。"
+    },
+    {
+      "id": "2026-11-13-break-2050-replan",
+      "date": "2026-11-13",
+      "start": "20:50",
+      "end": "21:00",
+      "title": "休息 10 分钟",
+      "category": "break",
+      "project": "life",
+      "status": "planned",
+      "evidence": "proposed",
+      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
+      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
+      "commitment": "core"
+    },
+    {
+      "id": "2026-11-13-replan-2100-english",
+      "date": "2026-11-13",
+      "start": "21:00",
+      "end": "21:40",
+      "title": "口语补足 / 同题纠错 · 按实际分钟选择",
+      "category": "english",
+      "project": "english",
+      "status": "planned",
+      "evidence": "proposed",
+      "detail": "先看今天实际开口记录：若晨练未做或未知，主动开口最多 35 分钟，加上 17:10 的 40 分钟达到至少 75；若晨练已有 50 分钟，则今天已有 90 分钟，本段改做回听、纠错或必要作业。部分完成时只补到 75–90，不重复计入计划。未练满如实记进度。",
+      "doneCriteria": "先看今天实际开口记录：若晨练未做或未知，主动开口最多 35 分钟，加上 17:10 的 40 分钟达到至少 75；若晨练已有 50 分钟，则今天已有 90 分钟，本段改做回听、纠错或必要作业。部分完成时只补到 75–90，不重复计入计划。未练满如实记进度。",
+      "commitment": "core",
+      "estimate": {
+        "activeMinutes": 40,
+        "confidence": "初估；先看现稿，按实际用时校准",
+        "machineWallMinutes": null
+      },
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。",
+      "activeSpeakingMinutes": 0,
+      "conditionalActiveSpeakingMinutes": 35,
+      "speakingCondition": "仅补 max(0,75-今天已确认的主动口语分钟)，最多35；晨练50+傍晚40已完成时不补。"
+    },
+    {
+      "id": "2026-11-13-focus-1030-life",
+      "date": "2026-11-13",
+      "start": "21:40",
+      "end": "22:00",
+      "title": "必要邮件与硬截止快筛",
+      "category": "admin",
+      "project": "life",
+      "status": "planned",
+      "evidence": "proposed",
+      "detail": "先看注册、英语课程或合作者是否有硬截止，再批量处理必要回复；已处理事项跳过，不开始新科研项目。本段与前一口语段累计 60 分钟，22:00 统一小休。",
+      "doneCriteria": "先看注册、英语课程或合作者是否有硬截止，再批量处理必要回复；已处理事项跳过，不开始新科研项目。本段与前一口语段累计 60 分钟，22:00 统一小休。",
+      "commitment": "core",
+      "estimate": {
+        "activeMinutes": 20,
+        "confidence": "初估；先看现稿，按实际用时校准",
+        "machineWallMinutes": null
+      },
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。"
+    },
+    {
+      "id": "2026-11-13-break-2200-replan",
+      "date": "2026-11-13",
+      "start": "22:00",
+      "end": "22:10",
+      "title": "休息 10 分钟",
+      "category": "break",
+      "project": "life",
+      "status": "planned",
+      "evidence": "proposed",
+      "detail": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
+      "doneCriteria": "起身、喝水、走动或远眺，不处理工作消息；回来继续同一问题。",
       "commitment": "core"
     },
     {
       "id": "2026-11-13-focus-1080-life",
       "date": "2026-11-13",
-      "start": "18:00",
+      "start": "22:10",
       "end": "22:30",
-      "title": "彻底下班",
-      "category": "rest",
+      "title": "晚间汇报 · 成果、阻塞与明日第一步",
+      "category": "admin",
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "整个晚上休息，不查实验、不回工作邮件、不要求复盘。",
-      "doneCriteria": "整个晚上休息，不查实验、不回工作邮件、不要求复盘。",
-      "commitment": "core"
+      "detail": "记录 ResNet 两份回应的实际状态、是否待 Siying 合并、GAUGE/Kumar 实际产物、主动口语分钟与精力。未完成也如实记；按真实耗时缩小/替换周末原有块，不把全部延期叠加到明天。",
+      "doneCriteria": "记录 ResNet 两份回应的实际状态、是否待 Siying 合并、GAUGE/Kumar 实际产物、主动口语分钟与精力。未完成也如实记；按真实耗时缩小/替换周末原有块，不把全部延期叠加到明天。",
+      "commitment": "core",
+      "estimate": {
+        "activeMinutes": 20,
+        "confidence": "初估；先看现稿，按实际用时校准",
+        "machineWallMinutes": null
+      },
+      "resumeHint": "最后 2–3 分钟保存文件位置、证据出处、未解决点与下一步。"
     },
     {
       "id": "2026-11-13-2215-275",
@@ -4264,8 +4442,8 @@
       "project": "life",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "22:30 停止工作，23:00 入睡。",
-      "doneCriteria": "22:30 停止工作，23:00 入睡。",
+      "detail": "22:30 停止工作，洗漱、放下屏幕，23:00 入睡；仅取消今晚完整休息，不延后睡眠。",
+      "doneCriteria": "22:30 停止工作，洗漱、放下屏幕，23:00 入睡；仅取消今晚完整休息，不延后睡眠。",
       "commitment": "core"
     },
     {
@@ -4323,15 +4501,15 @@
       "date": "2026-11-14",
       "start": "08:40",
       "end": "09:40",
-      "title": "GAUGE · 关键证据与计算准入检查",
+      "title": "GAUGE · 先核首稿，再做关键证据与计算准入",
       "category": "research",
       "project": "gauge",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "核查一项已有结果与对应回应；新计算只有已有试跑 ETA、直接回应核心质疑、能在 16 日前分析才进入队列。",
-      "doneCriteria": "核查一项已有结果与对应回应；新计算只有已有试跑 ETA、直接回应核心质疑、能在 16 日前分析才进入队列。",
+      "detail": "先核对13日GAUGE实际稿件；若因ResNet优先尚未形成首版，就用原有上午连续时段收拢已证回应与缺口，再复核关键证据。新实验须有实测ETA和负责人，能在16日前完成分析；条件不满足就复用证据、说明限制，不承诺本块跑完。",
+      "doneCriteria": "先核对13日GAUGE实际稿件；若因ResNet优先尚未形成首版，就用原有上午连续时段收拢已证回应与缺口，再复核关键证据。新实验须有实测ETA和负责人，能在16日前完成分析；条件不满足就复用证据、说明限制，不承诺本块跑完。",
       "commitment": "core",
-      "minimumOutcome": "核查一项已有结果与对应回应；新计算只有已有试跑 ETA、直接回应核心质疑、能在 16 日前分析才进入队列。",
+      "minimumOutcome": "先核对13日GAUGE实际稿件；若因ResNet优先尚未形成首版，就用原有上午连续时段收拢已证回应与缺口，再复核关键证据。新实验须有实测ETA和负责人，能在16日前完成分析；条件不满足就复用证据、说明限制，不承诺本块跑完。",
       "stretchOutcome": "最小交付完成后再深化同一问题；不自动换到其他项目。",
       "focusGroup": "2026-11-14-gauge",
       "dependsOn": "所需文件、数据或已返回日志；缺失时先写依赖与取得办法。",
@@ -4440,15 +4618,15 @@
       "date": "2026-11-14",
       "start": "12:30",
       "end": "13:30",
-      "title": "Noisy Pairs · 理论边界与直观解释 / 第 1 段",
+      "title": "Noisy Pairs · 先核对现稿，再补定义与首版",
       "category": "research",
       "project": "noisy",
       "status": "planned",
       "evidence": "proposed",
-      "detail": "核心最小交付：围绕当天主题改清楚一个定义或一段回应，保留原表述与修改稿。",
-      "doneCriteria": "围绕当天主题改清楚一个定义或一段回应，保留原表述与修改稿。",
+      "detail": "先打开 11-12 已保存稿件，实际状态未汇报；首版未成就用本来已有的 Noisy 时段补关键定义、最小例子与逐条问题映射，再处理边界。已成稿则继续关键假设核查；缺证明/结果明确列缺口，不保证一小时解决全部理论问题。",
+      "doneCriteria": "先打开 11-12 已保存稿件，实际状态未汇报；首版未成就用本来已有的 Noisy 时段补关键定义、最小例子与逐条问题映射，再处理边界。已成稿则继续关键假设核查；缺证明/结果明确列缺口，不保证一小时解决全部理论问题。",
       "commitment": "core",
-      "minimumOutcome": "围绕当天主题改清楚一个定义或一段回应，保留原表述与修改稿。",
+      "minimumOutcome": "先打开 11-12 已保存稿件，实际状态未汇报；首版未成就用本来已有的 Noisy 时段补关键定义、最小例子与逐条问题映射，再处理边界。已成稿则继续关键假设核查；缺证明/结果明确列缺口，不保证一小时解决全部理论问题。",
       "stretchOutcome": "最小交付完成后再深化同一问题；不自动换到其他项目。",
       "focusGroup": "2026-11-14-noisy",
       "dependsOn": "所需文件、数据或已返回日志；缺失时先写依赖与取得办法。",
@@ -12669,7 +12847,8 @@
     "11-10 上午已开始的 GAUGE 保留；其后按用户指定顺序推进两个 Kumar 项目和 MS-enhancement，属于当日主题数量例外，不推广为全月政策。",
     "11-11 用户约 11:46 说刚开始工作，明确要求给 ResNet-MoE 和 MoE-LLM 留时间。上午旧计划已归档；起床/早餐/昨晚睡眠实际未知。今天三科研主题依序集中是单日例外，22:30 收工、23:00 睡，次日恢复 07:00 起床目标。",
     "11-11 约 12:14 用户要求到 14:00 聚焦开会，按会前集中 MS 准备理解；保留原午饭与 60/10 小休，不延长 14:00–14:30 真实会议。口语移至 15:50，替换 GAUGE 延续，未把计划当完成。",
-    "11-12 约 09:17 用户确认正在上课；08:30–10:20 ENGL 105 B 保留为进行中，未自动勾选完成。今日早间口语未知，10:30 的补练与课前 25 分钟目标互斥。昨天 ResNet/MoE-LLM 未反馈状态，晚间先核对现有稿，不重复已完成部分。"
+    "11-12 约 09:17 用户确认正在上课；08:30–10:20 ENGL 105 B 保留为进行中，未自动勾选完成。今日早间口语未知，10:30 的补练与课前 25 分钟目标互斥。昨天 ResNet/MoE-LLM 未反馈状态，晚间先核对现有稿，不重复已完成部分。",
+    "11-13 用户明确“今天不休息了”：只取消今天周五18:00后整晚休息，22:30收工、23:00睡，其他周五保持。11:00前原计划保留，实际执行未知；ResNet优先且后续科研条件启动，不把排程当完成。"
   ],
   "cadence": {
     "label": "工作 60 分钟 / 休息 10 分钟",
@@ -12684,7 +12863,7 @@
     "fridayWorkEnd": "17:30",
     "mealsMinutes": 30,
     "bedtimePreparation": "22:30–23:00",
-    "exceptions": "固定课程和会议保留真实时长，在前后安排小休；周五 18:00 后完整休息。"
+    "exceptions": "固定课程和会议保留真实时长，在前后安排小休；常规周五18:00后完整休息。11-13 用户明确取消当晚完整休息，仍22:30收工、23:00睡。"
   },
   "planningPolicy": {
     "effectiveFrom": "2026-11-08",
@@ -12719,8 +12898,8 @@
     },
     {
       "date": "2026-11-13",
-      "title": "首轮回应不等全部实验",
-      "detail": "11-11 GAUGE 核心回应工作块已勾选，具体结果未知；11-12 Noisy 可读首版与 ResNet 条件补写/核查；11-13 GAUGE 既有上午段接续实际稿件。缺证据就列缺口，16/18 日节点保留，不把计划当完成。",
+      "title": "ResNet 完成后再启动其他科研",
+      "detail": "13日先核对现稿并完成自己两位 reviewer；14:40查漏未过则依次占用后续GAUGE/Kumar块。Siying待稿单列，不误记成未写。GAUGE未收拢用14日原有上午段，Noisy用14日原有下午段，16/18日不变。",
       "originalDate": "2026-11-10"
     },
     {

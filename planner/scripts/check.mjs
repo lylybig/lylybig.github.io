@@ -24,7 +24,16 @@ for(const file of monthFiles){
   const es=m.events.filter(e=>e.date===date).sort((a,b)=>a.start.localeCompare(b.start));
   for(let i=1;i<es.length;i++)assert(es[i-1].end<=es[i].start,`Overlap ${date}: ${es[i-1].title} / ${es[i].title}`);
   const day=new Date(date+'T12:00:00Z').getUTCDay();
-  if(day===5)assert(es.filter(e=>e.end>'18:00').every(e=>e.category==='rest'),`Friday evening is not protected ${date}`);
+  const fridayOverride=m.days[date].fridayRestOverride;
+  if(fridayOverride){
+   assert.equal(day,5,'Friday exception on a different weekday');
+   assert.equal(fridayOverride.appliesToDate,date,'Friday exception must be date-specific');
+   assert.equal(fridayOverride.evidence,'user-confirmed','Friday exception requires user instruction');
+   assert.equal(fridayOverride.cancelled,true,'Friday exception must explicitly cancel rest');
+   assert(fridayOverride.reason,'Missing Friday exception reason');
+   assert(es.filter(e=>!['rest','break','commute','buffer'].includes(e.category)).every(e=>e.end<=profile.workCadence.end),'Friday exception must preserve normal work finish');
+  }
+  if(day===5&&!fridayOverride)assert(es.filter(e=>e.end>'18:00').every(e=>e.category==='rest'),`Friday evening is not protected ${date}`);
   if(m.holidays.some(h=>h.date===date&&h.noClasses))assert(!es.some(e=>e.category==='fixed'&&/ENGL|Noble Lab/.test(e.title)),`Holiday class ${date}`);
   assert(m.days[date].priorities.length>0,'Missing priorities '+date);
   const nonWork=['rest','break','commute','buffer'];
@@ -38,8 +47,8 @@ for(const file of monthFiles){
     if(e.category==='break')assert.equal(length,10,'Break must be 10 minutes '+e.id);
     if(e.category==='fixed'||nonWork.includes(e.category))streak=0;
     else {streak+=length;assert(streak<=60,'More than 60 continuous self-directed work minutes '+date+' '+e.title);}
-    if(e.category==='rest'&&!(day===5&&e.start>='18:00'))assert(/起床与早餐|午饭|晚饭|洗漱与睡前准备/.test(e.title),'Unexpected long rest '+date+' '+e.title);
-    if(day!==5&&e.category==='rest')assert(length<=30,'Extra rest beyond meals/bedtime '+date);
+    if(e.category==='rest'&&!(day===5&&!fridayOverride&&e.start>='18:00'))assert(/起床与早餐|午饭|晚饭|洗漱与睡前准备/.test(e.title),'Unexpected long rest '+date+' '+e.title);
+    if((day!==5||fridayOverride)&&e.category==='rest')assert(length<=30,'Extra rest beyond meals/bedtime '+date);
    }
    const override=m.days[date].sleepOverride;
    if(override){
@@ -96,10 +105,11 @@ for(const file of monthFiles){
    assert.equal(contextOverride.evidence,'user-confirmed','Research exception requires user instruction');
    assert(contextOverride.reason,'Missing research exception reason');
    assert(Number.isInteger(contextOverride.maxProjects)&&contextOverride.maxProjects>=2&&contextOverride.maxProjects<=4,'Unbounded research exception');
+   if(contextOverride.replanFrom)assert(/^([01]\d|2[0-3]):[0-5]\d$/.test(contextOverride.replanFrom)&&contextOverride.replanFrom>='07:00'&&contextOverride.replanFrom<='22:30','Invalid dated replan start');
   }
   assert(projects.size<=(contextOverride?.maxProjects??(dow===1?3:2)),'Too many research contexts '+date);
   assert(research.every(e=>length(e)>=30&&e.minimumOutcome&&e.estimate?.activeMinutes===length(e)),'Fragmented or unscoped research '+date);
-  const morning=research.filter(e=>e.end<='12:00');assert(new Set(morning.map(e=>e.project)).size<=1,'Morning focus switching '+date);
+  const morning=research.filter(e=>e.end<='12:00'&&(!contextOverride?.replanFrom||e.end>contextOverride.replanFrom));assert(new Set(morning.map(e=>e.project)).size<=1,'Morning focus switching '+date);
   assert(day.priorities.length<=3,'Too many promised outcomes '+date);
  }
  for(const [start,w] of Object.entries(m.weekly)){

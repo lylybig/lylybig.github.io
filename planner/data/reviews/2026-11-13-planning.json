@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "reportedAt": "2026-11-13T18:48:15.735159Z",
+  "source": "chat-and-local-progress",
+  "reportType": "resnet-first-with-one-off-friday-work",
+  "status": "processed",
+  "processedAt": "2026-11-13T18:48:15.735159Z",
+  "rawNote": "帮我重新安排下今天的规划，重点是resent-moe，GUAGE，Kumar，口语。先把resent-moe的rebuttal搞完\n今天不休息了",
+  "completed": null,
+  "inProgress": null,
+  "blockers": null,
+  "energy": null,
+  "sleep": null,
+  "activeSpeakingMinutes": null,
+  "nextActions": [
+    "11:00先打开ResNet现稿，自己两位逐条收尾，第三周期核查。",
+    "ResNet完成后再启动GAUGE与MoE-LLM；口语傍晚40加条件补练35，按实际不双计。",
+    "22:10汇报真实成果、阻塞与用时，22:30收工、23:00睡。"
+  ],
+  "planAdjustments": [
+    "仅 2026-11-13：取消周五 18:00 后完整休息，工作到 22:30、23:00 睡，仍执行 60/10 与正常用餐。11:00 起 ResNet 优先，后续科研块以其完成为启动条件；其余周五不变。",
+    "后续 GAUGE、再 Kumar 科研块依次让给 ResNet；口语、三餐与睡眠保留。晚间报告实际占用后再调周末，不保证三小时足够，也不添加新硬任务。",
+    "Noisy原13日补强取消，在14日既有下午块接续；MoE-agent仍15日，不追加今晚。",
+    "11:00前历史计划及全部实际勾选不变；11-12科研实际状态未报告，不推断完成。"
+  ],
+  "historyPath": "data/reviews/history/2026-11-13-plan-before-resnet-first.json"
+}

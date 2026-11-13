@@ -10,7 +10,15 @@
   "rest": {
     "weekday": 5,
     "start": "18:00",
-    "description": "周五 18:00 后彻底下班，整个晚上休息"
+    "description": "周五 18:00 后彻底下班，整个晚上休息",
+    "oneOffOverrides": [
+      {
+        "appliesToDate": "2026-11-13",
+        "evidence": "user-confirmed",
+        "cancelled": true,
+        "reason": "用户明确说“今天不休息了”，只限今天，保留 22:30 收工和 23:00 睡眠。"
+      }
+    ]
   },
   "workRules": [
     "课程、会议、通勤计入当天负荷，会议多的日期减少科研任务。",
@@ -126,10 +134,12 @@
       "firstReplyTarget": "2026-11-13",
       "targetChange": {
         "originalDate": "2026-11-11",
-        "changedAt": "2026-11-11T19:51:05.540777Z",
-        "reason": "11-11 GAUGE 核心回应块已由用户勾选，具体成果/用时未知；13 日既有上午时段接着实际稿件收拢可读首版。"
+        "changedAt": "2026-11-13T18:48:15.735159Z",
+        "reason": "13 日用户指定 ResNet 第一优先，GAUGE 改下午条件启动；11-14 原有上午段是首版未收拢时的回退，16/18日不变。"
       },
-      "coreResponseTarget": "2026-11-11"
+      "coreResponseTarget": "2026-11-11",
+      "firstReplyScope": "11-13 ResNet 收尾后，用两个连续周期做一个关键质疑的证据闭环与可读首稿；完整性取决于现有材料。未达到首版就在 11-14 原有上午块继续，不向当天叠加。",
+      "firstReplyFallbackDate": "2026-11-14"
     },
     {
       "id": "resnet",
@@ -142,7 +152,7 @@
         2
       ],
       "focus": "用户负责两位 reviewer，Siying 负责一位；以解释、论断边界和证据出处为主，先写回应，不预排大规模重训。",
-      "firstReplyTarget": "2026-11-12",
+      "firstReplyTarget": "2026-11-13",
       "assignment": {
         "userReviewerCount": 2,
         "coauthor": "Siying",
@@ -154,15 +164,16 @@
         "initialActiveMinutes": 180,
         "basis": "用户认为以解释为主、任务量较轻；两段各一位 reviewer，第三段合并核查，按真实草稿校准。"
       },
-      "ownResponsesTarget": "2026-11-12",
+      "ownResponsesTarget": "2026-11-13",
       "targetChange": {
         "originalDate": "2026-11-11",
-        "changedAt": "2026-11-11T19:51:05.540777Z",
-        "reason": "今天晚间写用户两位 reviewer，合并核查使用明晚原 Noisy Pairs 延续，不新增工时。"
+        "previousDate": "2026-11-12",
+        "changedAt": "2026-11-13T18:48:15.735159Z",
+        "reason": "用户 11-13 明确先搞完 ResNet，连续三周期且超时优先替换 GAUGE/Kumar，不自动标完成。"
       },
-      "previousOwnResponsesTarget": "2026-11-11",
-      "ownResponsesActualStatus": "11-11 未提供完成标记或草稿状态，不推断已完成/未完成；11-12 为补写或核查的保留窗口。",
-      "firstReplyScope": "12 日按现有稿补关键解释与骨架，材料齐全就合并核查；这是内部目标，实际完成与完整性待本人汇报。"
+      "previousOwnResponsesTarget": "2026-11-12",
+      "ownResponsesActualStatus": "11-11/12 两份回应实际完成情况未反馈；11-13 用户明确先搞完，先检查真实稿件，不默认从零或已经完成。",
+      "firstReplyScope": "13 日第一优先：自己两位逐条回应达到可提交审阅状态，核对证据和正文措辞；Siying 稿有则合并，无则列依赖。三周期初估，不保证未知工作量；超时继续占用后续科研块。"
     },
     {
       "id": "noisy",
@@ -177,7 +188,7 @@
       ],
       "focus": "定义、直观示例、引言、coherence 和 remasking 等适用边界、有限维常数",
       "firstReplyTarget": "2026-11-12",
-      "firstReplyScope": "12 日可读首版：关键定义、最小例子、核心边界与逐条问题映射；待补内容列缺口，13 日既有时段继续，不承诺全部理论问题今天解决。"
+      "firstReplyScope": "11-12 可读首版内部目标的实际完成未知；13 日补强让给用户新优先级，14 日原有下午块先核对现稿并补定义/首版，再做边界，不新增工时。"
     },
     {
       "id": "moe-llm",
@@ -209,29 +220,29 @@
     {
       "id": "jingyang",
       "title": "回复 Jingyang 的问题",
-      "due": "2026-11-12",
+      "due": "2026-11-13",
       "status": "未反馈",
-      "detail": "11-12 邮件窗口按实际情况跟进：已回复就跳过，未回复则批处理；这是内部跟进窗口，不是已核实的外部硬截止。本系统不代发。",
+      "detail": "11-13 21:40 必要邮件窗口按真实状态批处理；已回复跳过。属于内部跟进窗口，真实外部截止未知，本系统不代发。",
       "originalDue": "2026-11-09",
-      "previousFollowUpDate": "2026-11-10"
+      "previousFollowUpDate": "2026-11-12"
     },
     {
       "id": "coffee",
       "title": "回复咖啡邀请",
-      "due": "2026-11-12",
+      "due": "2026-11-13",
       "status": "未反馈",
-      "detail": "11-12 邮件窗口按实际情况跟进：已回复就跳过，未回复则批处理；这是内部跟进窗口，不是已核实的外部硬截止。本系统不代发。",
+      "detail": "11-13 21:40 必要邮件窗口按真实状态批处理；已回复跳过。属于内部跟进窗口，真实外部截止未知，本系统不代发。",
       "originalDue": "2026-11-09",
-      "previousFollowUpDate": "2026-11-10"
+      "previousFollowUpDate": "2026-11-12"
     },
     {
       "id": "english-materials",
       "title": "回复英语资料相关问题",
-      "due": "2026-11-12",
+      "due": "2026-11-13",
       "status": "未反馈",
-      "detail": "11-12 邮件窗口按实际情况跟进：已回复就跳过，未回复则批处理；这是内部跟进窗口，不是已核实的外部硬截止。本系统不代发。",
+      "detail": "11-13 21:40 必要邮件窗口按真实状态批处理；已回复跳过。属于内部跟进窗口，真实外部截止未知，本系统不代发。",
       "originalDue": "2026-11-09",
-      "previousFollowUpDate": "2026-11-10"
+      "previousFollowUpDate": "2026-11-12"
     },
     {
       "id": "course-deadlines",
